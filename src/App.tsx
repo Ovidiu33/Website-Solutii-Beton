@@ -13,8 +13,8 @@ function App() {
     <div className="min-h-screen bg-dark">
       <Header />
       <Hero />
-      <WhyUs />
       <Services />
+      <WhyUs />
       <TikTokGallery />
       <Gallery />
       <Contact />

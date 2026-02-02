@@ -25,7 +25,7 @@ const Header = () => {
               Despre Noi
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a href="#galerie" className="text-gray-light hover:text-primary transition-colors relative group">
+            <a href="#galerie-imagini" className="text-gray-light hover:text-primary transition-colors relative group">
               Galerie
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
@@ -74,7 +74,7 @@ const Header = () => {
                 Despre Noi
               </a>
               <a 
-                href="#galerie" 
+                href="#galerie-imagini" 
                 className="text-gray-light hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >

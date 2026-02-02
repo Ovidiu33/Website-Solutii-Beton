@@ -4,39 +4,39 @@ const Services = () => {
   const services = [
     {
       icon: <Circle className="h-10 w-10" />,
-      title: "Carotaj Beton - Găuri Hote",
-      description: "Carotări profesionale în beton pentru hote de bucătărie în Suceava și Botoșani. Calculăm exact dimensiunile necesare pentru evacuare optimă.",
-      features: ["Carotaj până la Ø 500mm", "Orice grosime perete", "Finisaj curat", "Fără praf excesiv"]
+      title: "Găuri Hote",
+      description: "Carotări pentru hote de bucătărie în beton, cărămidă sau BCA. Calculăm exact dimensiunile necesare.",
+      features: ["Diametru până la Ø 500mm", "Orice grosime perete", "Finisaj curat", "Fără praf excesiv"]
     },
     {
       icon: <Wind className="h-10 w-10" />,
-      title: "Găuri Ventilații",
-      description: "Carotări pentru ventilație, aerisire centrală și aer condiționat în beton. Poziționare precisă conform proiectului, disponibil Suceava și Botoșani.",
+      title: "Ventilații",
+      description: "Găuri pentru ventilație, aerisire centrală și aparate de aer condiționat. Poziționare precisă conform proiectului.",
       features: ["Aer condiționat", "Beton armat", "Pereți portanți", "Aerisiri centrale"]
     },
     {
       icon: <Layers className="h-10 w-10" />,
-      title: "Tăieri Planșee Beton",
-      description: "Tăieri profesionale în planșee de beton pentru scări, lifturi sau modificări structurale în Suceava și Botoșani. Echipament performant, fără vibrații.",
-      features: ["Orice grosime", "Tăiere cu disc diamantat", "Fără vibrații", "Demolări controlate"]
+      title: "Tăieri Planșee",
+      description: "Tăiem planșee din beton pentru scări, lifturi sau alte modificări structurale.",
+      features: ["Orice grosime", "Tăiere cu disc", "Fără vibrații", "Demolări controlate"]
     },
     {
       icon: <Square className="h-10 w-10" />,
-      title: "Tăieri Pereți Beton",
-      description: "Deschideri pentru uși, ferestre sau alte modificări în pereți din beton, cărămidă, BCA. Servicii disponibile în Suceava și Botoșani.",
-      features: ["Pereți portanți beton", "Cărămidă", "BCA", "Beton armat"]
+      title: "Tăieri Pereți",
+      description: "Deschideri pentru uși, ferestre sau alte modificări în pereți din beton, cărămidă, BCA.",
+      features: ["Pereți portanți", "Cărămidă", "BCA", "Beton armat"]
     },
     {
       icon: <Scissors className="h-10 w-10" />,
-      title: "Decupaje Beton",
-      description: "Decupaje în beton pentru instalații sanitare, electrice, termice în Suceava și Botoșani. Lucrăm precis după măsurători, canalizări și instalații.",
-      features: ["Canale tehnice beton", "Țevi canalizare", "Cabluri electrice", "Instalații sanitare"]
+      title: "Decupaje",
+      description: "Decupaje pentru instalații sanitare, electrice, termice. Lucrăm precis după măsurători.",
+      features: ["Canale tehnice", "Țevi", "Cabluri", "Instalații"]
     },
     {
       icon: <Hammer className="h-10 w-10" />,
-      title: "Demolări Beton",
-      description: "Demolări selective în beton fără să afectăm restul structurii. Ridicăm molozul. Servicii profesionale în Suceava și Botoșani.",
-      features: ["Balcoane beton", "Console", "Elemente structurale", "Evacuare moloz"]
+      title: "Demolări",
+      description: "Demolări selective fără să afectăm restul structurii. Ridicăm molozul.",
+      features: ["Balcoane", "Console", "Elemente structurale", "Curățenie finală"]
     }
   ]
 
@@ -47,9 +47,9 @@ const Services = () => {
       
       <div className="container-custom relative z-10">
         <div className="text-center mb-16">
-          <h2 className="section-title">Servicii Carotaj și Tăieri Beton - Suceava, Botoșani</h2>
+          <h2 className="section-title">Ce Facem?</h2>
           <p className="text-xl text-gray-light max-w-3xl mx-auto mt-4">
-            Carotări profesionale, tăieri precizie și demolări controlate în beton, cărămidă, BCA, asfalt și piatră. Deservim județele Suceava și Botoșani cu echipament modern și experiență vastă.
+            Carotări, tăieri, decupaje și demolări în beton, cărămidă, BCA, asfalt și piatră.
           </p>
         </div>
 

@@ -28,9 +28,6 @@ const Gallery = () => {
       
       <div className="container-custom relative z-10">
         <h2 className="section-title mb-8 text-center">Galerie Lucrări Realizate</h2>
-        <p className="text-gray-light text-center mb-12 max-w-2xl mx-auto">
-          Lucrări de carotaj, tăiere și demolări în beton armat, realizate cu echipament profesional
-        </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {images.map((img, idx) => (
             <GalleryItem key={idx} image={img} />
