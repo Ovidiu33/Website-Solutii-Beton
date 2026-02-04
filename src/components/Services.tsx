@@ -41,7 +41,7 @@ const Services = () => {
   ]
 
   return (
-    <section id="servicii" className="relative py-12 md:py-16 bg-gradient-to-br from-gray-dark to-dark overflow-hidden scroll-mt-8">
+    <section id="servicii" className="relative py-8 md:py-12 bg-gradient-to-br from-gray-dark to-dark overflow-hidden scroll-mt-8">
       {/* Fade from black at top */}
       <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-dark to-transparent pointer-events-none"></div>
       

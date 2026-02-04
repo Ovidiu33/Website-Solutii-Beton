@@ -2,7 +2,7 @@ import { ExternalLink } from 'lucide-react'
 
 const TikTokGallery = () => {
   return (
-    <section id="galerie" className="relative py-20 bg-dark overflow-hidden scroll-mt-8">
+    <section id="galerie" className="relative py-12 md:py-16 bg-dark overflow-hidden scroll-mt-8">
       {/* Fade from black at top */}
       <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-dark to-transparent pointer-events-none"></div>
       

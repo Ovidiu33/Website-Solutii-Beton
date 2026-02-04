@@ -26,7 +26,7 @@ const WhyUs = () => {
   ]
 
   return (
-    <section id="despre" className="relative py-12 md:py-16 bg-dark overflow-hidden scroll-mt-8">
+    <section id="despre" className="relative py-8 md:py-12 bg-dark overflow-hidden scroll-mt-8">
       {/* Fade from black at top */}
       <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-dark to-transparent pointer-events-none"></div>
       

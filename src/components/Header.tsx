@@ -18,19 +18,19 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center justify-center space-x-6 lg:space-x-8 flex-2">
-            <a href="#servicii" className="text-lg lg:text-xl text-gray-light hover:text-primary transition-colors relative group font-semibold">
+            <a href="#servicii" className="text-base lg:text-lg text-gray-light hover:text-primary transition-colors relative group font-semibold">
               Servicii
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a href="#despre" className="text-lg lg:text-xl text-gray-light hover:text-primary transition-colors relative group font-semibold">
+            <a href="#despre" className="text-base lg:text-lg text-gray-light hover:text-primary transition-colors relative group font-semibold">
               Despre Noi
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a href="#galerie-imagini" className="text-lg lg:text-xl text-gray-light hover:text-primary transition-colors relative group font-semibold">
+            <a href="#galerie-imagini" className="text-base lg:text-lg text-gray-light hover:text-primary transition-colors relative group font-semibold">
               Galerie
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a href="#contact" className="text-lg lg:text-xl text-gray-light hover:text-primary transition-colors relative group font-semibold">
+            <a href="#contact" className="text-base lg:text-lg text-gray-light hover:text-primary transition-colors relative group font-semibold">
               Contact
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>

@@ -15,7 +15,7 @@ const Hero = () => {
         ></div>
       </div>
 
-      <div className="container-custom relative z-10 pb-32">
+      <div className="container-custom relative z-10 pb-16 md:pb-20">
         <div className="text-center max-w-4xl mx-auto">
           {/* Main Headline */}
           <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-6">
