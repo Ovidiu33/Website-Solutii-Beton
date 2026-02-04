@@ -7,11 +7,13 @@ import Gallery from './components/Gallery'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
+import TrustBanner from './components/TrustBanner'
 
 function App() {
   return (
     <div className="min-h-screen bg-dark">
       <Header />
+      <TrustBanner />
       <Hero />
       <Services />
       <WhyUs />

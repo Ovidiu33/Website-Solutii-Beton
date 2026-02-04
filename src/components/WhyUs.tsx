@@ -26,7 +26,7 @@ const WhyUs = () => {
   ]
 
   return (
-    <section id="despre" className="relative py-20 bg-dark overflow-hidden">
+    <section id="despre" className="relative py-12 md:py-16 bg-dark overflow-hidden scroll-mt-8">
       {/* Fade from black at top */}
       <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-dark to-transparent pointer-events-none"></div>
       
@@ -49,17 +49,16 @@ const WhyUs = () => {
               return (
                 <div 
                   ref={elementRef}
-                  className={`bg-gray-dark border rounded-lg p-8 text-center group hover:border-primary hover:scale-105 hover:shadow-lg hover:shadow-primary/20 ${
-                    isVisible ? 'border-primary scale-105 shadow-lg shadow-primary/20 transition-all duration-500' : 'border-gray-medium transition-all duration-300'
-                  }`}
+                  className={`bg-gray-dark border rounded-lg p-8 text-center group hover:border-primary hover:scale-105 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 ${
+                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  } ${isVisible ? 'border-gray-medium' : 'border-gray-medium'}`}
+                  style={{ transitionDelay: `${index * 100}ms` }}
                 >
-                  <div className={`mb-6 flex justify-center group-hover:scale-110 ${
-                    isVisible ? 'scale-110 transition-transform duration-500' : 'transition-transform duration-300'
-                  }`}>
+                  <div className="mb-6 flex justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                     {feature.icon}
                   </div>
                   
-                  <h3 className="text-xl font-display font-bold text-white mb-4">
+                  <h3 className="text-xl font-display font-bold text-white mb-4 group-hover:text-primary transition-colors duration-300">
                     {feature.title}
                   </h3>
                   
@@ -72,26 +71,6 @@ const WhyUs = () => {
             
             return <FeatureCard key={index} />;
           })}
-        </div>
-
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-16 border-t border-gray-medium">
-          <div className="text-center">
-            <div className="text-4xl md:text-5xl font-display font-bold text-primary mb-2">10+</div>
-            <div className="text-gray-light">Ani de muncă pe șantier</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl md:text-5xl font-display font-bold text-primary mb-2">5000+</div>
-            <div className="text-gray-light">Lucrări făcute</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl md:text-5xl font-display font-bold text-primary mb-2">Ø 500mm</div>
-            <div className="text-gray-light">Găuri și tăieturi mari</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl md:text-5xl font-display font-bold text-primary mb-2">100%</div>
-            <div className="text-gray-light">Clienți mulțumiți</div>
-          </div>
         </div>
       </div>
       

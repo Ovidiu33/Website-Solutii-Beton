@@ -31,7 +31,7 @@ const Contact = () => {
   }
 
   return (
-    <section id="contact" className="relative py-20 bg-gradient-to-br from-dark via-gray-dark to-dark overflow-hidden">
+    <section id="contact" className="relative py-20 bg-gradient-to-br from-dark via-gray-dark to-dark overflow-hidden scroll-mt-8">
       {/* Fade from black at top */}
       <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-dark to-transparent pointer-events-none"></div>
       
@@ -112,7 +112,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div>
+          <div id="oferta" className="scroll-mt-32">
             <h3 className="text-2xl font-display font-bold text-white mb-8">
               Solicită Ofertă
             </h3>
@@ -204,10 +204,6 @@ const Contact = () => {
                   {submitMessage}
                 </p>
               )}
-
-              <p className="text-sm text-gray-light text-center">
-                Sau sună direct: <a href="tel:0758663415" className="text-primary hover:text-orange-600 font-bold">0758 663 415</a>
-              </p>
             </form>
           </div>
         </div>
