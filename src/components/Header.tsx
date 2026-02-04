@@ -6,7 +6,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 w-full bg-transparent backdrop-blur-sm z-50">
+    <header className={`fixed top-0 w-full z-50 transition-colors duration-300 ${isMenuOpen ? 'bg-dark' : 'bg-transparent backdrop-blur-sm'}`}>
       <div className="container-custom">
         <div className="flex items-center justify-between h-24">
           {/* Logo */}
@@ -69,32 +69,32 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-dark">
+          <div className="md:hidden py-4 border-t border-gray-dark bg-dark">
             <nav className="flex flex-col space-y-4">
               <a 
                 href="#servicii" 
-                className="text-gray-light hover:text-primary transition-colors"
+                className="text-white hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Servicii
               </a>
               <a 
                 href="#despre" 
-                className="text-gray-light hover:text-primary transition-colors"
+                className="text-white hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Despre Noi
               </a>
               <a 
                 href="#galerie-imagini" 
-                className="text-gray-light hover:text-primary transition-colors"
+                className="text-white hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Galerie
               </a>
               <a 
                 href="#contact" 
-                className="text-gray-light hover:text-primary transition-colors"
+                className="text-white hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
@@ -103,7 +103,7 @@ const Header = () => {
                 href="https://www.tiktok.com/@solutii.beton.sv" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-800 hover:bg-gray-700 text-white py-3 px-4 rounded-lg transition-colors duration-300 flex items-center justify-center gap-2"
+                className="bg-dark border border-gray-medium hover:bg-primary hover:border-primary text-white py-3 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <FaTiktok className="h-5 w-5" />
