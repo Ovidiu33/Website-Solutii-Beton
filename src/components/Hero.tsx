@@ -3,7 +3,7 @@ import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-dark via-gray-dark to-dark overflow-hidden pt-8 md:pt-12">
+    <section className="relative bg-gradient-to-br from-dark via-gray-dark to-dark overflow-hidden pt-8 md:pt-12">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div
@@ -15,7 +15,7 @@ const Hero = () => {
         ></div>
       </div>
 
-      <div className="container-custom relative z-10 pb-16 md:pb-20">
+      <div className="container-custom relative z-10 pb-4 md:pb-8">
         <div className="text-center max-w-4xl mx-auto">
           {/* Main Headline */}
           <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-6">
