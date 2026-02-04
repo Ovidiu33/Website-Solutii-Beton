@@ -6,7 +6,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 w-full bg-dark/95 backdrop-blur-sm z-50 border-b border-gray-dark">
+    <header className="fixed top-0 w-full bg-transparent backdrop-blur-sm z-50">
       <div className="container-custom">
         <div className="flex items-center justify-between h-24">
           {/* Logo */}
@@ -18,19 +18,19 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center justify-center space-x-6 lg:space-x-8 flex-2">
-            <a href="#servicii" className="text-base lg:text-lg text-gray-light hover:text-primary transition-colors relative group font-semibold">
+            <a href="#servicii" className="text-base lg:text-lg text-white hover:text-primary transition-colors relative group font-semibold">
               Servicii
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a href="#despre" className="text-base lg:text-lg text-gray-light hover:text-primary transition-colors relative group font-semibold">
+            <a href="#despre" className="text-base lg:text-lg text-white hover:text-primary transition-colors relative group font-semibold">
               Despre Noi
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a href="#galerie-imagini" className="text-base lg:text-lg text-gray-light hover:text-primary transition-colors relative group font-semibold">
+            <a href="#galerie-imagini" className="text-base lg:text-lg text-white hover:text-primary transition-colors relative group font-semibold">
               Galerie
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a href="#contact" className="text-base lg:text-lg text-gray-light hover:text-primary transition-colors relative group font-semibold">
+            <a href="#contact" className="text-base lg:text-lg text-white hover:text-primary transition-colors relative group font-semibold">
               Contact
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
@@ -40,10 +40,11 @@ const Header = () => {
           <div className="hidden md:flex items-center justify-end flex-1 gap-8">
             <a 
               href="tel:0758663415" 
-              className="text-primary hover:text-yellow-400 transition-colors font-bold text-lg lg:text-xl flex items-center gap-2"
+              className="text-white hover:text-primary transition-colors font-bold text-lg lg:text-xl flex items-center gap-2 relative group"
             >
               <Phone className="h-5 w-5 lg:h-6 lg:w-6" />
               <span>0758 663 415</span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
             
             <a 

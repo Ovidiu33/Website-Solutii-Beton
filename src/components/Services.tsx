@@ -41,7 +41,7 @@ const Services = () => {
   ]
 
   return (
-    <section id="servicii" className="relative py-8 md:py-12 bg-gradient-to-br from-gray-dark to-dark overflow-hidden scroll-mt-8">
+    <section id="servicii" className="relative py-4 md:py-8 bg-gradient-to-br from-dark via-gray-dark to-dark overflow-hidden scroll-mt-8">
       {/* Fade from black at top */}
       <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-dark to-transparent pointer-events-none"></div>
       
@@ -81,19 +81,6 @@ const Services = () => {
               </ul>
             </div>
           ))}
-        </div>
-
-        {/* CTA */}
-        <div className="text-center mt-16">
-          <p className="text-lg text-gray-light mb-6 hover:text-white transition-colors duration-300">
-            Nu găsești ce cauți? Sună-ne pentru consultanță gratuită!
-          </p>
-          <a 
-            href="tel:0758663415" 
-            className="btn-primary text-lg px-8 py-4 inline-flex items-center gap-2 hover:scale-105 transition-all duration-300"
-          >
-            <span>0758 663 415</span>
-          </a>
         </div>
       </div>
       
