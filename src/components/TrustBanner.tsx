@@ -26,7 +26,7 @@ const TrustBanner = () => {
   return (
     <section 
       ref={elementRef}
-      className="relative bg-gradient-to-b from-primary via-primary/80 via-40% via-primary/40 via-70% to-primary/20 py-1 md:py-2 mt-24 pb-2 md:pb-4 overflow-hidden"
+      className="relative bg-gradient-to-b from-primary via-primary/80 via-40% via-primary/40 via-70% to-primary/20 py-0 md:py-0.5 mt-24 pb-1 md:pb-2 overflow-hidden"
     >
       {/* Animated background pattern */}
       <div className="absolute inset-0 opacity-5">
@@ -42,7 +42,7 @@ const TrustBanner = () => {
       <div className="container-custom relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
           {/* Trust Stats */}
-          <div className={`grid grid-cols-3 gap-3 md:gap-6 lg:gap-8 flex-1 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <div className={`grid grid-cols-3 gap-3 md:gap-6 lg:gap-8 flex-1 transition-all duration-1000 mt-2 md:mt-3 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             {stats.map((stat, index) => (
               <div 
                 key={index}
