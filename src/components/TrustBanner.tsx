@@ -68,18 +68,18 @@ const TrustBanner = () => {
             <div className="flex flex-row gap-3 items-center">
               <a
                 href="tel:0758663415"
-                className="group bg-dark hover:bg-primary text-white px-4 py-2 md:px-6 md:py-3 rounded-lg font-bold text-sm md:text-base transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center gap-2 whitespace-nowrap"
+                className="group bg-dark hover:bg-primary text-white px-5 py-3 md:px-6 md:py-3 rounded-lg font-bold text-base md:text-base transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center gap-2 whitespace-nowrap"
               >
-                <Phone className="h-4 w-4 md:h-5 md:w-5" />
+                <Phone className="h-5 w-5 md:h-5 md:w-5" />
                 <span>Sună Acum!</span>
               </a>
               
               <a
                 href="#oferta"
-                className="group bg-dark hover:bg-primary text-white px-4 py-2 md:px-6 md:py-3 rounded-lg font-bold text-sm md:text-base transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center gap-2 whitespace-nowrap"
+                className="group bg-dark hover:bg-primary text-white px-5 py-3 md:px-6 md:py-3 rounded-lg font-bold text-base md:text-base transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center gap-2 whitespace-nowrap"
               >
                 <span>Ofertă Gratuită</span>
-                <ArrowRight className="h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="h-5 w-5 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
           </div>

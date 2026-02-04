@@ -1,5 +1,4 @@
 import { Target, Wrench, Droplets, Phone } from 'lucide-react';
-import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 const WhyUs = () => {
   const features = [
@@ -44,15 +43,9 @@ const WhyUs = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => {
             const FeatureCard = () => {
-              const { elementRef, isVisible } = useIntersectionObserver({ threshold: 0.3 });
-              
               return (
                 <div 
-                  ref={elementRef}
-                  className={`bg-gray-dark border rounded-lg p-8 text-center group hover:border-primary hover:scale-105 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 ${
-                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                  } ${isVisible ? 'border-gray-medium' : 'border-gray-medium'}`}
-                  style={{ transitionDelay: `${index * 100}ms` }}
+                  className="bg-gray-dark border border-gray-medium rounded-lg p-8 text-center group hover:border-primary hover:scale-105 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300"
                 >
                   <div className="mb-6 flex justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                     {feature.icon}

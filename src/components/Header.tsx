@@ -6,7 +6,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-colors duration-300 ${isMenuOpen ? 'bg-dark' : 'bg-transparent backdrop-blur-sm'}`}>
+    <header className={`fixed top-0 w-full z-50 ${isMenuOpen ? 'bg-dark' : 'bg-transparent backdrop-blur-sm'}`}>
       <div className="container-custom">
         <div className="flex items-center justify-between h-24">
           {/* Logo */}

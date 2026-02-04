@@ -1,5 +1,4 @@
 import { ArrowRight, MapPin, CircleDot, Scissors, Phone } from 'lucide-react';
-import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 const Hero = () => {
   return (
@@ -68,18 +67,11 @@ const Hero = () => {
               }
             ].map((service, index) => {
               const ServiceCard = () => {
-                const { elementRef, isVisible } = useIntersectionObserver({ threshold: 0.3 });
-                
                 return (
                   <div 
-                    ref={elementRef}
-                    className={`bg-gray-dark/50 backdrop-blur-sm border rounded-lg p-6 flex flex-col items-center group hover:bg-gray-dark/80 hover:border-primary hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/30 hover:scale-105 ${
-                      isVisible ? 'border-primary -translate-y-1 shadow-lg shadow-primary/20 scale-105 transition-all duration-500' : 'border-gray-medium transition-all duration-300'
-                    }`}
+                    className="bg-gray-dark/50 backdrop-blur-sm border border-gray-medium rounded-lg p-6 flex flex-col items-center group hover:bg-gray-dark/80 hover:border-primary hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/30 hover:scale-105 transition-all duration-300"
                   >
-                    <div className={`group-hover:scale-125 group-hover:rotate-6 ${
-                      isVisible ? 'scale-110 transition-transform duration-500' : 'transition-transform duration-300'
-                    }`}>
+                    <div className="group-hover:scale-125 group-hover:rotate-6 transition-transform duration-300">
                       {service.icon}
                     </div>
                     <h3 className="text-white font-display font-bold text-xl mb-2 mt-2 group-hover:text-primary transition-colors duration-300">{service.title}</h3>
