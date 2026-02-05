@@ -15,7 +15,7 @@ const FAQ = () => {
     },
     {
       question: "Până la ce dimensiune puteți face găuri?",
-      answer: "Facem găuri de la Ø 30mm până la Ø 500mm. Avem caroate profesionale pentru orice dimensiune."
+      answer: "Facem găuri de la Ø 30mm până la Ø 500mm. Avem carote profesionale pentru orice dimensiune."
     },
     {
       question: "Cât durează să faceți o gaură pentru hotă?",

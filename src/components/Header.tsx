@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <header className={`fixed top-0 w-full z-50 ${isMenuOpen ? 'bg-dark' : 'bg-transparent backdrop-blur-sm'}`}>
       <div className="container-custom">
-        <div className="flex items-center justify-between h-24">
+        <div className="flex items-center justify-between h-20 md:h-24">
           {/* Logo */}
           <div className="flex items-center flex-1">
             <a href="#" className="text-3xl md:text-4xl lg:text-4xl font-display font-bold text-white hover:scale-105 hover:text-primary transition-all duration-300">

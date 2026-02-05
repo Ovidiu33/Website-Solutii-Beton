@@ -26,7 +26,7 @@ const TrustBanner = () => {
   return (
     <section 
       ref={elementRef}
-      className="relative bg-gradient-to-b from-primary via-primary/80 via-40% via-primary/40 via-70% to-primary/20 py-0 md:py-0.5 mt-24 pb-1 md:pb-2 overflow-hidden"
+      className="relative bg-gradient-to-b from-primary via-primary/80 via-40% via-primary/40 via-70% to-primary/20 py-0 md:py-0.5 mt-20 md:mt-24 pb-1 md:pb-2 overflow-hidden"
     >
       {/* Animated background pattern */}
       <div className="absolute inset-0 opacity-5">
