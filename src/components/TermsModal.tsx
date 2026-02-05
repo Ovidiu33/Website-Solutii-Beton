@@ -36,7 +36,12 @@ const TermsModal = ({ isOpen, onClose }: TermsModalProps) => {
         <div className="sticky top-0 bg-[#1a1a1a] border-b-2 border-primary/40 px-6 py-5 flex items-center justify-between">
           <h2 className="text-3xl font-bold text-white">Termeni și Condiții</h2>
           <button
-            onClick={onClose}
+            onClick={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+              onClose()
+            }}
+            type="button"
             className="text-gray-light hover:text-primary transition-colors"
             aria-label="Închide"
           >
@@ -186,7 +191,12 @@ const TermsModal = ({ isOpen, onClose }: TermsModalProps) => {
         {/* Footer */}
         <div className="sticky bottom-0 bg-[#1a1a1a] border-t-2 border-primary/40 px-6 py-5">
           <button
-            onClick={onClose}
+            onClick={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+              onClose()
+            }}
+            type="button"
             className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-lg transition-all text-lg"
           >
             Am înțeles
