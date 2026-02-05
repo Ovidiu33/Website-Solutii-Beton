@@ -1,33 +1,23 @@
 import { Phone, Mail, MapPin } from 'lucide-react'
+import { useState } from 'react'
+import TermsModal from './TermsModal'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
+  const [isTermsOpen, setIsTermsOpen] = useState(false)
 
   return (
     <footer className="bg-dark border-t border-gray-medium">
       <div className="container-custom py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
             <h3 className="text-2xl font-display font-bold text-white mb-4">
               SOLUȚII <span className="text-primary">BETON</span>
             </h3>
-            <p className="text-gray-light mb-6">
+            <p className="text-gray-light">
               Ne ocupăm de găuri și tăieturi în beton, fără complicații și fără promisiuni deșarte. Dacă ai nevoie de ajutor, suntem la un telefon distanță.
             </p>
-            <div className="flex gap-4">
-              <a 
-                href="https://www.tiktok.com/@solutii.beton.sv" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-dark hover:bg-primary border border-gray-medium hover:border-primary rounded-lg flex items-center justify-center transition-all"
-                aria-label="TikTok"
-              >
-                <svg className="h-5 w-5 text-white" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
-                </svg>
-              </a>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -45,8 +35,13 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#galerie" className="text-gray-light hover:text-primary transition-colors">
+                <a href="#galerie-imagini" className="text-gray-light hover:text-primary transition-colors">
                   Galerie
+                </a>
+              </li>
+              <li>
+                <a href="#intrebari" className="text-gray-light hover:text-primary transition-colors">
+                  Întrebări Frecvente
                 </a>
               </li>
               <li>
@@ -77,7 +72,7 @@ const Footer = () => {
                 <Mail className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                 <a 
                   href="mailto:sulerurenov@yahoo.com" 
-                  className="text-gray-light hover:text-primary transition-colors"
+                  className="text-gray-light hover:text-primary transition-colors break-all"
                 >
                   sulerurenov@yahoo.com
                 </a>
@@ -86,23 +81,44 @@ const Footer = () => {
                 <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                 <div className="text-gray-light">
                   Suceava, Botoșani
-                  <br />
-                  <span className="text-sm"></span>
                 </div>
               </li>
             </ul>
           </div>
+
+          {/* Firma Autorizată */}
+          <div>
+            <div>
+              <p className="text-white font-semibold mb-3 flex items-center gap-2">
+                <span className="inline-block w-3 h-3 bg-green-500 rounded-full"></span>
+                Firmă Autorizată Legal
+              </p>
+              <div className="text-gray-light text-sm space-y-1">
+                <p><strong className="text-white">S.C. SULERU RENOV S.R.L.</strong></p>
+                <p>CUI: RO38206793</p>
+                <p>J33/1603/2017</p>
+                <p className="text-xs">Str. Eroilor nr. 60, Bloc 115, Sc. D, Ap. 5, Suceava</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-medium mt-12 pt-8">
-          <div className="text-center">
-            <p className="text-gray-light text-sm">
-              © {currentYear} Carotaj Beton Suceava și Botoșani. Toate drepturile rezervate.
-            </p>
-          </div>
+        <div className="border-t border-gray-medium mt-12 pt-8 text-center">
+          <p className="text-gray-light text-sm mb-3">
+            © {currentYear} Carotaj Beton Suceava și Botoșani. Toate drepturile rezervate.
+          </p>
+          <button
+            onClick={() => setIsTermsOpen(true)}
+            className="text-sm text-primary hover:text-white border border-primary hover:bg-primary px-4 py-2 rounded transition-colors"
+          >
+            Termeni și Condiții
+          </button>
         </div>
       </div>
+
+      {/* Terms Modal */}
+      <TermsModal isOpen={isTermsOpen} onClose={() => setIsTermsOpen(false)} />
     </footer>
   )
 }

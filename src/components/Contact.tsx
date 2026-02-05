@@ -1,10 +1,13 @@
 import { Phone, Mail, MapPin, Clock } from 'lucide-react'
 import { useState, FormEvent } from 'react'
 import emailjs from '@emailjs/browser'
+import TermsModal from './TermsModal'
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitMessage, setSubmitMessage] = useState('')
+  const [acceptTerms, setAcceptTerms] = useState(false)
+  const [isTermsOpen, setIsTermsOpen] = useState(false)
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -191,9 +194,43 @@ const Contact = () => {
                 ></textarea>
               </div>
 
+              {/* Terms Acceptance */}
+              <div className="flex items-start gap-3 p-4 bg-gray-dark/50 rounded-lg transition-colors">
+                <div className="relative flex items-center justify-center mt-0.5">
+                  <input
+                    type="checkbox"
+                    id="acceptTerms"
+                    checked={acceptTerms}
+                    onChange={(e) => setAcceptTerms(e.target.checked)}
+                    className="peer w-5 h-5 appearance-none bg-gray-800 border-2 border-gray-medium rounded cursor-pointer transition-all duration-200 checked:bg-primary checked:border-primary hover:border-primary/70 focus:ring-2 focus:ring-primary/50 focus:outline-none"
+                    required
+                  />
+                  <svg
+                    className="absolute w-3 h-3 pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity duration-200"
+                    fill="none"
+                    stroke="white"
+                    strokeWidth="3"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
+                <label htmlFor="acceptTerms" className="text-sm text-gray-light leading-relaxed cursor-pointer">
+                  Accept{' '}
+                  <button
+                    type="button"
+                    onClick={() => setIsTermsOpen(true)}
+                    className="text-primary hover:text-orange-400 underline decoration-primary/50 hover:decoration-primary font-semibold transition-colors"
+                  >
+                    Termenii și Condițiile
+                  </button>
+                  {' '}de prelucrare a datelor personale *
+                </label>
+              </div>
+
               <button
                 type="submit"
-                disabled={isSubmitting}
+                disabled={isSubmitting || !acceptTerms}
                 className="w-full btn-primary py-4 text-lg font-bold disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? 'Se trimite...' : 'Trimite Solicitare'}
@@ -208,6 +245,9 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      
+      {/* Terms Modal */}
+      <TermsModal isOpen={isTermsOpen} onClose={() => setIsTermsOpen(false)} />
       
       {/* Fade to black */}
       <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-b from-transparent to-dark pointer-events-none"></div>
