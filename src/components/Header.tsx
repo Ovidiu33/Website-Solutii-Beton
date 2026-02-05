@@ -12,7 +12,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center flex-1">
             <a href="#" className="text-3xl md:text-4xl lg:text-4xl font-display font-bold text-white hover:scale-105 hover:text-primary transition-all duration-300">
-              SOLUȚII <span className="text-primary">BETON</span>
+              CAROTAJ <span className="text-primary">BETON</span>
             </a>
           </div>
 
@@ -28,6 +28,10 @@ const Header = () => {
             </a>
             <a href="#galerie-imagini" className="text-base lg:text-lg text-white hover:text-primary transition-colors relative group font-semibold">
               Galerie
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="#intrebari" className="text-base lg:text-lg text-white hover:text-primary transition-colors relative group font-semibold">
+              Întrebări
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
             <a href="#contact" className="text-base lg:text-lg text-white hover:text-primary transition-colors relative group font-semibold">
@@ -91,6 +95,13 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Galerie
+              </a>
+              <a 
+                href="#intrebari" 
+                className="text-white hover:text-primary transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Întrebări
               </a>
               <a 
                 href="#contact" 

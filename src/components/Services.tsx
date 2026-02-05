@@ -4,38 +4,38 @@ const Services = () => {
   const services = [
     {
       icon: <Circle className="h-10 w-10" />,
-      title: "Găuri Hote",
-      description: "Carotări pentru hote de bucătărie în beton, cărămidă sau BCA. Calculăm exact dimensiunile necesare.",
+      title: "Carotaj Găuri pentru Hote Bucătărie",
+      description: "Carotări profesionale pentru hote de bucătărie în beton, cărămidă sau BCA. Calculăm exact dimensiunile necesare pentru evacuarea eficientă a fumului și vaporilor.",
       features: ["Diametru până la Ø 500mm", "Orice grosime perete", "Finisaj curat", "Fără praf excesiv"]
     },
     {
       icon: <Wind className="h-10 w-10" />,
-      title: "Ventilații",
-      description: "Găuri pentru ventilație, aerisire centrală și aparate de aer condiționat. Poziționare precisă conform proiectului.",
-      features: ["Aer condiționat", "Beton armat", "Pereți portanți", "Aerisiri centrale"]
+      title: "Găuri Ventilație și Aer Condiționat",
+      description: "Găuri pentru ventilație, aerisire centrală și aparate de aer condiționat. Poziționare precisă conform proiectului, respectând normele de siguranță.",
+      features: ["Aer condiționat", "Beton", "Pereți portanți", "Aerisiri centrale"]
     },
     {
       icon: <Layers className="h-10 w-10" />,
-      title: "Tăieri Planșee",
-      description: "Tăiem planșee din beton pentru scări, lifturi sau alte modificări structurale.",
+      title: "Tăiere Planșee",
+      description: "Tăiem planșee din beton pentru scări, lifturi sau alte modificări structurale. Folosim discuri diamantate profesionale pentru tăiere precisă fără vibrații.",
       features: ["Orice grosime", "Tăiere cu disc", "Fără vibrații", "Demolări controlate"]
     },
     {
       icon: <Square className="h-10 w-10" />,
-      title: "Tăieri Pereți",
-      description: "Deschideri pentru uși, ferestre sau alte modificări în pereți din beton, cărămidă, BCA.",
-      features: ["Pereți portanți", "Cărămidă", "BCA", "Beton armat"]
+      title: "Tăiere Pereți și Deschideri",
+      description: "Deschideri pentru uși, ferestre sau alte modificări în pereți portanți din beton, cărămidă sau BCA. Lucrăm cu atenție la structura portantă.",
+      features: ["Pereți portanți", "Cărămidă", "BCA", "Beton"]
     },
     {
       icon: <Scissors className="h-10 w-10" />,
-      title: "Decupaje",
-      description: "Decupaje pentru instalații sanitare, electrice, termice. Lucrăm precis după măsurători.",
+      title: "Decupaje pentru Instalații",
+      description: "Decupaje precise pentru instalații sanitare, electrice și termice. Lucrăm după măsurători exacte pentru canale și treceri tehnice.",
       features: ["Canale tehnice", "Țevi", "Cabluri", "Instalații"]
     },
     {
       icon: <Hammer className="h-10 w-10" />,
       title: "Demolări",
-      description: "Demolări selective fără să afectăm restul structurii. Ridicăm molozul.",
+      description: "Demolări selective în beton fără să afectăm restul structurii. Lucrăm controlat pe balcoane, console și alte elemente. Ridicăm tot molozul.",
       features: ["Balcoane", "Console", "Elemente structurale", "Curățenie finală"]
     }
   ]

@@ -98,7 +98,7 @@ const Footer = () => {
         <div className="border-t border-gray-medium mt-12 pt-8">
           <div className="text-center">
             <p className="text-gray-light text-sm">
-              © {currentYear} Soluții Beton. Toate drepturile rezervate.
+              © {currentYear} Carotaj Beton Suceava și Botoșani. Toate drepturile rezervate.
             </p>
           </div>
         </div>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Background -->
+  <rect width="64" height="64" rx="12" fill="#1a1a1a"/>
+  
+  <!-- Orange circle (drill bit representation) -->
+  <circle cx="32" cy="32" r="20" fill="#FF6B00" opacity="0.2"/>
+  <circle cx="32" cy="32" r="14" fill="#FF6B00"/>
+  
+  <!-- Drill bit center -->
+  <circle cx="32" cy="32" r="8" fill="#1a1a1a"/>
+  <circle cx="32" cy="32" r="4" fill="#FF6B00"/>
+  
+  <!-- Letter C -->
+  <path d="M 38 25 A 8 8 0 0 1 38 39" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
+</svg>

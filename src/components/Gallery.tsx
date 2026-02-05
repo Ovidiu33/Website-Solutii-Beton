@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
-import img1 from '../assets/gallery/carotaj,prima poza vreau.jpeg'
-import img2 from '../assets/gallery/Gaura centrala.jpeg'
-import img3 from '../assets/gallery/carotaj pe santier.jpeg'
-import img4 from '../assets/gallery/Gauri traversare tevi.jpeg'
-import img5 from '../assets/gallery/imagine_decupaj_beton.jpg'
-import img6 from '../assets/gallery/taiere_beton1.jpeg'
-import img7 from '../assets/gallery/taiere_beton3.jpeg'
-import img8a from '../assets/gallery/carotaj-500mm-1.jpeg'
-import img8b from '../assets/gallery/carotaj-500mm-2.jpeg'
+import img1 from '../assets/gallery-webp/carotaj,prima poza vreau.webp'
+import img2 from '../assets/gallery-webp/Gaura centrala.webp'
+import img3 from '../assets/gallery-webp/carotaj pe santier.webp'
+import img4 from '../assets/gallery-webp/Gauri traversare tevi.webp'
+import img5 from '../assets/gallery-webp/imagine_decupaj_beton.webp'
+import img6 from '../assets/gallery-webp/taiere_beton1.webp'
+import img7 from '../assets/gallery-webp/taiere_beton3.webp'
+import img8a from '../assets/gallery-webp/carotaj-500mm-1.webp'
+import img8b from '../assets/gallery-webp/carotaj-500mm-2.webp'
 
 const Gallery = () => {
   const images = [
@@ -22,7 +22,7 @@ const Gallery = () => {
   ];
 
   return (
-    <section id="galerie-imagini" className="relative py-8 md:py-12 bg-dark overflow-hidden scroll-mt-8">
+    <section id="galerie-imagini" className="relative py-8 md:py-12 bg-gradient-to-br from-dark via-gray-dark to-dark overflow-hidden scroll-mt-8">
       {/* Fade from black at top */}
       <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-dark to-transparent pointer-events-none"></div>
       
