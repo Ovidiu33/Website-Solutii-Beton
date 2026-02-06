@@ -25,12 +25,12 @@ const WhyUs = () => {
   ]
 
   return (
-    <section id="despre" className="relative py-8 md:py-12 bg-dark overflow-hidden scroll-mt-8">
+    <section id="despre" className="relative py-4 md:py-8 bg-dark overflow-hidden scroll-mt-8">
       {/* Fade from black at top */}
-      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-dark to-transparent pointer-events-none"></div>
+      <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-dark to-transparent pointer-events-none"></div>
       
       <div className="container-custom relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2 className="section-title">De ce noi?</h2>
           <p className="text-xl text-primary font-bold max-w-2xl mx-auto mt-4 mb-2">
             Calculăm găurile cu precizie

@@ -1,4 +1,4 @@
-import { Award, Wrench, Shield, Phone, ArrowRight } from 'lucide-react';
+import { Award, Wrench, Shield } from 'lucide-react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 const TrustBanner = () => {
@@ -6,18 +6,18 @@ const TrustBanner = () => {
 
   const stats = [
     { 
-      icon: <Wrench className="h-6 w-6 md:h-7 md:w-7" />, 
+      icon: <Wrench className="h-5 w-5 md:h-6 md:w-6" />, 
       number: "10+", 
       label: "Ani Experiență",
       highlight: true
     },
     { 
-      icon: <Award className="h-6 w-6 md:h-7 md:w-7" />, 
+      icon: <Award className="h-5 w-5 md:h-6 md:w-6" />, 
       number: "5000+", 
       label: "Lucrări" 
     },
     { 
-      icon: <Shield className="h-6 w-6 md:h-7 md:w-7" />, 
+      icon: <Shield className="h-5 w-5 md:h-6 md:w-6" />, 
       number: "100%", 
       label: "Garanție Calitate" 
     }
@@ -40,48 +40,26 @@ const TrustBanner = () => {
       </div>
 
       <div className="container-custom relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
+        <div className="flex items-center justify-center">
           {/* Trust Stats */}
-          <div className={`grid grid-cols-3 gap-3 md:gap-6 lg:gap-8 flex-1 transition-all duration-1000 mt-2 md:mt-3 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <div className={`grid grid-cols-3 gap-6 md:gap-8 lg:gap-12 transition-all duration-1000 mt-2 md:mt-3 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             {stats.map((stat, index) => (
               <div 
                 key={index}
-                 className="flex flex-col items-center text-center transition-all duration-500 hover:scale-110 min-h-[80px] md:min-h-[100px] justify-center"
+                className="flex flex-col items-center justify-center text-center transition-all duration-500 hover:scale-110 min-h-[70px] md:min-h-[85px]"
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div className="text-black mb-0.5">
+                <div className="text-black mb-1 flex items-center justify-center drop-shadow-sm">
                   {stat.icon}
                 </div>
-                <div className="text-xl md:text-2xl lg:text-3xl font-bold text-black leading-none mb-0.5">
+                <div className="text-xl md:text-2xl lg:text-3xl font-bold text-black leading-none mb-1 drop-shadow-sm">
                   {stat.number}
                 </div>
-                <div className="text-xs md:text-sm lg:text-base text-black font-bold mt-0.5 uppercase tracking-wide">
+                <div className="text-sm md:text-base lg:text-lg text-black font-bold uppercase tracking-tight drop-shadow-sm">
                   {stat.label}
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* CTA Section */}
-          <div className={`flex flex-row items-center gap-3 lg:gap-4 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}>
-            
-            <div className="flex flex-row gap-3 items-center">
-              <a
-                href="tel:0758663415"
-                className="group bg-dark hover:bg-primary text-white px-5 py-3 md:px-6 md:py-3 rounded-lg font-bold text-base md:text-base transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center gap-2 whitespace-nowrap"
-              >
-                <Phone className="h-5 w-5 md:h-5 md:w-5" />
-                <span>Sună Acum!</span>
-              </a>
-              
-              <a
-                href="#oferta"
-                className="group bg-dark hover:bg-primary text-white px-5 py-3 md:px-6 md:py-3 rounded-lg font-bold text-base md:text-base transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center gap-2 whitespace-nowrap"
-              >
-                <span>Ofertă Gratuită</span>
-                <ArrowRight className="h-5 w-5 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </div>
           </div>
         </div>
       </div>
