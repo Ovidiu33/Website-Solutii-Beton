@@ -25,16 +25,16 @@ const TermsModal = ({ isOpen, onClose }: TermsModalProps) => {
 
   return (
     <div 
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/90 backdrop-blur-md"
+      className="fixed inset-0 z-[100] flex items-center justify-center p-2 md:p-4 bg-black/90 backdrop-blur-md"
       onClick={onClose}
     >
       <div 
-        className="relative bg-[#1a1a1a] border-2 border-primary/40 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl"
+        className="relative bg-[#1a1a1a] border-2 border-primary/40 rounded-xl max-w-4xl w-full max-h-[85vh] md:max-h-[90vh] overflow-hidden shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="sticky top-0 bg-[#1a1a1a] border-b-2 border-primary/40 px-6 py-5 flex items-center justify-between">
-          <h2 className="text-3xl font-bold text-white">Termeni și Condiții</h2>
+        <div className="sticky top-0 bg-[#1a1a1a] border-b-2 border-primary/40 px-4 md:px-6 py-4 md:py-5 flex items-center justify-between">
+          <h2 className="text-2xl md:text-3xl font-bold text-white">Termeni și Condiții</h2>
           <button
             onClick={(e) => {
               e.preventDefault()
@@ -45,13 +45,13 @@ const TermsModal = ({ isOpen, onClose }: TermsModalProps) => {
             className="text-gray-light hover:text-primary transition-colors"
             aria-label="Închide"
           >
-            <X className="h-7 w-7" />
+            <X className="h-6 w-6 md:h-7 md:w-7" />
           </button>
         </div>
 
         {/* Content */}
         <div 
-          className="px-6 py-6 overflow-y-auto max-h-[calc(90vh-160px)] bg-gradient-to-b from-[#1a1a1a] to-[#0f0f0f]"
+          className="px-4 md:px-6 py-4 md:py-6 overflow-y-auto max-h-[calc(85vh-140px)] md:max-h-[calc(90vh-160px)] bg-gradient-to-b from-[#1a1a1a] to-[#0f0f0f]"
           style={{
             scrollbarWidth: 'none', /* Firefox */
             msOverflowStyle: 'none', /* IE and Edge */
@@ -64,10 +64,10 @@ const TermsModal = ({ isOpen, onClose }: TermsModalProps) => {
               }
             `
           }} />
-          <div className="space-y-8 text-gray-light text-base leading-relaxed">
+          <div className="space-y-6 md:space-y-8 text-gray-light text-sm md:text-base leading-relaxed">
             {/* Date firma - MUTAT SUS */}
-            <section className="bg-gradient-to-br from-primary/10 to-primary/5 border-2 border-primary/50 rounded-xl p-6">
-              <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+            <section className="bg-gradient-to-br from-primary/10 to-primary/5 border-2 border-primary/50 rounded-xl p-4 md:p-6">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4 flex items-center gap-3">
                 <span className="inline-block w-4 h-4 bg-green-500 rounded-full"></span>
                 Date Societate
               </h3>
@@ -88,7 +88,7 @@ const TermsModal = ({ isOpen, onClose }: TermsModalProps) => {
 
             {/* GDPR */}
             <section>
-              <h3 className="text-2xl font-bold text-white mb-4">GDPR - Politica de Confidențialitate</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">GDPR - Politica de Confidențialitate</h3>
               <p className="text-base leading-relaxed mb-3">
                 Această politică de confidențialitate stabilește modul în care <strong className="text-white">S.C. SULERU RENOV S.R.L.</strong> utilizează 
                 și protejează orice informație pe care o furnizați atunci când utilizați acest site web.
@@ -106,7 +106,7 @@ const TermsModal = ({ isOpen, onClose }: TermsModalProps) => {
 
             {/* Ce colectăm */}
             <section>
-              <h3 className="text-2xl font-bold text-white mb-4">Ce Colectăm</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Ce Colectăm</h3>
               <p className="text-base leading-relaxed mb-3">Putem colecta următoarele informații:</p>
               <ul className="list-disc list-outside ml-6 space-y-2 text-base">
                 <li>numele și prenumele</li>
@@ -118,7 +118,7 @@ const TermsModal = ({ isOpen, onClose }: TermsModalProps) => {
 
             {/* Ce facem cu informațiile */}
             <section>
-              <h3 className="text-2xl font-bold text-white mb-4">Ce Facem cu Informațiile Pe Care Le Adunăm</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Ce Facem cu Informațiile Pe Care Le Adunăm</h3>
               <p className="text-base leading-relaxed mb-3">Solicităm aceste informații pentru a înțelege nevoile dvs. și pentru a vă oferi un serviciu mai bun, în special pentru:</p>
               <ul className="list-disc list-outside ml-6 space-y-2 text-base">
                 <li>Menținerea evidenței interne și facturare</li>
@@ -130,7 +130,7 @@ const TermsModal = ({ isOpen, onClose }: TermsModalProps) => {
 
             {/* Securitate */}
             <section>
-              <h3 className="text-2xl font-bold text-white mb-4">Securitate</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Securitate</h3>
               <p className="text-base leading-relaxed">
                 Ne angajăm să ne asigurăm că informațiile dvs. sunt sigure. Pentru a preveni accesul sau dezvăluirea neautorizată, 
                 am pus în practică proceduri fizice, electronice și manageriale adecvate pentru protejarea și asigurarea informațiilor 
@@ -140,7 +140,7 @@ const TermsModal = ({ isOpen, onClose }: TermsModalProps) => {
 
             {/* Cookie-uri */}
             <section>
-              <h3 className="text-2xl font-bold text-white mb-4">Cum Folosim Cookie-urile</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Cum Folosim Cookie-urile</h3>
               <p className="text-base leading-relaxed mb-4">
                 Un cookie este un fișier mic care solicită permisiunea de a fi plasat pe unitatea hard disk a computerului. 
                 Odată ce sunteți de acord, fișierul este adăugat, iar modulul cookie vă ajută să analizați traficul web sau 
@@ -159,7 +159,7 @@ const TermsModal = ({ isOpen, onClose }: TermsModalProps) => {
 
             {/* Legături către alte site-uri */}
             <section>
-              <h3 className="text-2xl font-bold text-white mb-4">Legături Către Alte Site-uri Web</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Legături Către Alte Site-uri Web</h3>
               <p className="text-base leading-relaxed">
                 Site-ul nostru poate conține legături către alte site-uri de interes. Cu toate acestea, odată ce ați utilizat 
                 aceste linkuri pentru a părăsi site-ul nostru, trebuie să rețineți că nu avem control asupra acelui alt site web. 
@@ -170,7 +170,7 @@ const TermsModal = ({ isOpen, onClose }: TermsModalProps) => {
 
             {/* Controlarea informațiilor */}
             <section>
-              <h3 className="text-2xl font-bold text-white mb-4">Controlarea Informațiilor Dvs. Personale</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Controlarea Informațiilor Dvs. Personale</h3>
               <p className="text-base leading-relaxed mb-3">Puteți alege să restricționați colectarea sau utilizarea informațiilor dvs. personale în următoarele moduri:</p>
               <ul className="list-disc list-outside ml-6 space-y-2 text-base">
                 <li>Ori de câte ori vi se cere să completați un formular pe site, puteți indica faptul că nu doriți ca informațiile să fie folosite în scopuri de marketing direct</li>
@@ -189,7 +189,7 @@ const TermsModal = ({ isOpen, onClose }: TermsModalProps) => {
         </div>
 
         {/* Footer */}
-        <div className="sticky bottom-0 bg-[#1a1a1a] border-t-2 border-primary/40 px-6 py-5">
+        <div className="sticky bottom-0 bg-[#1a1a1a] border-t-2 border-primary/40 px-4 md:px-6 py-3 md:py-5">
           <button
             onClick={(e) => {
               e.preventDefault()
@@ -197,7 +197,7 @@ const TermsModal = ({ isOpen, onClose }: TermsModalProps) => {
               onClose()
             }}
             type="button"
-            className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-lg transition-all text-lg"
+            className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-lg transition-all text-base md:text-lg"
           >
             Am înțeles
           </button>
