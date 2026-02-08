@@ -14,14 +14,16 @@ function App() {
   return (
     <div className="min-h-screen bg-dark">
       <Header />
-      <TrustBanner />
-      <Hero />
-      <Services />
-      <WhyUs />
-      <TikTokGallery />
-      <Gallery />
-      <Contact />
-      <FAQ />
+      <main>
+        <TrustBanner />
+        <Hero />
+        <Services />
+        <WhyUs />
+        <TikTokGallery />
+        <Gallery />
+        <Contact />
+        <FAQ />
+      </main>
       <Footer />
       <WhatsAppButton />
     </div>
