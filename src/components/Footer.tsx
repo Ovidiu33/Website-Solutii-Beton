@@ -12,9 +12,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-2xl font-display font-bold text-white mb-4">
+            <h2 className="text-2xl font-display font-bold text-white mb-4">
               SOLUȚII <span className="text-primary">BETON</span>
-            </h3>
+            </h2>
             <p className="text-gray-light">
               Ne ocupăm de găuri și tăieturi în beton, fără complicații și fără promisiuni deșarte. Dacă ai nevoie de ajutor, suntem la un telefon distanță.
             </p>
@@ -22,7 +22,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-display font-bold text-white mb-4">Link-uri Rapide</h4>
+            <h3 className="text-lg font-display font-bold text-white mb-4">Link-uri Rapide</h3>
             <ul className="space-y-3">
               <li>
                 <a href="#servicii" className="text-gray-light hover:text-primary transition-colors">
@@ -54,7 +54,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-display font-bold text-white mb-4">Contact</h4>
+            <h3 className="text-lg font-display font-bold text-white mb-4">Contact</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Phone className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
