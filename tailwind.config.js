@@ -19,9 +19,9 @@ export default {
         },
         gray: {
           DEFAULT: '#808080',
-          light: '#d4d4d4',
+          light: '#e5e5e5',
           dark: '#4d4d4d',
-          medium: '#666666',
+          medium: '#a3a3a3',
         },
       },
       fontFamily: {
