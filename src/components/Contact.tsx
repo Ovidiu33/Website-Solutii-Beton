@@ -63,7 +63,7 @@ const Contact = () => {
                   <h4 className="text-white font-bold mb-2">Telefon</h4>
                   <a 
                     href="tel:0758663415" 
-                    className="text-2xl font-display font-bold text-orange-400 hover:text-primary transition-colors"
+                    className="text-2xl font-display font-bold text-primary hover:text-primary-light transition-colors"
                   >
                     0758 663 415
                   </a>
@@ -80,7 +80,7 @@ const Contact = () => {
                   <h4 className="text-white font-bold mb-2">Email</h4>
                   <a 
                     href="mailto:sulerurenov@yahoo.com" 
-                    className="text-orange-300 hover:text-primary transition-colors"
+                    className="text-primary hover:text-primary-light transition-colors"
                   >
                     sulerurenov@yahoo.com
                   </a>
@@ -220,7 +220,7 @@ const Contact = () => {
                   <button
                     type="button"
                     onClick={() => setIsTermsOpen(true)}
-                    className="text-primary hover:text-orange-400 underline decoration-primary/50 hover:decoration-primary font-semibold transition-colors"
+                    className="text-primary hover:text-primary-light underline decoration-primary/50 hover:decoration-primary font-semibold transition-colors"
                   >
                     Termenii și Condițiile
                   </button>
