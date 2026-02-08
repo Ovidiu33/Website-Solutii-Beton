@@ -42,14 +42,14 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6 px-4">
             <a 
               href="tel:0758663415"
-              className="w-full sm:w-auto bg-primary hover:bg-primary-dark text-white font-display font-bold text-xl py-5 px-10 rounded-lg transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-xl hover:shadow-primary/50 flex items-center justify-center gap-3"
+              className="w-full sm:w-auto bg-primary hover:bg-primary-dark text-black font-display font-bold text-xl py-5 px-10 rounded-lg transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-xl hover:shadow-primary/50 flex items-center justify-center gap-3"
             >
               <Phone className="h-6 w-6" />
               Sună Acum
             </a>
             <a 
               href="#oferta"
-              className="w-full sm:w-auto bg-transparent border border-primary text-primary hover:bg-primary hover:text-white font-display font-bold text-xl py-5 px-10 rounded-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3"
+              className="w-full sm:w-auto bg-primary hover:bg-primary-dark text-black font-display font-bold text-xl py-5 px-10 rounded-lg transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-xl hover:shadow-primary/50 flex items-center justify-center gap-3"
             >
               <ArrowRight className="h-6 w-6" />
               Ofertă Gratuită
