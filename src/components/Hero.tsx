@@ -89,7 +89,7 @@ const Hero = () => {
                     <div className="group-hover:scale-125 group-hover:rotate-6 transition-transform duration-300">
                       {service.icon}
                     </div>
-                    <h3 className="text-white font-display font-bold text-lg mb-2 mt-2 group-hover:text-primary transition-colors duration-300">{service.title}</h3>
+                    <p className="text-white font-display font-bold text-lg mb-2 mt-2 group-hover:text-primary transition-colors duration-300">{service.title}</p>
                     <p className="text-gray-light text-center text-sm group-hover:text-white transition-colors duration-300">
                       {service.description}
                     </p>
