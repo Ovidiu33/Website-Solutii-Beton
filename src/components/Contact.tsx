@@ -14,17 +14,19 @@ const Contact = () => {
     setIsSubmitting(true)
     setSubmitMessage('')
 
+    const form = e.currentTarget
+
     try {
-      // Configurează cu datele tale din EmailJS dashboard
       await emailjs.sendForm(
-        'YOUR_SERVICE_ID',      // Înlocuiește cu Service ID-ul tău
-        'YOUR_TEMPLATE_ID',     // Înlocuiește cu Template ID-ul tău
-        e.currentTarget,
-        'YOUR_PUBLIC_KEY'       // Înlocuiește cu Public Key-ul tău
+        'service_swpejgg',
+        'template_ccf8qbb',
+        form,
+        'Nm29ouhyIsnREZHbD'
       )
       
       setSubmitMessage('✅ Mesaj trimis cu succes! Te contactăm în curând.')
-      e.currentTarget.reset()
+      form.reset()
+      setAcceptTerms(false)
     } catch (error) {
       setSubmitMessage('❌ Eroare la trimitere. Sună direct la 0758 663 415.')
       console.error('EmailJS error:', error)
@@ -173,7 +175,7 @@ const Contact = () => {
                   className="w-full px-4 py-3 bg-gray-dark border border-gray-medium rounded-lg text-white focus:outline-none focus:border-primary transition-colors"
                 >
                   <option value="">Selectează...</option>
-                  <option value="carotare">Carotare în beton</option>
+                  <option value="carotaj">Carotaj în beton</option>
                   <option value="taiere">Tăiere beton</option>
                   <option value="demontare">Demontare selectivă</option>
                   <option value="altele">Altele</option>
