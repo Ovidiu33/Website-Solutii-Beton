@@ -1,10 +1,14 @@
 import { Phone, Mail, MapPin } from 'lucide-react'
 import { useState } from 'react'
 import TermsModal from './TermsModal'
+import PrivacyPolicyModal from './PrivacyPolicyModal'
+import CookiePolicyModal from './CookiePolicyModal'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
   const [isTermsOpen, setIsTermsOpen] = useState(false)
+  const [isPrivacyOpen, setIsPrivacyOpen] = useState(false)
+  const [isCookieOpen, setIsCookieOpen] = useState(false)
 
   return (
     <footer className="bg-dark border-t border-gray-medium">
@@ -13,7 +17,7 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <h2 className="text-2xl font-display font-bold text-white mb-4">
-              SOLUȚII <span className="text-primary">BETON</span>
+              CAROTARE <span className="text-primary">BETON</span>
             </h2>
             <p className="text-gray-light">
               Ne ocupăm de găuri și tăieturi în beton, fără complicații și fără promisiuni deșarte. Dacă ai nevoie de ajutor, suntem la un telefon distanță.
@@ -71,10 +75,10 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <Mail className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                 <a 
-                  href="mailto:sulerurenov@yahoo.com" 
+                  href="mailto:contact@carotaretaierebeton.ro" 
                   className="text-gray-light hover:text-primary transition-colors break-all"
                 >
-                  sulerurenov@yahoo.com
+                  contact@carotaretaierebeton.ro
                 </a>
               </li>
               <li className="flex items-start gap-3">
@@ -104,21 +108,74 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-medium mt-12 pt-8 text-center">
-          <p className="text-gray-light text-sm mb-3">
-            © {currentYear} Carotaj Beton Suceava și Botoșani. Toate drepturile rezervate.
-          </p>
-          <button
-            onClick={() => setIsTermsOpen(true)}
-            className="text-sm text-primary hover:text-white border border-primary hover:bg-primary px-4 py-2 rounded transition-colors"
-          >
-            Termeni și Condiții
-          </button>
+        <div className="border-t border-gray-medium mt-12 pt-8 pb-4">
+          <div className="flex flex-col items-center gap-6">
+            {/* ANPC SAL si SOL - Center */}
+            <div className="flex items-center justify-center gap-4">
+              <a 
+                href="https://anpc.ro/ce-este-sal/" 
+                target="_blank" 
+                rel="nofollow noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+                title="Soluționarea Alternativă a Litigiilor"
+              >
+                <img 
+                  src="https://layouth.ro/wp-content/uploads/resurse-publice/anpc-sal-mare.png"
+                  alt="Soluționarea Alternativă a Litigiilor" 
+                  className="h-10 w-auto"
+                  loading="lazy"
+                />
+              </a>
+              <a 
+                href="https://ec.europa.eu/consumers/odr" 
+                target="_blank" 
+                rel="nofollow noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+                title="Soluționarea Online a Litigiilor"
+              >
+                <img 
+                  src="https://layouth.ro/wp-content/uploads/resurse-publice/anpc-sol-mare.png"
+                  alt="Soluționarea Online a Litigiilor" 
+                  className="h-10 w-auto"
+                  loading="lazy"
+                />
+              </a>
+            </div>
+
+            {/* Policy Buttons - Center row */}
+            <div className="flex flex-wrap gap-2 justify-center">
+              <button
+                onClick={() => setIsTermsOpen(true)}
+                className="text-xs text-primary hover:text-white border border-primary hover:bg-primary px-3 py-2 rounded transition-colors whitespace-nowrap"
+              >
+                Termeni și Condiții
+              </button>
+              <button
+                onClick={() => setIsPrivacyOpen(true)}
+                className="text-xs text-primary hover:text-white border border-primary hover:bg-primary px-3 py-2 rounded transition-colors whitespace-nowrap"
+              >
+                Politica de Confidențialitate
+              </button>
+              <button
+                onClick={() => setIsCookieOpen(true)}
+                className="text-xs text-primary hover:text-white border border-primary hover:bg-primary px-3 py-2 rounded transition-colors whitespace-nowrap"
+              >
+                Politica Cookie
+              </button>
+            </div>
+
+            {/* Copyright - Center bottom */}
+            <p className="text-gray-light text-sm text-center">
+              © {currentYear} Carotare Beton Suceava și Botoșani. Toate drepturile rezervate.
+            </p>
+          </div>
         </div>
       </div>
 
-      {/* Terms Modal */}
+      {/* Modals */}
       <TermsModal isOpen={isTermsOpen} onClose={() => setIsTermsOpen(false)} />
+      <PrivacyPolicyModal isOpen={isPrivacyOpen} onClose={() => setIsPrivacyOpen(false)} />
+      <CookiePolicyModal isOpen={isCookieOpen} onClose={() => setIsCookieOpen(false)} />
     </footer>
   )
 }

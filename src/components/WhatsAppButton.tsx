@@ -1,6 +1,6 @@
 const WhatsAppButton = () => {
   const phoneNumber = "40758663415" // Format internațional fără +
-  const message = "Bună ziua, sunt interesat de servicii de carotaj/tăiere beton."
+  const message = "Bună ziua, sunt interesat de servicii de carotare/tăiere beton."
 
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
 

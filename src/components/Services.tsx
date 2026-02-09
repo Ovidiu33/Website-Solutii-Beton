@@ -4,7 +4,7 @@ const Services = () => {
   const services = [
     {
       icon: <Circle className="h-10 w-10" />,
-      title: "Carotaj Găuri pentru Hote Bucătărie",
+      title: "Carotare Găuri pentru Hote Bucătărie",
       description: "Carotări profesionale pentru hote de bucătărie în beton, cărămidă sau BCA. Calculăm exact dimensiunile necesare pentru evacuarea eficientă a fumului și vaporilor.",
       features: ["Diametru până la Ø 500mm", "Orice grosime perete", "Finisaj curat", "Fără praf excesiv"]
     },

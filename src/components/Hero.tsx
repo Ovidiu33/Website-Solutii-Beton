@@ -21,7 +21,7 @@ const Hero = () => {
         <div className="text-center max-w-4xl mx-auto">
           {/* Main Headline */}
           <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-6 md:whitespace-nowrap">
-            <span className="text-primary">CAROTAJ</span> <span className="text-white">și</span> <span className="text-primary">TĂIERI BETON</span>
+            <span className="text-primary">CAROTARE</span> <span className="text-white">și</span> <span className="text-primary">TĂIERI BETON</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-white mb-6">

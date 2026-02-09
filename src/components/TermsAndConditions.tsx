@@ -66,11 +66,11 @@ const TermsAndConditions = () => {
             </h3>
             <div className="space-y-4 text-gray-light">
               <p>
-                <strong className="text-white">1.1.</strong> SULERU RENOV SRL prestează servicii de carotaj, tăiere și demolări în beton, 
+                <strong className="text-white">1.1.</strong> SULERU RENOV SRL prestează servicii de carotare, tăiere și demolări în beton, 
                 în județele Suceava și Botoșani, conform cerințelor legale în vigoare.
               </p>
               <p>
-                <strong className="text-white">1.2.</strong> Serviciile includ: carotaj beton (găuri Ø 30-500mm), tăiere planșee și pereți, 
+                <strong className="text-white">1.2.</strong> Serviciile includ: carotare beton (găuri Ø 30-500mm), tăiere planșee și pereți, 
                 demolări controlate, găuri pentru instalații (hote, ventilații, conducte).
               </p>
               <p>
@@ -162,8 +162,8 @@ const TermsAndConditions = () => {
               </p>
               <p>
                 <strong className="text-white">5.4.</strong> Pentru exercitarea drepturilor GDPR: 
-                <a href="mailto:sulerurenov@yahoo.com" className="text-primary hover:underline ml-1">
-                  sulerurenov@yahoo.com
+                <a href="mailto:contact@carotaretaierebeton.ro" className="text-primary hover:underline ml-1">
+                  contact@carotaretaierebeton.ro
                 </a>
               </p>
             </div>
@@ -192,8 +192,8 @@ const TermsAndConditions = () => {
                 0758 663 415
               </a>
               {' '}sau scrieți la{' '}
-              <a href="mailto:sulerurenov@yahoo.com" className="text-primary hover:underline">
-                sulerurenov@yahoo.com
+              <a href="mailto:contact@carotaretaierebeton.ro" className="text-primary hover:underline">
+                contact@carotaretaierebeton.ro
               </a>
             </p>
           </div>

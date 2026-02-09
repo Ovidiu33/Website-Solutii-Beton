@@ -12,7 +12,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center flex-1">
             <a href="#" className="text-3xl md:text-4xl lg:text-4xl font-display font-bold text-white hover:scale-105 hover:text-primary transition-all duration-300">
-              CAROTAJ <span className="text-primary">BETON</span>
+              CAROTARE <span className="text-primary">BETON</span>
             </a>
           </div>
 

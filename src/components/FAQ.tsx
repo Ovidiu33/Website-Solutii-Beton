@@ -61,7 +61,7 @@ const FAQ = () => {
           <div className="text-center mb-16">
             <h2 className="section-title">Întrebări Frecvente despre serviciile oferite</h2>
             <p className="text-xl text-gray-light max-w-3xl mx-auto mt-4">
-              Răspunsuri la cele mai frecvente întrebări despre serviciile noastre de carotaj, tăiere și demolări în beton. 
+              Răspunsuri la cele mai frecvente întrebări despre serviciile noastre de carotare, tăiere și demolări în beton. 
               Nu găsiți răspunsul? <a href="tel:0758663415" className="text-primary hover:underline font-semibold">Sunați-ne la 0758 663 415</a>
             </p>
           </div>

@@ -79,10 +79,10 @@ const Contact = () => {
                 <div>
                   <h4 className="text-white font-bold mb-2">Email</h4>
                   <a 
-                    href="mailto:sulerurenov@yahoo.com" 
+                    href="mailto:contact@carotaretaierebeton.ro" 
                     className="text-primary hover:text-primary-light transition-colors"
                   >
-                    sulerurenov@yahoo.com
+                    contact@carotaretaierebeton.ro
                   </a>
                   <p className="text-sm text-gray-light mt-1">Răspundem în max 24h</p>
                 </div>
@@ -173,7 +173,7 @@ const Contact = () => {
                   className="w-full px-4 py-3 bg-gray-dark border border-gray-medium rounded-lg text-white focus:outline-none focus:border-primary transition-colors"
                 >
                   <option value="">Selectează...</option>
-                  <option value="carotaj">Carotaj în beton</option>
+                  <option value="carotare">Carotare în beton</option>
                   <option value="taiere">Tăiere beton</option>
                   <option value="demontare">Demontare selectivă</option>
                   <option value="altele">Altele</option>

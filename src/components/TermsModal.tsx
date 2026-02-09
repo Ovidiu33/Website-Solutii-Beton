@@ -86,103 +86,130 @@ const TermsModal = ({ isOpen, onClose }: TermsModalProps) => {
               </div>
             </section>
 
-            {/* GDPR */}
+            {/* Introducere */}
             <section>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">GDPR - Politica de Confidențialitate</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">1. Introducere</h3>
+              <p className="text-base leading-relaxed">
+                Prezentele Termene și Condiții reglementează relația contractuală dintre <strong className="text-white">S.C. SULERU RENOV S.R.L.</strong> 
+                (furnizor) și Client în cadrul prestării serviciilor de carotare în beton, tăiere beton, demolări controlate și lucrări conexe. 
+                Prin solicitarea unei oferte sau acceptarea serviciilor, Clientul este de acord cu termenii și condițiile prezentate mai jos.
+              </p>
+            </section>
+
+            {/* Obiectul contractului */}
+            <section>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">2. Obiectul Contractului</h3>
+              <p className="text-base leading-relaxed mb-3">Furnizorul oferă următoarele servicii:</p>
+              <ul className="list-disc list-outside ml-6 space-y-2 text-base">
+                <li><strong className="text-white">Carotare în beton</strong> - găuriri de precizie cu diametre între 40mm și 500mm</li>
+                <li><strong className="text-white">Tăiere beton</strong> - tăieturi liniare orizontale și verticale pentru demolări controlate</li>
+                <li><strong className="text-white">Demolări parțiale</strong> - eliminarea selectivă a structurilor din beton armat</li>
+                <li><strong className="text-white">Consultanță tehnică</strong> - evaluare și recomandări pentru proiecte complexe</li>
+              </ul>
+            </section>
+
+            {/* Ofertare și comandă */}
+            <section>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">3. Ofertare și Comandă</h3>
+              <ul className="list-disc list-outside ml-6 space-y-2 text-base">
+                <li>Ofertele de preț sunt valabile <strong className="text-white">30 de zile</strong> de la data emiterii, dacă nu se specifică altfel</li>
+                <li>Prețurile pot varia în funcție de complexitatea lucrării, accesibilitate, volum și condiții de la fața locului</li>
+                <li>Comanda se consideră confirmată după acceptarea ofertei și plata avansului (dacă este cazul)</li>
+                <li>Modificările solicitate de Client după acceptarea ofertei pot atrage costuri suplimentare</li>
+              </ul>
+            </section>
+
+            {/* Responsabilitățile Clientului */}
+            <section>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">4. Responsabilitățile Clientului</h3>
+              <p className="text-base leading-relaxed mb-3">Clientul se obligă să:</p>
+              <ul className="list-disc list-outside ml-6 space-y-2 text-base">
+                <li>Asigure <strong className="text-white">acces liber</strong> la zona de lucru și sursă de apă și electricitate dacă este necesar</li>
+                <li>Furnizeze informații corecte despre <strong className="text-white">structura clădirii</strong>, instalații ascunse (cabluri, țevi, etc.)</li>
+                <li>Obțină toate <strong className="text-white">autorizațiile necesare</strong> pentru lucrările de intervenție (dacă este cazul)</li>
+                <li>Evacueze zona de lucru de persoane și obiecte sau bunuri valoroase</li>
+                <li>Notifice Furnizorul în cazul descoperirii unor <strong className="text-white">obstacole neprevăzute</strong> (armături, instalații, etc.)</li>
+              </ul>
+            </section>
+
+            {/* Responsabilitățile Furnizorului */}
+            <section>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">5. Responsabilitățile Furnizorului</h3>
+              <p className="text-base leading-relaxed mb-3">Furnizorul se obligă să:</p>
+              <ul className="list-disc list-outside ml-6 space-y-2 text-base">
+                <li>Execută lucrările conform specificațiilor tehnice agreate cu Clientul</li>
+                <li>Utilizeze echipamente profesionale și personal calificat</li>
+                <li>Respecte normele de <strong className="text-white">protecția muncii și securitate</strong></li>
+                <li>Lase zona de lucru într-o stare curată și ordonată după finalizare</li>
+                <li>Informeze Clientul despre orice <strong className="text-white">impedimente tehnice</strong> descoperite în timpul lucrării</li>
+              </ul>
+            </section>
+
+            {/* Durata execuției */}
+            <section>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">6. Durata Execuției</h3>
+              <ul className="list-disc list-outside ml-6 space-y-2 text-base">
+                <li>Termenele de execuție sunt estimate în funcție de complexitatea lucrării și se stabilesc în oferta de preț</li>
+                <li>Întârzierile cauzate de <strong className="text-white">condiții meteo nefavorabile, accesibilitate redusă sau obstacole neprevăzute</strong> nu sunt imputabile Furnizorului</li>
+                <li>Furnizorul va notifica Clientul în cazul unor întârzieri și va propune un nou termen de finalizare</li>
+              </ul>
+            </section>
+
+            {/* Garanții și limitări */}
+            <section>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">7. Garanții și Limitări de Răspundere</h3>
+              <ul className="list-disc list-outside ml-6 space-y-2 text-base">
+                <li>Furnizorul garantează calitatea lucrărilor executate conform standardelor profesionale</li>
+                <li>Furnizorul <strong className="text-white">nu răspunde</strong> pentru deteriorări cauzate de informații incorecte furnizate de Client (instalații nedeclarate, structuri ascunse, etc.)</li>
+                <li>Clientul este responsabil pentru obținerea autorizațiilor necesare intervenției în structura clădirii</li>
+                <li>Reclamațiile se primesc în termen de <strong className="text-white">48 ore</strong> de la finalizarea lucrării</li>
+              </ul>
+            </section>
+
+            {/* Forță majoră */}
+            <section>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">8. Forță Majoră</h3>
+              <p className="text-base leading-relaxed">
+                Niciuna dintre părți nu va fi răspunzătoare pentru neexecutarea obligațiilor contractuale dacă aceasta se datorează unui 
+                eveniment de <strong className="text-white">forță majoră</strong> (calamități naturale, pandemii, restricții guvernamentale, etc.). 
+                Partea afectată va notifica cealaltă parte în termen de 48 ore și va furniza dovezi ale evenimentului de forță majoră.
+              </p>
+            </section>
+
+            {/* Confidențialitate și protecția datelor */}
+            <section>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">9. Confidențialitate și Protecția Datelor</h3>
+              <p className="text-base leading-relaxed">
+                Datele personale ale Clientului sunt prelucrate conform <strong className="text-white">GDPR</strong> și a 
+                Politicii de Confidențialitate a S.C. SULERU RENOV S.R.L. (disponibilă pe site). Datele sunt folosite exclusiv 
+                pentru prestarea serviciilor și nu sunt transmise către terți fără acordul Clientului.
+              </p>
+            </section>
+
+            {/* Litigii și legea aplicabilă */}
+            <section>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">10. Litigii și Legea Aplicabilă</h3>
+              <ul className="list-disc list-outside ml-6 space-y-2 text-base">
+                <li>Prezentele Termene și Condiții sunt guvernate de <strong className="text-white">legea română</strong></li>
+                <li>Orice litigiu va fi soluționat pe cale amiabilă. În cazul imposibilității, litigiul va fi deferit instanțelor competente din <strong className="text-white">Suceava</strong></li>
+                <li>Clientul poate accesa mecanismele de <strong className="text-white">soluționare alternativă a litigiilor</strong> (SAL) prin ANPC - <a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://anpc.ro/ce-este-sal/</a></li>
+                <li>Pentru litigii transfrontaliere, Clientul poate apela la platforma SOL - <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://ec.europa.eu/consumers/odr</a></li>
+              </ul>
+            </section>
+
+            {/* Contact */}
+            <section className="bg-primary/10 border border-primary/30 rounded-lg p-4">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3">11. Contact</h3>
               <p className="text-base leading-relaxed mb-3">
-                Această politică de confidențialitate stabilește modul în care <strong className="text-white">S.C. SULERU RENOV S.R.L.</strong> utilizează 
-                și protejează orice informație pe care o furnizați atunci când utilizați acest site web.
+                Pentru întrebări sau clarificări privind acești Termeni și Condiții, vă rugăm să ne contactați:
               </p>
-              <p className="text-base leading-relaxed mb-3">
-                S.C. SULERU RENOV S.R.L. se angajează să asigure protejarea confidențialității. Dacă vă cerem să furnizați anumite informații 
-                prin care puteți fi identificat atunci când utilizați acest site, puteți fi siguri că aceasta va fi utilizată numai în 
-                conformitate cu această declarație de confidențialitate.
+              <p className="text-white">
+                <strong className="text-primary">Telefon:</strong>{' '}
+                <a href="tel:0758663415" className="text-primary hover:underline font-semibold">0758 663 415</a>
               </p>
-              <p className="text-base leading-relaxed">
-                S.C. SULERU RENOV S.R.L. poate modifica din când în când această politică prin actualizarea acestei pagini. 
-                Ar trebui să verificați din când în când această pagină pentru a vă asigura că sunteți mulțumit de orice schimbare.
-              </p>
-            </section>
-
-            {/* Ce colectăm */}
-            <section>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Ce Colectăm</h3>
-              <p className="text-base leading-relaxed mb-3">Putem colecta următoarele informații:</p>
-              <ul className="list-disc list-outside ml-6 space-y-2 text-base">
-                <li>numele și prenumele</li>
-                <li>informații de contact, inclusiv număr de telefon și adresa de e-mail</li>
-                <li>informații despre locația lucrării (adresă, detalii tehnice)</li>
-                <li>alte informații relevante pentru prestarea serviciilor solicitate</li>
-              </ul>
-            </section>
-
-            {/* Ce facem cu informațiile */}
-            <section>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Ce Facem cu Informațiile Pe Care Le Adunăm</h3>
-              <p className="text-base leading-relaxed mb-3">Solicităm aceste informații pentru a înțelege nevoile dvs. și pentru a vă oferi un serviciu mai bun, în special pentru:</p>
-              <ul className="list-disc list-outside ml-6 space-y-2 text-base">
-                <li>Menținerea evidenței interne și facturare</li>
-                <li>Contactarea dumneavoastră pentru confirmarea programărilor și detalii despre lucrări</li>
-                <li>Îmbunătățirea produselor și serviciilor noastre</li>
-                <li>Trimiterea de oferte sau informații despre serviciile noastre (doar cu acordul dumneavoastră)</li>
-              </ul>
-            </section>
-
-            {/* Securitate */}
-            <section>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Securitate</h3>
-              <p className="text-base leading-relaxed">
-                Ne angajăm să ne asigurăm că informațiile dvs. sunt sigure. Pentru a preveni accesul sau dezvăluirea neautorizată, 
-                am pus în practică proceduri fizice, electronice și manageriale adecvate pentru protejarea și asigurarea informațiilor 
-                pe care le colectăm online.
-              </p>
-            </section>
-
-            {/* Cookie-uri */}
-            <section>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Cum Folosim Cookie-urile</h3>
-              <p className="text-base leading-relaxed mb-4">
-                Un cookie este un fișier mic care solicită permisiunea de a fi plasat pe unitatea hard disk a computerului. 
-                Odată ce sunteți de acord, fișierul este adăugat, iar modulul cookie vă ajută să analizați traficul web sau 
-                vă informează când vizitați un anumit site.
-              </p>
-              <p className="text-base leading-relaxed mb-4">
-                Utilizăm cookie-urile din jurnalul de trafic pentru a identifica ce pagini sunt folosite. Acest lucru ne ajută 
-                să analizăm date despre traficul de pagini web și să îmbunătățim site-ul nostru pentru a ne adapta nevoilor clienților. 
-                Utilizăm aceste informații numai în scopuri de analiză statistică.
-              </p>
-              <p className="text-base leading-relaxed">
-                Puteți alege să acceptați sau să refuzați cookie-urile. Majoritatea browserelor web acceptă automat cookie-urile, 
-                dar de obicei puteți modifica setarea browserului pentru a refuza cookie-urile dacă preferați.
-              </p>
-            </section>
-
-            {/* Legături către alte site-uri */}
-            <section>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Legături Către Alte Site-uri Web</h3>
-              <p className="text-base leading-relaxed">
-                Site-ul nostru poate conține legături către alte site-uri de interes. Cu toate acestea, odată ce ați utilizat 
-                aceste linkuri pentru a părăsi site-ul nostru, trebuie să rețineți că nu avem control asupra acelui alt site web. 
-                Prin urmare, nu putem fi responsabili pentru protecția și confidențialitatea oricăror informații pe care le furnizați 
-                în timp ce vizitați astfel de site-uri.
-              </p>
-            </section>
-
-            {/* Controlarea informațiilor */}
-            <section>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Controlarea Informațiilor Dvs. Personale</h3>
-              <p className="text-base leading-relaxed mb-3">Puteți alege să restricționați colectarea sau utilizarea informațiilor dvs. personale în următoarele moduri:</p>
-              <ul className="list-disc list-outside ml-6 space-y-2 text-base">
-                <li>Ori de câte ori vi se cere să completați un formular pe site, puteți indica faptul că nu doriți ca informațiile să fie folosite în scopuri de marketing direct</li>
-                <li>Dacă ați fost de acord în prealabil cu utilizarea informațiilor dvs. personale în scopuri de marketing direct, vă puteți schimba opinia în orice moment scriind sau trimițând e-mail la <a href="mailto:sulerurenov@yahoo.com" className="text-primary hover:underline font-semibold">sulerurenov@yahoo.com</a></li>
-              </ul>
-              <p className="mt-4 text-base leading-relaxed">
-                Nu vom vinde, distribui sau închiria informațiile dvs. personale unor terțe părți decât dacă avem permisiunea dvs. 
-                sau dacă legea ne cere să facem acest lucru.
-              </p>
-              <p className="mt-4 text-base leading-relaxed">
-                Dacă credeți că orice informație pe care o deținem este incorectă sau incompletă, vă rugăm să ne scrieți sau 
-                să ne trimiteți un e-mail cât mai curând posibil. Vom corecta cu promptitudine orice informație găsită incorectă.
+              <p className="text-white">
+                <strong className="text-primary">Email:</strong>{' '}
+                <a href="mailto:sulerurenov@yahoo.com" className="text-primary hover:underline">sulerurenov@yahoo.com</a>
               </p>
             </section>
           </div>

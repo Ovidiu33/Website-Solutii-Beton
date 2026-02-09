@@ -9,6 +9,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
 import TrustBanner from './components/TrustBanner'
+import CookieBanner from './components/CookieBanner'
 
 function App() {
   return (
@@ -21,11 +22,12 @@ function App() {
         <WhyUs />
         <TikTokGallery />
         <Gallery />
-        <Contact />
         <FAQ />
+        <Contact />
       </main>
       <Footer />
       <WhatsAppButton />
+      <CookieBanner />
     </div>
   )
 }

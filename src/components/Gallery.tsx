@@ -12,13 +12,13 @@ import img8b from '../assets/gallery-webp/carotaj-500mm-2.webp'
 const Gallery = () => {
   const images = [
     { src: img1, alt: "Carotare în beton cu stativ" },
-    { src: img6, alt: "Carotaj beton și evacuare moloz" },
-    { src: img3, alt: "Lucrări carotaj beton pe șantier mare" },
+    { src: img6, alt: "Carotare beton și evacuare moloz" },
+    { src: img3, alt: "Lucrări carotare beton pe șantier mare" },
     { src: img4, alt: "Găuri pentru traversare țevi și instalații" },
     { src: img2, alt: "Gaură pentru centrală" },
     { src: img5, alt: "Decupaj perete beton" },
-    { src: img7, alt: "Carotaj perete beton 90 cm" },
-    { src: [img8a, img8b], alt: "Carotaj în beton ⌀500 mm", slideshow: true },
+    { src: img7, alt: "Carotare perete beton 90 cm" },
+    { src: [img8a, img8b], alt: "Carotare în beton ⌦00 mm", slideshow: true },
   ];
 
   return (
