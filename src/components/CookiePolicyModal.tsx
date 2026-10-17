@@ -170,7 +170,7 @@ const CookiePolicyModal = ({ isOpen, onClose }: CookiePolicyModalProps) => {
               </p>
               <div className="mt-3 p-4 bg-primary/10 rounded-lg border border-primary/30">
                 <p className="font-semibold text-white">S.C. SULERU RENOV S.R.L.</p>
-                <p>Email: <a href="mailto:contact@carotaretaierebeton.ro" className="text-primary hover:underline font-semibold">contact@carotaretaierebeton.ro</a></p>
+                <p>Email: <a href="mailto:contact@ecarota.ro" className="text-primary hover:underline font-semibold">contact@ecarota.ro</a></p>
                 <p>Telefon: <a href="tel:0758663415" className="text-primary hover:underline font-semibold">0758 663 415</a></p>
               </div>
             </section>

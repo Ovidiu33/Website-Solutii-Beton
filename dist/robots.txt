@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin/
 Disallow: /private/
 
-Sitemap: https://carotaretaierebeton.ro/sitemap.xml
+Sitemap: https://ecarota.ro/sitemap.xml

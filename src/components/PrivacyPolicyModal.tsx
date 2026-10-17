@@ -155,7 +155,7 @@ const PrivacyPolicyModal = ({ isOpen, onClose }: PrivacyPolicyModalProps) => {
               </p>
               <div className="mt-3 p-4 bg-primary/10 rounded-lg border border-primary/30">
                 <p className="font-semibold text-white">S.C. SULERU RENOV S.R.L.</p>
-                <p>Email: <a href="mailto:contact@carotaretaierebeton.ro" className="text-primary hover:text-primary-light">contact@carotaretaierebeton.ro</a></p>
+                <p>Email: <a href="mailto:contact@ecarota.ro" className="text-primary hover:text-primary-light">contact@ecarota.ro</a></p>
                 <p>Telefon: <a href="tel:0758663415" className="text-primary hover:text-primary-light">0758 663 415</a></p>
                 <p className="text-sm mt-2">Str. Eroilor nr. 60, Bloc 115, Sc. D, Ap. 5, Suceava</p>
               </div>

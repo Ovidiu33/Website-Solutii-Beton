@@ -162,8 +162,8 @@ const TermsAndConditions = () => {
               </p>
               <p>
                 <strong className="text-white">5.4.</strong> Pentru exercitarea drepturilor GDPR: 
-                <a href="mailto:contact@carotaretaierebeton.ro" className="text-primary hover:underline ml-1">
-                  contact@carotaretaierebeton.ro
+                <a href="mailto:contact@ecarota.ro" className="text-primary hover:underline ml-1">
+                  contact@ecarota.ro
                 </a>
               </p>
             </div>
@@ -192,8 +192,8 @@ const TermsAndConditions = () => {
                 0758 663 415
               </a>
               {' '}sau scrieți la{' '}
-              <a href="mailto:contact@carotaretaierebeton.ro" className="text-primary hover:underline">
-                contact@carotaretaierebeton.ro
+              <a href="mailto:contact@ecarota.ro" className="text-primary hover:underline">
+                contact@ecarota.ro
               </a>
             </p>
           </div>

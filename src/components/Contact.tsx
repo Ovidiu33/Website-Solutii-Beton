@@ -81,10 +81,10 @@ const Contact = () => {
                 <div>
                   <h4 className="text-white font-bold mb-2">Email</h4>
                   <a 
-                    href="mailto:contact@carotaretaierebeton.ro" 
+                    href="mailto:contact@ecarota.ro" 
                     className="text-primary hover:text-primary-light transition-colors"
                   >
-                    contact@carotaretaierebeton.ro
+                    contact@ecarota.ro
                   </a>
                   <p className="text-sm text-gray-light mt-1">Răspundem în max 24h</p>
                 </div>
