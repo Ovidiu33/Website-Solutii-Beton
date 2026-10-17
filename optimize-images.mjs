@@ -8,7 +8,7 @@ const OUT = './src/assets/img';
 // slug, sursă, crop opțional (fracții din imagine: left, top, width, height), lățimi generate
 const IMAGES = [
   { slug: 'hero-wide', src: 'carotaj,prima poza vreau.jpeg', crop: [0, 0.14, 1, 0.75], widths: [960, 1600], quality: [36, 50] },
-  { slug: 'hero-mobile', src: 'carotaj,prima poza vreau.jpeg', crop: [0.08, 0.17, 0.85, 0.6375], widths: [480, 760, 1080], quality: [30, 46] },
+  { slug: 'hero-mobile', src: 'carotaj,prima poza vreau.jpeg', crop: [0.08, 0.17, 0.85, 0.6375], widths: [480, 760, 1080, 1360], quality: [50, 70], sharpen: true },
   { slug: 'carotaj-stativ', src: 'carotaj,prima poza vreau.jpeg' },
   { slug: 'carotaj-santier', src: 'carotaj pe santier.jpeg' },
   { slug: 'gauri-traversare', src: 'Gauri traversare tevi.jpeg' },
@@ -24,7 +24,7 @@ const DEFAULT_WIDTHS = [480, 720, 1200];
 
 if (!existsSync(OUT)) mkdirSync(OUT, { recursive: true });
 
-async function build({ slug, src, crop, widths = DEFAULT_WIDTHS, quality: [qAvif, qWebp] = [44, 64] }) {
+async function build({ slug, src, crop, widths = DEFAULT_WIDTHS, quality: [qAvif, qWebp] = [44, 64], sharpen = false }) {
   const input = join(SRC, src);
   const meta = await sharp(input).rotate().metadata();
   let base = sharp(input).rotate();
@@ -41,7 +41,8 @@ async function build({ slug, src, crop, widths = DEFAULT_WIDTHS, quality: [qAvif
     .toBuffer();
   for (const width of widths) {
     const target = Math.min(width, w);
-    const resized = sharp(graded).resize({ width: target, withoutEnlargement: true });
+    let resized = sharp(graded).resize({ width: target, withoutEnlargement: true });
+    if (sharpen) resized = resized.sharpen({ sigma: 0.6 }); // poza din hero pe telefon: mai clară după micșorare
     await resized.clone().avif({ quality: qAvif, effort: 6 }).toFile(join(OUT, `${slug}-${width}.avif`));
     await resized.clone().webp({ quality: qWebp, effort: 6, smartSubsample: true }).toFile(join(OUT, `${slug}-${width}.webp`));
   }
