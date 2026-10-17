@@ -9,12 +9,20 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     emptyOutDir: true,
-    cssCodeSplit: false, // Bundle all CSS in one file for faster initial load
-    minify: 'esbuild', // Use esbuild for faster minification
+    cssCodeSplit: false,
+    minify: 'esbuild',
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
+        },
+        // Optimize asset loading
+        assetFileNames: (assetInfo) => {
+          // Defer CSS by using media attribute trick
+          if (assetInfo.name && assetInfo.name.endsWith('.css')) {
+            return 'assets/[name]-[hash][extname]';
+          }
+          return 'assets/[name]-[hash][extname]';
         },
       },
     },

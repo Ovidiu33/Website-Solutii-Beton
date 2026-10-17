@@ -49,6 +49,7 @@ const FAQ = () => {
     <>
       {/* Add FAQ Schema to page */}
       <script
+        key="faq-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
@@ -62,7 +63,7 @@ const FAQ = () => {
             <h2 className="section-title">Întrebări Frecvente despre serviciile oferite</h2>
             <p className="text-xl text-gray-light max-w-3xl mx-auto mt-4">
               Răspunsuri la cele mai frecvente întrebări despre serviciile noastre de carotare, tăiere și demolări în beton. 
-              Nu găsiți răspunsul? <a href="tel:0758663415" className="text-primary hover:underline font-semibold">Sunați-ne la 0758 663 415</a>
+              <br />Nu găsiți răspunsul? <a href="tel:0758663415" className="text-primary hover:underline font-semibold">Sunați-ne la 0758 663 415</a>
             </p>
           </div>
 

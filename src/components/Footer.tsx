@@ -122,8 +122,8 @@ const Footer = () => {
                 <img 
                   src="https://layouth.ro/wp-content/uploads/resurse-publice/anpc-sal-mare.png"
                   alt="Soluționarea Alternativă a Litigiilor" 
-                  className="h-10 w-auto"
-                  loading="lazy"
+                  className="h-10 w-auto"                  width="40"
+                  height="40"                  loading="lazy"
                 />
               </a>
               <a 
@@ -136,8 +136,8 @@ const Footer = () => {
                 <img 
                   src="https://layouth.ro/wp-content/uploads/resurse-publice/anpc-sol-mare.png"
                   alt="Soluționarea Online a Litigiilor" 
-                  className="h-10 w-auto"
-                  loading="lazy"
+                  className="h-10 w-auto"                  width="40"
+                  height="40"                  loading="lazy"
                 />
               </a>
             </div>

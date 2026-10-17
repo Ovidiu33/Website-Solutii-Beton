@@ -57,7 +57,7 @@ const Contact = () => {
 
             <div className="space-y-6">
               {/* Phone */}
-              <div className="flex items-start gap-4 p-6 bg-gray-dark border border-gray-medium rounded-lg hover:border-primary transition-colors">
+              <div className="flex items-start gap-4 p-6 bg-dark-lighter border border-gray-medium rounded-lg hover:border-primary transition-colors">
                 <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                   <Phone className="h-6 w-6 text-primary" />
                 </div>
@@ -74,7 +74,7 @@ const Contact = () => {
               </div>
 
               {/* Email */}
-              <div className="flex items-start gap-4 p-6 bg-gray-dark border border-gray-medium rounded-lg hover:border-primary transition-colors">
+              <div className="flex items-start gap-4 p-6 bg-dark-lighter border border-gray-medium rounded-lg hover:border-primary transition-colors">
                 <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                   <Mail className="h-6 w-6 text-primary" />
                 </div>
@@ -91,7 +91,7 @@ const Contact = () => {
               </div>
 
               {/* Location */}
-              <div className="flex items-start gap-4 p-6 bg-gray-dark border border-gray-medium rounded-lg hover:border-primary transition-colors">
+              <div className="flex items-start gap-4 p-6 bg-dark-lighter border border-gray-medium rounded-lg hover:border-primary transition-colors">
                 <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                   <MapPin className="h-6 w-6 text-primary" />
                 </div>
@@ -103,7 +103,7 @@ const Contact = () => {
               </div>
 
               {/* Hours */}
-              <div className="flex items-start gap-4 p-6 bg-gray-dark border border-gray-medium rounded-lg hover:border-primary transition-colors">
+              <div className="flex items-start gap-4 p-6 bg-dark-lighter border border-gray-medium rounded-lg hover:border-primary transition-colors">
                 <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                   <Clock className="h-6 w-6 text-primary" />
                 </div>

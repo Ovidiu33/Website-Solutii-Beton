@@ -11,14 +11,14 @@ import img8b from '../assets/gallery-webp/carotaj-500mm-2.webp'
 
 const Gallery = () => {
   const images = [
-    { src: img1, alt: "Carotare în beton cu stativ" },
-    { src: img6, alt: "Carotare beton și evacuare moloz" },
+    { src: img1, alt: "Carotare în beton cu stativ", priority: true },
+    { src: img6, alt: "Carotare beton și evacuare moloz", priority: true },
     { src: img3, alt: "Lucrări carotare beton pe șantier mare" },
     { src: img4, alt: "Găuri pentru traversare țevi și instalații" },
     { src: img2, alt: "Gaură pentru centrală" },
     { src: img5, alt: "Decupaj perete beton" },
     { src: img7, alt: "Carotare perete beton 90 cm" },
-    { src: [img8a, img8b], alt: "Carotare în beton ⌦00 mm", slideshow: true },
+    { src: [img8a, img8b], alt: "Carotare în beton Ø500 mm", slideshow: true },
   ];
 
   return (
@@ -30,7 +30,7 @@ const Gallery = () => {
         <h2 className="section-title mb-8 text-center">Galerie Lucrări Realizate</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {images.map((img, idx) => (
-            <GalleryItem key={idx} image={img} />
+            <GalleryItem key={idx} image={img} index={idx} />
           ))}
         </div>
       </div>
@@ -41,7 +41,7 @@ const Gallery = () => {
   );
 };
 
-const GalleryItem = ({ image }: { image: any }) => {
+const GalleryItem = ({ image, index }: { image: any; index: number }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
@@ -73,6 +73,9 @@ const GalleryItem = ({ image }: { image: any }) => {
   const currentSrc = isSlideshow 
     ? (isMobile ? image.src[currentIndex] : (isHovered ? image.src[1] : image.src[0]))
     : image.src;
+  
+  // Priority loading for first 2 images (above-the-fold on desktop)
+  const isPriority = image.priority === true;
 
   return (
     <div 
@@ -84,8 +87,11 @@ const GalleryItem = ({ image }: { image: any }) => {
         <img 
           src={currentSrc} 
           alt={image.alt}
-          loading="lazy"
+          loading={isPriority ? "eager" : "lazy"}
+          fetchPriority={isPriority ? "high" : "low"}
           decoding="async"
+          width="400"
+          height="256"
           className="w-full h-full object-cover group-hover:scale-110 transition-all duration-500" 
         />
         <div className="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

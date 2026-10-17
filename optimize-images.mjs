@@ -4,7 +4,9 @@ import { join, parse } from 'path';
 
 const GALLERY_DIR = './src/assets/gallery';
 const WEBP_DIR = './src/assets/gallery-webp';
-const QUALITY = 85; // High quality WebP (85-90 recommended)
+const QUALITY = 55; // Ultra-aggressive for LCP (still visually acceptable)
+const MAX_WIDTH = 650; // Exact match display size (665px)
+const MOBILE_WIDTH = 650; // Width pentru mobile
 
 // Create output directory
 if (!existsSync(WEBP_DIR)) {
@@ -14,8 +16,22 @@ if (!existsSync(WEBP_DIR)) {
 async function optimizeImage(inputPath, outputPath) {
   const startSize = statSync(inputPath).size;
   
+  // Get image metadata
+  const metadata = await sharp(inputPath).metadata();
+  
+  // Resize if larger than MAX_WIDTH
+  const shouldResize = metadata.width > MAX_WIDTH;
+  
   await sharp(inputPath)
-    .webp({ quality: QUALITY, effort: 6 }) // effort 6 = better compression
+    .resize(shouldResize ? MAX_WIDTH : null, null, { 
+      withoutEnlargement: true,
+      fit: 'inside'
+    })
+    .webp({ 
+      quality: QUALITY, 
+      effort: 6, // Better compression (slower but smaller)
+      smartSubsample: true // Better quality at lower file sizes
+    })
     .toFile(outputPath);
   
   const endSize = statSync(outputPath).size;
