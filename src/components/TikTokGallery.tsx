@@ -9,13 +9,13 @@ const TikTokGallery = () => {
       <div className="container-custom text-center relative z-10">
         <h2 className="section-title mb-8">Vezi lucrările noastre pe TikTok</h2>
         <a 
-          href="https://www.tiktok.com/@solutii.beton.sv" 
+          href="https://www.tiktok.com/@carotare.taiere.beton" 
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-3 bg-gradient-to-r from-primary to-orange-600 hover:from-orange-600 hover:to-primary text-white font-bold text-lg px-10 py-5 rounded-full transition-all duration-300 shadow-lg hover:shadow-primary/50 hover:scale-105"
         >
           <ExternalLink className="h-6 w-6" />
-          <span>@solutii.beton.sv</span>
+          <span>@carotare.taiere.beton</span>
         </a>
       </div>
       

@@ -52,7 +52,7 @@ const Header = () => {
             </a>
             
             <a 
-              href="https://www.tiktok.com/@solutii.beton.sv" 
+              href="https://www.tiktok.com/@carotare.taiere.beton" 
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gray-800 hover:bg-primary hover:scale-110 hover:shadow-lg hover:shadow-primary/30 text-white p-3.5 rounded-lg transition-all duration-300 flex items-center justify-center"
@@ -113,7 +113,7 @@ const Header = () => {
                 Contact
               </a>
               <a 
-                href="https://www.tiktok.com/@solutii.beton.sv" 
+                href="https://www.tiktok.com/@carotare.taiere.beton" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-dark border border-gray-medium hover:bg-primary hover:border-primary text-white py-3 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
