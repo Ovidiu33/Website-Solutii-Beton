@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, lazy, Suspense } from 'react'
 import { X, Cookie, Check, Ban } from 'lucide-react'
-import CookiePolicyModal from './CookiePolicyModal'
+
+const CookiePolicyModal = lazy(() => import('./CookiePolicyModal'))
 
 const CookieBanner = () => {
   const [showBanner, setShowBanner] = useState(false)
@@ -10,7 +11,7 @@ const CookieBanner = () => {
     // Check if user has already made a choice
     const cookies = document.cookie.split(';').map(c => c.trim())
     const hasConsent = cookies.some(c => c.startsWith('cookie-consent='))
-    
+
     if (!hasConsent) {
       // Show banner after a small delay
       setTimeout(() => setShowBanner(true), 1000)
@@ -39,54 +40,54 @@ const CookieBanner = () => {
   return (
     <>
       {/* Cookie Banner */}
-      <div className="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:max-w-md z-50 animate-slideUp">
-        <div className="bg-gradient-to-br from-gray-dark to-dark border border-primary/30 rounded-xl shadow-2xl p-4">
-          <div className="flex items-start gap-3 mb-3">
-            <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
-              <Cookie className="h-4 w-4 text-primary" />
-            </div>
-            <div className="flex-1">
-              <h3 className="text-sm font-display font-bold text-white mb-1 flex items-center gap-1.5">
-              <Cookie className="h-4 w-4 text-primary" /> Cookies
-              </h3>
-              <p className="text-xs text-gray-light leading-relaxed">
-                Folosim cookie-uri pentru a analiza traficul și a îmbunătăți site-ul.{' '}
-                <button
-                  type="button"
-                  onClick={() => setIsPolicyOpen(true)}
-                  className="text-primary hover:text-white underline transition-colors"
-                >
-                  Detalii
-                </button>
-              </p>
-            </div>
-            <button
-              onClick={handleReject}
-              className="flex-shrink-0 text-gray-light hover:text-white transition-colors"
-              aria-label="Închide"
-            >
-              <X className="h-4 w-4" />
-            </button>
+      <aside aria-label="Cookie-uri" className="theme-dark fixed bottom-3 left-3 right-3 md:left-auto md:right-6 md:bottom-6 md:max-w-md z-50 animate-slideUp rounded border border-white/15 bg-[#1c1c1c] p-4 shadow-2xl shadow-black/50 mb-[env(safe-area-inset-bottom)]">
+        <div className="flex items-start gap-3 mb-3">
+          <div className="flex-shrink-0 w-9 h-9 bg-accent/10 rounded flex items-center justify-center">
+            <Cookie className="h-4 w-4 text-accent" />
           </div>
-
-          <div className="flex gap-2">
-            <button
-              onClick={handleAccept}
-              className="flex-1 flex items-center justify-center gap-1.5 bg-primary hover:bg-primary-dark text-black py-2 px-3 rounded-lg text-xs font-bold transition-colors"
-            >
-              <Check className="h-3 w-3" /> Accept
-            </button>
-            <button
-              onClick={handleReject}
-              className="flex-1 flex items-center justify-center gap-1.5 bg-gray-700 hover:bg-gray-600 text-white py-2 px-3 rounded-lg text-xs font-bold transition-colors"
-            >
-              <Ban className="h-3 w-3" /> Refuz
-            </button>
+          <div className="flex-1">
+            <h3 className="text-sm font-display font-bold mb-1">Cookies</h3>
+            <p className="text-sm text-mute leading-relaxed">
+              Folosim cookie-uri pentru a analiza traficul și a îmbunătăți site-ul.{' '}
+              <button
+                type="button"
+                onClick={() => setIsPolicyOpen(true)}
+                className="text-accent-ink hover:text-accent underline underline-offset-2 transition-colors"
+              >
+                Detalii
+              </button>
+            </p>
           </div>
+          <button
+            onClick={handleReject}
+            className="flex-shrink-0 h-8 w-8 -mt-1 -mr-1 flex items-center justify-center rounded text-mute hover:text-ink hover:bg-white/10 transition-colors"
+            aria-label="Închide"
+          >
+            <X className="h-4 w-4" />
+          </button>
         </div>
-      </div>
 
-      <CookiePolicyModal isOpen={isPolicyOpen} onClose={() => setIsPolicyOpen(false)} />
+        <div className="flex gap-2">
+          <button
+            onClick={handleAccept}
+            className="btn btn-accent flex-1 h-11 px-3 text-sm"
+          >
+            <Check className="h-4 w-4" /> Accept
+          </button>
+          <button
+            onClick={handleReject}
+            className="btn btn-outline flex-1 h-11 px-3 text-sm"
+          >
+            <Ban className="h-4 w-4" /> Refuz
+          </button>
+        </div>
+      </aside>
+
+      {isPolicyOpen && (
+        <Suspense fallback={null}>
+          <CookiePolicyModal isOpen={isPolicyOpen} onClose={() => setIsPolicyOpen(false)} />
+        </Suspense>
+      )}
     </>
   )
 }

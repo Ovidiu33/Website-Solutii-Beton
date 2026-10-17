@@ -1,114 +1,60 @@
-import { ArrowRight, MapPin, CircleDot, Scissors, Phone } from 'lucide-react';
+import { ArrowRight, MapPin, Phone } from 'lucide-react'
+import Picture from './Picture'
 
 const Hero = () => {
   return (
-    <section className="relative bg-gradient-to-br from-dark via-gray-dark to-dark overflow-hidden pt-8 md:pt-12 pb-4 md:pb-6">
-      {/* Fade from black at top */}
-      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-dark to-transparent pointer-events-none"></div>
-      
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `radial-gradient(circle, white 1px, transparent 1px)`,
-            backgroundSize: '50px 50px',
-          }}
-        ></div>
+    <section id="acasa" className="theme-dark relative isolate overflow-hidden">
+      <div className="absolute inset-0 -z-10 phone:inset-auto phone:inset-x-0 phone:top-16 phone:aspect-[4/3] phone-short:aspect-[16/10]">
+        <Picture
+          slug="hero-mobile"
+          mediaSlug={{ media: '(min-width: 768px)', slug: 'hero-wide' }}
+          alt="Carotare în beton cu stativ Hilti DD 500 pe șantier"
+          sizes="100vw"
+          width={800}
+          height={600}
+          priority
+          className="h-full w-full object-cover object-[75%_center] phone:object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-graphite via-graphite/85 via-50% to-graphite/20 phone:bg-gradient-to-b phone:from-graphite/10 phone:via-graphite/30 phone:via-55% phone:to-graphite" />
       </div>
 
-      <div className="container-custom relative z-10 pb-8 md:pb-12">
-        <div className="text-center max-w-4xl mx-auto">
-          {/* Main Headline */}
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-6 md:whitespace-nowrap">
-            <span className="text-primary">CAROTARE</span> <span className="text-white">și</span> <span className="text-primary">TĂIERI BETON</span>
+      <div className="container-custom pt-28 pb-12 md:pt-40 md:pb-20 lg:pt-44 lg:pb-24 phone:pt-[calc(4rem+56vw)] phone-short:pt-[calc(4rem+46vw)] short:pt-24 short:pb-10">
+        <div className="max-w-2xl">
+          <p className="flex items-center gap-2 font-display font-semibold text-base md:text-lg">
+            <MapPin className="h-5 w-5 text-accent shrink-0" strokeWidth={2.25} />
+            <span>
+              <span className="text-accent">Suceava, Botoșani</span> și împrejurimi
+            </span>
+          </p>
+
+          <h1 className="heading-xl uppercase text-[2.6rem] sm:text-6xl lg:text-7xl mt-5 phone-short:mt-3 short:text-5xl">
+            <span>CAROTARE</span> <span className="text-accent normal-case">și</span>{' '}
+            <span className="whitespace-nowrap">TĂIERI BETON</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-white mb-6">
+          <p className="mt-6 phone-short:mt-4 font-display font-semibold text-sm sm:text-base tracking-[0.08em] text-mute">
             BETON • CĂRĂMIDĂ • BCA • ASFALT <span className="whitespace-nowrap">• PIATRĂ</span>
           </p>
 
-          <p className="text-xl md:text-2xl text-gray-light mb-6 max-w-2xl mx-auto flex items-center justify-center gap-2 flex-wrap">
-            <MapPin className="h-6 w-6 md:h-7 md:w-7 text-primary" />
-            <span className="text-primary font-bold">Suceava, Botoșani</span>
-            <span className="text-white font-bold">și împrejurimi</span>
+          <p className="mt-3 text-lg md:text-xl text-ink/90 max-w-xl">
+            <span className="font-semibold">Soluții beton</span> <span className="text-accent font-semibold">(și în beton)</span>.
+            {' '}Găuri până la Ø 500mm, tăieri și demolări controlate.
           </p>
 
-          <p className="text-xl md:text-2xl mb-6 max-w-2xl mx-auto">
-            <span className="text-white font-bold">Soluții beton</span> <span className="text-primary font-bold">(și în beton)</span>
-          </p>
-
-          {/* CTA Buttons - Mobile optimized */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6 px-4">
-            <a 
-              href="tel:0758663415"
-              className="w-full sm:w-auto bg-primary hover:bg-primary-dark text-black font-display font-bold text-xl py-5 px-10 rounded-lg transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-xl hover:shadow-primary/50 flex items-center justify-center gap-3"
-            >
-              <Phone className="h-6 w-6" />
+          <div className="mt-8 phone-short:mt-6 flex flex-col sm:flex-row gap-3">
+            <a href="tel:+40758663415" className="btn btn-accent w-full sm:w-auto">
+              <Phone className="h-5 w-5" strokeWidth={2.25} />
               Sună Acum
             </a>
-            <a 
-              href="#oferta"
-              className="w-full sm:w-auto bg-primary hover:bg-primary-dark text-black font-display font-bold text-xl py-5 px-10 rounded-lg transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-xl hover:shadow-primary/50 flex items-center justify-center gap-3"
-            >
-              <ArrowRight className="h-6 w-6" />
+            <a href="#oferta" className="group btn btn-outline w-full sm:w-auto">
               Ofertă Gratuită
+              <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" strokeWidth={2.25} />
             </a>
-          </div>
-
-          {/* Servicii principale */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 md:mt-16 px-4">
-            {[
-              {
-                icon: <CircleDot className="h-12 w-12 text-primary mb-2" />,
-                title: "CAROTĂRI",
-                description: (
-                  <>
-                    Găuri hote • Ventilații • Aerisiri centrale • Aparate aer condiționat
-                    <br />
-                    Până la Ø 500mm
-                  </>
-                )
-              },
-              {
-                icon: <Scissors className="h-12 w-12 text-primary mb-2" />,
-                title: "TĂIERI DECUPAJE",
-                description: "Planșee • Pereți • Demolări controlate • Orice complexitate"
-              },
-              {
-                icon: <Phone className="h-12 w-12 text-primary mb-2" />,
-                title: "INTERVENIM RAPID",
-                description: "Răspundem la telefon 24/7 • 0758 663 415"
-              }
-            ].map((service, index) => {
-              const ServiceCard = () => {
-                return (
-                  <div 
-                    className="bg-gray-dark/50 backdrop-blur-sm border border-gray-medium rounded-lg p-5 flex flex-col items-center group hover:bg-gray-dark/80 hover:border-primary hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/30 hover:scale-105 transition-all duration-300"
-                  >
-                    <div className="group-hover:scale-125 group-hover:rotate-6 transition-transform duration-300">
-                      {service.icon}
-                    </div>
-                    <p className="text-white font-display font-bold text-lg mb-2 mt-2 group-hover:text-primary transition-colors duration-300">{service.title}</p>
-                    <p className="text-gray-light text-center text-sm group-hover:text-white transition-colors duration-300">
-                      {service.description}
-                    </p>
-                  </div>
-                );
-              };
-              
-              return <ServiceCard key={index} />;
-            })}
           </div>
         </div>
       </div>
-      
-      {/* Fade to black */}
-      <div className="absolute bottom-0 left-0 right-0 h-96 md:h-64 bg-gradient-to-b from-transparent to-dark pointer-events-none"></div>
-
-      {/* Scroll Indicator removed as requested */}
     </section>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

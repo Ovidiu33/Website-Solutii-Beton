@@ -1,138 +1,123 @@
 import { Phone, Menu, X } from 'lucide-react'
-import { useState } from 'react'
-import { FaTiktok } from 'react-icons/fa'
+import { useEffect, useRef, useState } from 'react'
+import Logo from './Logo'
+import { TikTokIcon } from './icons'
+
+const NAV = [
+  { href: '#servicii', label: 'Servicii' },
+  { href: '#despre', label: 'Despre Noi' },
+  { href: '#galerie-imagini', label: 'Galerie' },
+  { href: '#intrebari', label: 'Întrebări' },
+  { href: '#contact', label: 'Contact' },
+]
+
+const TIKTOK = 'https://www.tiktok.com/@carotare.taiere.beton'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const toggleRef = useRef<HTMLButtonElement>(null)
+
+  useEffect(() => {
+    if (!isMenuOpen) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsMenuOpen(false)
+        toggleRef.current?.focus()
+      }
+    }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [isMenuOpen])
 
   return (
-    <header className={`fixed top-0 w-full z-50 ${isMenuOpen ? 'bg-dark' : 'bg-transparent backdrop-blur-sm'}`}>
+    <header className="theme-dark fixed top-0 inset-x-0 z-50 border-b border-white/10 bg-graphite">
       <div className="container-custom">
-        <div className="flex items-center justify-between h-20 md:h-24">
-          {/* Logo */}
-          <div className="flex items-center flex-1">
-            <a href="#" className="text-3xl md:text-4xl lg:text-4xl font-display font-bold text-white hover:scale-105 hover:text-primary transition-all duration-300">
-              <span className="text-primary">e</span>CAROTA
-            </a>
-          </div>
+        <div className="flex items-center justify-between gap-6 h-16 lg:h-20">
+          <a href="#" className="group flex items-center shrink-0" aria-label="eCAROTA, mergi la începutul paginii">
+            <Logo className="h-[22px] lg:h-[26px] w-auto" />
+            <span className="sr-only">eCAROTA</span>
+          </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center justify-center space-x-6 lg:space-x-8 flex-2">
-            <a href="#servicii" className="text-base lg:text-lg text-white hover:text-primary transition-colors relative group font-semibold">
-              Servicii
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a href="#despre" className="text-base lg:text-lg text-white hover:text-primary transition-colors relative group font-semibold">
-              Despre Noi
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a href="#galerie-imagini" className="text-base lg:text-lg text-white hover:text-primary transition-colors relative group font-semibold">
-              Galerie
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a href="#intrebari" className="text-base lg:text-lg text-white hover:text-primary transition-colors relative group font-semibold">
-              Întrebări
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a href="#contact" className="text-base lg:text-lg text-white hover:text-primary transition-colors relative group font-semibold">
-              Contact
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </a>
+          <nav className="hidden lg:flex items-center gap-8" aria-label="Navigare principală">
+            {NAV.map(item => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="link-underline font-display font-semibold text-[15px] text-ink/75 hover:text-ink transition-colors"
+              >
+                {item.label}
+              </a>
+            ))}
           </nav>
 
-          {/* Phone Number - Desktop Only */}
-          <div className="hidden md:flex items-center justify-end flex-1 gap-8">
-            <a 
-              href="tel:0758663415" 
-              className="text-white hover:text-primary transition-colors font-bold text-lg lg:text-xl flex items-center gap-2 relative group"
-            >
-              <Phone className="h-5 w-5 lg:h-6 lg:w-6" />
-              <span>0758 663 415</span>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            
-            <a 
-              href="https://www.tiktok.com/@carotare.taiere.beton" 
+          <div className="hidden lg:flex items-center gap-3">
+            <a
+              href={TIKTOK}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gray-800 hover:bg-primary hover:scale-110 hover:shadow-lg hover:shadow-primary/30 text-white p-3.5 rounded-lg transition-all duration-300 flex items-center justify-center"
+              className="flex h-11 w-11 items-center justify-center rounded text-ink/75 hover:text-ink hover:bg-white/5 transition-colors"
               aria-label="TikTok"
             >
-              <FaTiktok className="h-6 w-6" />
+              <TikTokIcon className="h-5 w-5" />
+            </a>
+            <a href="tel:+40758663415" className="btn btn-accent h-11 px-5 text-base">
+              <Phone className="h-[18px] w-[18px]" strokeWidth={2.25} />
+              <span>0758 663 415</span>
             </a>
           </div>
 
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-white"
-            aria-label={isMenuOpen ? "Închide meniu" : "Deschide meniu"}
-            aria-expanded={isMenuOpen}
-          >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          <div className="flex lg:hidden items-center gap-1 min-[360px]:gap-2">
+            <a href="tel:+40758663415" className="btn btn-accent h-11 px-3 min-[360px]:px-4 text-base" aria-label="Sună la 0758 663 415">
+              <Phone className="h-[18px] w-[18px]" strokeWidth={2.25} />
+              <span className="hidden min-[360px]:inline">Sună</span>
+            </a>
+            <button
+              ref={toggleRef}
+              type="button"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="flex h-11 w-11 items-center justify-center rounded text-ink hover:bg-white/5"
+              aria-label={isMenuOpen ? 'Închide meniu' : 'Deschide meniu'}
+              aria-expanded={isMenuOpen}
+              aria-controls="meniu-mobil"
+            >
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
+      </div>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-dark bg-dark">
-            <nav className="flex flex-col space-y-4">
-              <a 
-                href="#servicii" 
-                className="text-white hover:text-primary transition-colors"
+      {isMenuOpen && (
+        <div id="meniu-mobil" className="lg:hidden border-t border-white/10 bg-graphite">
+          <nav className="container-custom flex flex-col py-3" aria-label="Navigare mobil">
+            {NAV.map(item => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="font-display font-semibold text-xl text-ink py-3.5 border-b border-white/[0.06] hover:text-accent hover:pl-1 transition-all duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Servicii
+                {item.label}
               </a>
-              <a 
-                href="#despre" 
-                className="text-white hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Despre Noi
-              </a>
-              <a 
-                href="#galerie-imagini" 
-                className="text-white hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Galerie
-              </a>
-              <a 
-                href="#intrebari" 
-                className="text-white hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Întrebări
-              </a>
-              <a 
-                href="#contact" 
-                className="text-white hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Contact
-              </a>
-              <a 
-                href="https://www.tiktok.com/@carotare.taiere.beton" 
+            ))}
+            <div className="grid grid-cols-2 gap-3 pt-5 pb-3">
+              <a
+                href={TIKTOK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-dark border border-gray-medium hover:bg-primary hover:border-primary text-white py-3 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
+                className="btn btn-outline h-12 text-base"
                 onClick={() => setIsMenuOpen(false)}
               >
-                <FaTiktok className="h-5 w-5" />
+                <TikTokIcon className="h-5 w-5" />
                 <span>TikTok</span>
               </a>
-              <a 
-                href="tel:0758663415" 
-                className="btn-primary flex items-center justify-center gap-2"
-              >
+              <a href="tel:+40758663415" className="btn btn-accent h-12 text-base">
                 <Phone className="h-5 w-5" />
                 <span>0758 663 415</span>
               </a>
-            </nav>
-          </div>
-        )}
-      </div>
+            </div>
+          </nav>
+        </div>
+      )}
     </header>
   )
 }

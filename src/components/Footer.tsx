@@ -1,8 +1,20 @@
 import { Phone, Mail, MapPin } from 'lucide-react'
-import { useState } from 'react'
-import TermsModal from './TermsModal'
-import PrivacyPolicyModal from './PrivacyPolicyModal'
-import CookiePolicyModal from './CookiePolicyModal'
+import { useState, lazy, Suspense } from 'react'
+import Logo from './Logo'
+
+const TermsModal = lazy(() => import('./TermsModal'))
+const PrivacyPolicyModal = lazy(() => import('./PrivacyPolicyModal'))
+const CookiePolicyModal = lazy(() => import('./CookiePolicyModal'))
+
+const LINKS = [
+  { href: '#servicii', label: 'Servicii' },
+  { href: '#despre', label: 'Despre Noi' },
+  { href: '#galerie-imagini', label: 'Galerie' },
+  { href: '#intrebari', label: 'Întrebări Frecvente' },
+  { href: '#contact', label: 'Contact' },
+]
+
+const POLICY_BTN = 'text-sm font-display font-semibold text-ink/80 hover:text-ink border border-white/15 hover:border-accent px-3.5 py-2 rounded transition-colors whitespace-nowrap'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -11,171 +23,116 @@ const Footer = () => {
   const [isCookieOpen, setIsCookieOpen] = useState(false)
 
   return (
-    <footer className="bg-dark border-t border-gray-medium">
-      <div className="container-custom py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div>
-            <h2 className="text-2xl font-display font-bold text-white mb-4">
-              <span className="text-primary">e</span>CAROTA
-            </h2>
-            <p className="text-gray-light">
+    <footer className="theme-dark border-t border-white/10 bg-[#0d0d0d] pb-20 lg:pb-0">
+      <div className="container-custom py-14 md:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10">
+          <div className="lg:col-span-4">
+            <a href="#" className="group inline-flex" aria-label="eCAROTA, mergi la începutul paginii">
+              <Logo className="h-7 w-auto" />
+            </a>
+            <h2 className="sr-only">eCAROTA</h2>
+            <p className="mt-5 text-mute max-w-sm leading-relaxed">
               Ne ocupăm de găuri și tăieturi în beton, fără complicații și fără promisiuni deșarte. Dacă ai nevoie de ajutor, suntem la un telefon distanță.
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-display font-bold text-white mb-4">Link-uri Rapide</h3>
-            <ul className="space-y-3">
-              <li>
-                <a href="#servicii" className="text-gray-light hover:text-primary transition-colors">
-                  Servicii
-                </a>
-              </li>
-              <li>
-                <a href="#despre" className="text-gray-light hover:text-primary transition-colors">
-                  Despre Noi
-                </a>
-              </li>
-              <li>
-                <a href="#galerie-imagini" className="text-gray-light hover:text-primary transition-colors">
-                  Galerie
-                </a>
-              </li>
-              <li>
-                <a href="#intrebari" className="text-gray-light hover:text-primary transition-colors">
-                  Întrebări Frecvente
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="text-gray-light hover:text-primary transition-colors">
-                  Contact
-                </a>
-              </li>
+          <div className="lg:col-span-2">
+            <h3 className="font-display font-bold text-base">Link-uri Rapide</h3>
+            <ul className="mt-4 space-y-3">
+              {LINKS.map(link => (
+                <li key={link.href}>
+                  <a href={link.href} className="link-underline text-mute hover:text-ink transition-colors">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-lg font-display font-bold text-white mb-4">Contact</h3>
-            <ul className="space-y-4">
+          <div className="lg:col-span-3">
+            <h3 className="font-display font-bold text-base">Contact</h3>
+            <ul className="mt-4 space-y-4">
               <li className="flex items-start gap-3">
-                <Phone className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                <Phone className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                 <div>
-                  <a 
-                    href="tel:0758663415" 
-                    className="text-gray-light hover:text-primary transition-colors font-semibold"
-                  >
+                  <a href="tel:+40758663415" className="font-display font-bold text-ink hover:text-accent transition-colors">
                     0758 663 415
                   </a>
-                  <p className="text-sm text-gray-light">Disponibil 24/7</p>
+                  <p className="text-sm text-mute">Disponibil 24/7</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <Mail className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                <a 
-                  href="mailto:contact@ecarota.ro" 
-                  className="text-gray-light hover:text-primary transition-colors break-all"
-                >
+                <Mail className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+                <a href="mailto:contact@ecarota.ro" className="text-mute hover:text-ink transition-colors break-all">
                   contact@ecarota.ro
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                <div className="text-gray-light">
-                  Suceava, Botoșani
-                </div>
+                <MapPin className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+                <span className="text-mute">Suceava, Botoșani</span>
               </li>
             </ul>
           </div>
 
-          {/* Firma Autorizată */}
-          <div>
-            <div>
-              <p className="text-white font-semibold mb-3 flex items-center gap-2">
-                <span className="inline-block w-3 h-3 bg-green-500 rounded-full"></span>
-                Firmă Autorizată Legal
-              </p>
-              <div className="text-gray-light text-sm space-y-1">
-                <p><strong className="text-white">S.C. SULERU RENOV S.R.L.</strong></p>
-                <p>CUI: RO38206793</p>
-                <p>J33/1603/2017</p>
-                <p className="text-xs">Str. Eroilor nr. 60, Bloc 115, Sc. D, Ap. 5, Suceava</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="border-t border-gray-medium mt-12 pt-8 pb-4">
-          <div className="flex flex-col items-center gap-6">
-            {/* ANPC SAL si SOL - Center */}
-            <div className="flex items-center justify-center gap-4">
-              <a 
-                href="https://anpc.ro/ce-este-sal/" 
-                target="_blank" 
-                rel="nofollow noopener noreferrer"
-                className="hover:opacity-80 transition-opacity"
-                title="Soluționarea Alternativă a Litigiilor"
-              >
-                <img 
-                  src="https://layouth.ro/wp-content/uploads/resurse-publice/anpc-sal-mare.png"
-                  alt="Soluționarea Alternativă a Litigiilor" 
-                  className="h-10 w-auto"                  width="40"
-                  height="40"                  loading="lazy"
-                />
-              </a>
-              <a 
-                href="https://ec.europa.eu/consumers/odr" 
-                target="_blank" 
-                rel="nofollow noopener noreferrer"
-                className="hover:opacity-80 transition-opacity"
-                title="Soluționarea Online a Litigiilor"
-              >
-                <img 
-                  src="https://layouth.ro/wp-content/uploads/resurse-publice/anpc-sol-mare.png"
-                  alt="Soluționarea Online a Litigiilor" 
-                  className="h-10 w-auto"                  width="40"
-                  height="40"                  loading="lazy"
-                />
-              </a>
-            </div>
-
-            {/* Policy Buttons - Center row */}
-            <div className="flex flex-wrap gap-2 justify-center">
-              <button
-                onClick={() => setIsTermsOpen(true)}
-                className="text-xs text-primary hover:text-white border border-primary hover:bg-primary px-3 py-2 rounded transition-colors whitespace-nowrap"
-              >
-                Termeni și Condiții
-              </button>
-              <button
-                onClick={() => setIsPrivacyOpen(true)}
-                className="text-xs text-primary hover:text-white border border-primary hover:bg-primary px-3 py-2 rounded transition-colors whitespace-nowrap"
-              >
-                Politica de Confidențialitate
-              </button>
-              <button
-                onClick={() => setIsCookieOpen(true)}
-                className="text-xs text-primary hover:text-white border border-primary hover:bg-primary px-3 py-2 rounded transition-colors whitespace-nowrap"
-              >
-                Politica Cookie
-              </button>
-            </div>
-
-            {/* Copyright - Center bottom */}
-            <p className="text-gray-light text-sm text-center">
-              © {currentYear} eCarota – Carotare Beton Suceava și Botoșani. Toate drepturile rezervate.
+          <div className="lg:col-span-3">
+            <p className="font-display font-bold text-base flex items-center gap-2">
+              <span className="inline-block h-2.5 w-2.5 rounded-full bg-green-500" aria-hidden="true"></span>
+              Firmă Autorizată Legal
             </p>
+            <div className="mt-4 text-sm text-mute space-y-1">
+              <p><strong className="text-ink">S.C. SULERU RENOV S.R.L.</strong></p>
+              <p>CUI: RO38206793</p>
+              <p>J33/1603/2017</p>
+              <p>Str. Eroilor nr. 60, Bloc 115, Sc. D, Ap. 5, Suceava</p>
+            </div>
           </div>
         </div>
+
+        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setIsTermsOpen(true)} className={POLICY_BTN}>
+              Termeni și Condiții
+            </button>
+            <button onClick={() => setIsPrivacyOpen(true)} className={POLICY_BTN}>
+              Politica de Confidențialitate
+            </button>
+            <button onClick={() => setIsCookieOpen(true)} className={POLICY_BTN}>
+              Politica Cookie
+            </button>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <a
+              href="https://anpc.ro/ce-este-sal/"
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+              className="opacity-90 hover:opacity-100 transition-opacity"
+              title="Soluționarea Alternativă a Litigiilor"
+            >
+              <img src="/anpc-sal.webp" alt="Soluționarea Alternativă a Litigiilor" className="h-10 w-auto" width="156" height="40" loading="lazy" decoding="async" />
+            </a>
+            <a
+              href="https://ec.europa.eu/consumers/odr"
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+              className="opacity-90 hover:opacity-100 transition-opacity"
+              title="Soluționarea Online a Litigiilor"
+            >
+              <img src="/anpc-sol.webp" alt="Soluționarea Online a Litigiilor" className="h-10 w-auto" width="143" height="40" loading="lazy" decoding="async" />
+            </a>
+          </div>
+        </div>
+
+        <p className="mt-8 text-sm text-mute" suppressHydrationWarning>
+          © {currentYear} eCarota – Carotare Beton Suceava și Botoșani. Toate drepturile rezervate.
+        </p>
       </div>
 
-      {/* Modals */}
-      <TermsModal isOpen={isTermsOpen} onClose={() => setIsTermsOpen(false)} />
-      <PrivacyPolicyModal isOpen={isPrivacyOpen} onClose={() => setIsPrivacyOpen(false)} />
-      <CookiePolicyModal isOpen={isCookieOpen} onClose={() => setIsCookieOpen(false)} />
+      <Suspense fallback={null}>
+        {isTermsOpen && <TermsModal isOpen={isTermsOpen} onClose={() => setIsTermsOpen(false)} />}
+        {isPrivacyOpen && <PrivacyPolicyModal isOpen={isPrivacyOpen} onClose={() => setIsPrivacyOpen(false)} />}
+        {isCookieOpen && <CookiePolicyModal isOpen={isCookieOpen} onClose={() => setIsCookieOpen(false)} />}
+      </Suspense>
     </footer>
   )
 }

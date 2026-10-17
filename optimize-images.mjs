@@ -1,70 +1,54 @@
 import sharp from 'sharp';
-import { readdirSync, statSync, mkdirSync, existsSync } from 'fs';
-import { join, parse } from 'path';
+import { mkdirSync, existsSync, readdirSync, statSync } from 'fs';
+import { join } from 'path';
 
-const GALLERY_DIR = './src/assets/gallery';
-const WEBP_DIR = './src/assets/gallery-webp';
-const QUALITY = 55; // Ultra-aggressive for LCP (still visually acceptable)
-const MAX_WIDTH = 650; // Exact match display size (665px)
-const MOBILE_WIDTH = 650; // Width pentru mobile
+const SRC = './src/assets/gallery';
+const OUT = './src/assets/img';
 
-// Create output directory
-if (!existsSync(WEBP_DIR)) {
-  mkdirSync(WEBP_DIR, { recursive: true });
-}
+// slug, sursă, crop opțional (fracții din imagine: left, top, width, height), lățimi generate
+const IMAGES = [
+  { slug: 'hero-wide', src: 'carotaj,prima poza vreau.jpeg', crop: [0, 0.14, 1, 0.75], widths: [960, 1600], quality: [36, 50] },
+  { slug: 'hero-mobile', src: 'carotaj,prima poza vreau.jpeg', crop: [0.15, 0.25, 0.75, 0.75], widths: [480, 760, 1080], quality: [30, 46] },
+  { slug: 'carotaj-stativ', src: 'carotaj,prima poza vreau.jpeg' },
+  { slug: 'carotaj-santier', src: 'carotaj pe santier.jpeg' },
+  { slug: 'gauri-traversare', src: 'Gauri traversare tevi.jpeg' },
+  { slug: 'gaura-centrala', src: 'Gaura centrala.jpeg', crop: [0.3, 0.3, 0.45, 0.45], widths: [480, 720] },
+  { slug: 'decupaj-perete', src: 'imagine_decupaj_beton.jpg' },
+  { slug: 'taiere-moloz', src: 'taiere_beton1.jpeg' },
+  { slug: 'taiere-deschidere', src: 'taiere_Beton2.jpeg' },
+  { slug: 'taiere-perete-90', src: 'taiere_beton3.jpeg' },
+  { slug: 'carotaj-500-stativ', src: 'carotaj-500mm-1.jpeg' },
+  { slug: 'carotaj-500-carota', src: 'carotaj-500mm-2.jpeg' },
+];
+const DEFAULT_WIDTHS = [480, 720, 1200];
 
-async function optimizeImage(inputPath, outputPath) {
-  const startSize = statSync(inputPath).size;
-  
-  // Get image metadata
-  const metadata = await sharp(inputPath).metadata();
-  
-  // Resize if larger than MAX_WIDTH
-  const shouldResize = metadata.width > MAX_WIDTH;
-  
-  await sharp(inputPath)
-    .resize(shouldResize ? MAX_WIDTH : null, null, { 
-      withoutEnlargement: true,
-      fit: 'inside'
-    })
-    .webp({ 
-      quality: QUALITY, 
-      effort: 6, // Better compression (slower but smaller)
-      smartSubsample: true // Better quality at lower file sizes
-    })
-    .toFile(outputPath);
-  
-  const endSize = statSync(outputPath).size;
-  const reduction = ((1 - endSize / startSize) * 100).toFixed(1);
-  
-  console.log(`✓ ${parse(inputPath).base}`);
-  console.log(`  ${(startSize / 1024).toFixed(1)}KB → ${(endSize / 1024).toFixed(1)}KB (-${reduction}%)`);
-}
+if (!existsSync(OUT)) mkdirSync(OUT, { recursive: true });
 
-async function processGallery() {
-  console.log('🖼️  Optimizare imagini Gallery → WebP...\n');
-  
-  const files = readdirSync(GALLERY_DIR)
-    .filter(f => /\.(jpg|jpeg|png)$/i.test(f));
-  
-  let totalBefore = 0;
-  let totalAfter = 0;
-  
-  for (const file of files) {
-    const inputPath = join(GALLERY_DIR, file);
-    const outputPath = join(WEBP_DIR, parse(file).name + '.webp');
-    
-    totalBefore += statSync(inputPath).size;
-    await optimizeImage(inputPath, outputPath);
-    totalAfter += statSync(outputPath).size;
+async function build({ slug, src, crop, widths = DEFAULT_WIDTHS, quality: [qAvif, qWebp] = [44, 64] }) {
+  const input = join(SRC, src);
+  const meta = await sharp(input).rotate().metadata();
+  let base = sharp(input).rotate();
+  let w = meta.width, h = meta.height;
+  if (crop) {
+    const [l, t, cw, ch] = crop;
+    const region = { left: Math.round(l * w), top: Math.round(t * h), width: Math.round(cw * w), height: Math.round(ch * h) };
+    base = base.extract(region);
+    w = region.width; h = region.height;
   }
-  
-  const totalReduction = ((1 - totalAfter / totalBefore) * 100).toFixed(1);
-  
-  console.log(`\n✅ Procesate ${files.length} imagini`);
-  console.log(`📦 Mărime totală: ${(totalBefore / 1024).toFixed(1)}KB → ${(totalAfter / 1024).toFixed(1)}KB`);
-  console.log(`🚀 Reducere: -${totalReduction}%`);
-  console.log(`\n💡 Next step: Actualizează Gallery.tsx să folosească imaginile WebP`);
+  const graded = await base
+    .modulate({ saturation: 0.92 })
+    .linear(1.06, -6)
+    .toBuffer();
+  for (const width of widths) {
+    const target = Math.min(width, w);
+    const resized = sharp(graded).resize({ width: target, withoutEnlargement: true });
+    await resized.clone().avif({ quality: qAvif, effort: 6 }).toFile(join(OUT, `${slug}-${width}.avif`));
+    await resized.clone().webp({ quality: qWebp, effort: 6, smartSubsample: true }).toFile(join(OUT, `${slug}-${width}.webp`));
+  }
+  console.log(`${slug}: ${w}x${h} -> ${widths.join(', ')}`);
 }
 
-processGallery().catch(console.error);
+for (const img of IMAGES) await build(img);
+
+const total = readdirSync(OUT).reduce((s, f) => s + statSync(join(OUT, f)).size, 0);
+console.log(`total ${(total / 1024).toFixed(0)} KB in ${OUT}`);

@@ -3,7 +3,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path'
 
-export default defineConfig({
+export default defineConfig(({ isSsrBuild }) => ({
   base: '/',
   plugins: [react()],
   build: {
@@ -13,7 +13,7 @@ export default defineConfig({
     minify: 'esbuild',
     rollupOptions: {
       output: {
-        manualChunks: {
+        manualChunks: isSsrBuild ? undefined : {
           vendor: ['react', 'react-dom'],
         },
         // Optimize asset loading
@@ -35,4 +35,4 @@ export default defineConfig({
   server: {
     port: 5173,
   },
-})
+}))

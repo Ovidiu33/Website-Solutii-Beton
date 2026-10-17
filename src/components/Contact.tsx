@@ -1,6 +1,14 @@
-import { Phone, Mail, MapPin, Clock } from 'lucide-react'
-import { useState, FormEvent } from 'react'
-import TermsModal from './TermsModal'
+import { Phone, Mail, MapPin, Clock, ArrowUpRight } from 'lucide-react'
+import { useState, FormEvent, lazy, Suspense } from 'react'
+import { track } from '../analytics'
+
+const TermsModal = lazy(() => import('./TermsModal'))
+
+const ZONES = ['Suceava', 'Botoșani', 'Rădăuți', 'Fălticeni', 'Vatra Dornei', 'Dorohoi']
+const MAPS_URL = 'https://www.google.com/maps/search/?api=1&query=Carotare+%C8%99i+T%C4%83iere+Beton+Suceava'
+
+const FIELD = 'w-full h-12 px-4 rounded bg-surface border border-white/15 text-ink placeholder:text-mute/70 transition-colors duration-200 hover:border-white/30 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30'
+const LABEL = 'block font-display font-semibold text-sm text-ink/85 mb-2'
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -20,6 +28,7 @@ const Contact = () => {
       const result = await response.json().catch(() => ({ ok: false }))
       if (!response.ok || !result.ok) throw new Error(`HTTP ${response.status}`)
 
+      track('generate_lead', { service: String(new FormData(form).get('service') ?? '') })
       setSubmitMessage('✅ Mesaj trimis cu succes! Te contactăm în curând.')
       form.reset()
       setAcceptTerms(false)
@@ -31,197 +40,144 @@ const Contact = () => {
     }
   }
 
+  const info = [
+    {
+      icon: <Phone className="h-5 w-5" />,
+      title: 'Telefon',
+      body: <a href="tel:+40758663415" className="font-display font-extrabold text-2xl text-accent-ink hover:text-accent transition-colors">0758 663 415</a>,
+      note: 'Disponibil 24/7',
+    },
+    {
+      icon: <Mail className="h-5 w-5" />,
+      title: 'Email',
+      body: <a href="mailto:contact@ecarota.ro" className="font-semibold text-accent-ink hover:text-accent transition-colors break-all">contact@ecarota.ro</a>,
+      note: 'Răspundem în max 24h',
+    },
+    {
+      icon: <MapPin className="h-5 w-5" />,
+      title: 'Zonă Acoperire',
+      body: <p className="text-ink">Suceava, Botoșani și județe</p>,
+      note: 'Deplasare rapidă în toată Moldova',
+    },
+    {
+      icon: <Clock className="h-5 w-5" />,
+      title: 'Program',
+      body: <p className="text-ink">Luni - Vineri: 7:00 - 17:00</p>,
+      note: 'Posibilitate intervenții urgente',
+    },
+  ]
+
   return (
-    <section id="contact" className="relative py-12 md:py-16 bg-gradient-to-br from-dark via-gray-dark to-dark overflow-hidden scroll-mt-8">
-      {/* Fade from black at top */}
-      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-dark to-transparent pointer-events-none"></div>
-      
-      <div className="container-custom relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="section-title">Hai Să Discutăm</h2>
-          <p className="text-xl text-gray-light max-w-3xl mx-auto mt-4">
+    <section id="contact" className="theme-dark scroll-mt-16 lg:scroll-mt-20 py-16 md:py-24">
+      <div className="container-custom">
+        <div className="max-w-2xl">
+          <h2 className="heading-lg">Hai Să Discutăm</h2>
+          <p className="mt-4 text-lg md:text-xl text-mute">
             Sună pentru consultanță gratuită și ofertă personalizată. Răspundem rapid!
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-2xl font-display font-bold text-white mb-8">
-              Informații Contact
-            </h3>
+        <div className="mt-10 md:mt-14 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
+          <div className="lg:col-span-5">
+            <h3 className="font-display font-bold text-2xl">Informații Contact</h3>
 
-            <div className="space-y-6">
-              {/* Phone */}
-              <div className="flex items-start gap-4 p-6 bg-dark-lighter border border-gray-medium rounded-lg hover:border-primary transition-colors">
-                <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <Phone className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="text-white font-bold mb-2">Telefon</h4>
-                  <a 
-                    href="tel:0758663415" 
-                    className="text-2xl font-display font-bold text-primary hover:text-primary-light transition-colors"
-                  >
-                    0758 663 415
-                  </a>
-                  <p className="text-sm text-gray-light mt-1">Disponibil 24/7</p>
-                </div>
-              </div>
+            <ul className="mt-6 divide-y divide-white/10 border-y border-white/10">
+              {info.map(item => (
+                <li key={item.title} className="group flex items-start gap-4 py-5">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded bg-accent/10 text-accent-ink transition-colors duration-300 group-hover:bg-accent group-hover:text-graphite">
+                    {item.icon}
+                  </div>
+                  <div className="min-w-0">
+                    <h4 className="font-display font-semibold text-sm text-mute">{item.title}</h4>
+                    <div className="mt-1">{item.body}</div>
+                    <p className="mt-1 text-sm text-mute">{item.note}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
 
-              {/* Email */}
-              <div className="flex items-start gap-4 p-6 bg-dark-lighter border border-gray-medium rounded-lg hover:border-primary transition-colors">
-                <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <Mail className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="text-white font-bold mb-2">Email</h4>
-                  <a 
-                    href="mailto:contact@ecarota.ro" 
-                    className="text-primary hover:text-primary-light transition-colors"
-                  >
-                    contact@ecarota.ro
-                  </a>
-                  <p className="text-sm text-gray-light mt-1">Răspundem în max 24h</p>
-                </div>
-              </div>
-
-              {/* Location */}
-              <div className="flex items-start gap-4 p-6 bg-dark-lighter border border-gray-medium rounded-lg hover:border-primary transition-colors">
-                <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <MapPin className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="text-white font-bold mb-2">Zonă Acoperire</h4>
-                    <p className="text-gray-light">Suceava, Botoșani și județe</p>
-                  <p className="text-sm text-gray-light mt-1">Deplasare rapidă în toată Moldova</p>
-                </div>
-              </div>
-
-              {/* Hours */}
-              <div className="flex items-start gap-4 p-6 bg-dark-lighter border border-gray-medium rounded-lg hover:border-primary transition-colors">
-                <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <Clock className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="text-white font-bold mb-2">Program</h4>
-                  <p className="text-gray-light">Luni - Vineri: 7:00 - 17:00</p>
-                  <p className="text-sm text-gray-light mt-1">Posibilitate intervenții urgente</p>
-                </div>
-              </div>
+            <div className="mt-8">
+              <h3 className="font-display font-bold text-lg">Zone deservite</h3>
+              <ul className="mt-3 flex flex-wrap gap-2">
+                {ZONES.map(zone => (
+                  <li key={zone} className="rounded border border-white/15 px-3 py-1.5 font-display font-semibold text-sm">
+                    {zone}
+                  </li>
+                ))}
+                <li className="px-1 py-1.5 font-display font-semibold text-sm text-mute">și împrejurimi</li>
+              </ul>
+              <a
+                href={MAPS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group/link mt-5 inline-flex items-center gap-1.5 font-display font-bold text-accent-ink"
+              >
+                Ne găsești pe Google Maps
+                <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" strokeWidth={2.5} />
+              </a>
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div id="oferta" className="scroll-mt-32">
-            <h3 className="text-2xl font-display font-bold text-white mb-8">
-              Solicită Ofertă
-            </h3>
+          <div id="oferta" className="lg:col-span-7 scroll-mt-24 rounded border border-white/10 bg-surface/60 p-6 md:p-8">
+            <h3 className="font-display font-bold text-2xl">Solicită Ofertă</h3>
 
-            <form className="space-y-6" onSubmit={handleSubmit}>
+            <form className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-5" onSubmit={handleSubmit}>
               {/* Anti-spam: câmp invizibil pentru oameni, completat doar de boți */}
               <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
 
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-light mb-2">
-                  Nume complet *
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  className="w-full px-4 py-3 bg-gray-dark border border-gray-medium rounded-lg text-white placeholder-gray-light focus:outline-none focus:border-primary transition-colors"
-                  placeholder="Ion Popescu"
-                />
+                <label htmlFor="name" className={LABEL}>Nume complet *</label>
+                <input type="text" id="name" name="name" required autoComplete="name" className={FIELD} placeholder="Ion Popescu" />
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-light mb-2">
-                  Telefon *
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  required
-                  className="w-full px-4 py-3 bg-gray-dark border border-gray-medium rounded-lg text-white placeholder-gray-light focus:outline-none focus:border-primary transition-colors"
-                  placeholder="0758 663 415"
-                />
+                <label htmlFor="phone" className={LABEL}>Telefon *</label>
+                <input type="tel" id="phone" name="phone" required autoComplete="tel" className={FIELD} placeholder="0758 663 415" />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-light mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="w-full px-4 py-3 bg-gray-dark border border-gray-medium rounded-lg text-white placeholder-gray-light focus:outline-none focus:border-primary transition-colors"
-                  placeholder="ion@exemplu.ro"
-                />
+                <label htmlFor="email" className={LABEL}>Email</label>
+                <input type="email" id="email" name="email" autoComplete="email" className={FIELD} placeholder="ion@exemplu.ro" />
               </div>
 
               <div>
-                <label htmlFor="service" className="block text-sm font-medium text-gray-light mb-2">
-                  Tip serviciu *
-                </label>
-                <select
-                  id="service"
-                  name="service"
-                  required
-                  className="w-full px-4 py-3 bg-gray-dark border border-gray-medium rounded-lg text-white focus:outline-none focus:border-primary transition-colors"
-                >
+                <label htmlFor="service" className={LABEL}>Tip serviciu *</label>
+                <select id="service" name="service" required defaultValue="" className={`${FIELD} cursor-pointer`}>
                   <option value="">Selectează...</option>
                   <option value="carotaj">Carotaj în beton</option>
                   <option value="taiere">Tăiere beton</option>
-                  <option value="demontare">Demontare selectivă</option>
+                  <option value="demontare">Demolări</option>
                   <option value="altele">Altele</option>
                 </select>
               </div>
 
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-light mb-2">
-                  Descriere lucrare *
-                </label>
+              <div className="sm:col-span-2">
+                <label htmlFor="message" className={LABEL}>Descriere lucrare *</label>
                 <textarea
                   id="message"
                   name="message"
                   required
                   rows={4}
-                  className="w-full px-4 py-3 bg-gray-dark border border-gray-medium rounded-lg text-white placeholder-gray-light focus:outline-none focus:border-primary transition-colors resize-none"
+                  className={`${FIELD} h-auto py-3 resize-none`}
                   placeholder="Dimensiuni, locație, material,..."
                 ></textarea>
               </div>
 
-              {/* Terms Acceptance */}
-              <div className="flex items-start gap-3 p-4 bg-gray-dark/50 rounded-lg transition-colors">
-                <div className="relative flex items-center justify-center mt-0.5">
-                  <input
-                    type="checkbox"
-                    id="acceptTerms"
-                    checked={acceptTerms}
-                    onChange={(e) => setAcceptTerms(e.target.checked)}
-                    className="peer w-5 h-5 appearance-none bg-gray-800 border-2 border-gray-medium rounded cursor-pointer transition-all duration-200 checked:bg-primary checked:border-primary hover:border-primary/70 focus:ring-2 focus:ring-primary/50 focus:outline-none"
-                    required
-                  />
-                  <svg
-                    className="absolute w-3 h-3 pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity duration-200"
-                    fill="none"
-                    stroke="white"
-                    strokeWidth="3"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </div>
-                <label htmlFor="acceptTerms" className="text-sm text-gray-light leading-relaxed cursor-pointer">
+              <div className="sm:col-span-2 flex items-start gap-3">
+                <input
+                  type="checkbox"
+                  id="acceptTerms"
+                  checked={acceptTerms}
+                  onChange={(e) => setAcceptTerms(e.target.checked)}
+                  className="mt-0.5 h-5 w-5 shrink-0 cursor-pointer accent-[#FF6B00]"
+                  required
+                />
+                <label htmlFor="acceptTerms" className="text-sm text-mute leading-relaxed cursor-pointer">
                   Accept{' '}
                   <button
                     type="button"
                     onClick={() => setIsTermsOpen(true)}
-                    className="text-primary hover:text-primary-light underline decoration-primary/50 hover:decoration-primary font-semibold transition-colors"
+                    className="text-accent-ink underline decoration-accent/50 underline-offset-2 hover:decoration-accent font-semibold transition-colors"
                   >
                     Termenii și Condițiile
                   </button>
@@ -229,29 +185,31 @@ const Contact = () => {
                 </label>
               </div>
 
-              <button
-                type="submit"
-                disabled={isSubmitting || !acceptTerms}
-                className="w-full btn-primary py-4 text-lg font-bold disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isSubmitting ? 'Se trimite...' : 'Trimite Solicitare'}
-              </button>
+              <div className="sm:col-span-2">
+                <button
+                  type="submit"
+                  disabled={isSubmitting || !acceptTerms}
+                  className="btn btn-accent w-full disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-none"
+                >
+                  {isSubmitting ? 'Se trimite...' : 'Trimite Solicitare'}
+                </button>
 
-              {submitMessage && (
-                <p className={`text-center font-medium ${submitMessage.startsWith('✅') ? 'text-green-500' : 'text-red-500'}`}>
-                  {submitMessage}
-                </p>
-              )}
+                {submitMessage && (
+                  <p role="status" className={`mt-4 text-center font-medium ${submitMessage.startsWith('✅') ? 'text-green-400' : 'text-red-400'}`}>
+                    {submitMessage}
+                  </p>
+                )}
+              </div>
             </form>
           </div>
         </div>
       </div>
-      
-      {/* Terms Modal */}
-      <TermsModal isOpen={isTermsOpen} onClose={() => setIsTermsOpen(false)} />
-      
-      {/* Fade to black */}
-      <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-b from-transparent to-dark pointer-events-none"></div>
+
+      {isTermsOpen && (
+        <Suspense fallback={null}>
+          <TermsModal isOpen={isTermsOpen} onClose={() => setIsTermsOpen(false)} />
+        </Suspense>
+      )}
     </section>
   )
 }

@@ -109,7 +109,7 @@ const CookiePolicyModal = ({ isOpen, onClose }: CookiePolicyModalProps) => {
                   <h4 className="font-bold text-white mb-2">🔧 Cookie-uri necesare (esențiale)</h4>
                   <p className="text-base leading-relaxed">
                     Aceste cookie-uri sunt necesare pentru funcționarea corectă a site-ului și nu pot fi dezactivate. 
-                    Includ cookie-uri pentru navigare, cache și Service Worker.
+                    Includ cookie-ul care ține minte alegerea dvs. din bannerul de cookie-uri.
                   </p>
                 </div>
 
@@ -138,11 +138,10 @@ const CookiePolicyModal = ({ isOpen, onClose }: CookiePolicyModalProps) => {
             </section>
 
             <section>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Service Worker și Cache</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Cache-ul browserului</h3>
               <p className="text-base leading-relaxed">
-                Site-ul folosește tehnologia Service Worker pentru a îmbunătăți performanța și pentru funcționare offline. 
-                Service Worker-ul stochează în cache fișierele site-ului (imagini, CSS, JavaScript) pentru încărcare mai rapidă. 
-                Aceste date sunt stocate local pe dispozitivul dvs.
+                Browserul dvs. păstrează local fișierele site-ului (imagini, CSS, JavaScript) pentru încărcare mai rapidă la
+                vizitele următoare. Aceste fișiere nu conțin date personale și pot fi șterse oricând din setările browserului.
               </p>
             </section>
 

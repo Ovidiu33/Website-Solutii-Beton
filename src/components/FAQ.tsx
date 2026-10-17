@@ -1,9 +1,6 @@
-import { Plus, Minus } from 'lucide-react'
-import { useState } from 'react'
+import { Plus, Phone } from 'lucide-react'
 
 const FAQ = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(0)
-
   const faqs = [
     {
       question: "Faceți mizerie mult? Cum procedați cu praful și apa?",
@@ -22,14 +19,14 @@ const FAQ = () => {
       answer: "O gaură standard pentru hotă într-un perete de 30-40cm durează 30-60 minute. Timpul variază în funcție de grosime și tipul materialului (beton, cărămidă, BCA). Pentru lucrări mai complexe sau multiple găuri, poate varia durata de timp."
     },
     {
+      question: "Evaluarea la fața locului se plătește?",
+      answer: "Nu. Evaluarea la fața locului este gratuită. Venim, vedem lucrarea și vă spunem prețul înainte să începem."
+    },
+    {
       question: "Pe ce materiale lucrați și cât de gros poate fi peretele?",
       answer: "Lucrăm pe orice tip de material: beton (inclusiv beton armat), cărămidă, BCA, piatră, asfalt. Avem echipament profesional specializat care poate carota pereți de peste 1 metru grosime."
     }
   ]
-
-  const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index)
-  }
 
   // Generate Schema.org FAQPage JSON-LD
   const faqSchema = {
@@ -54,56 +51,38 @@ const FAQ = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <section id="intrebari" className="relative py-16 md:py-24 bg-gradient-to-br from-dark via-gray-dark to-dark overflow-hidden scroll-mt-24">
-        {/* Fade from black at top */}
-        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-dark to-transparent pointer-events-none"></div>
-        
-        <div className="container-custom relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="section-title">Întrebări Frecvente despre serviciile oferite</h2>
-            <p className="text-xl text-gray-light max-w-3xl mx-auto mt-4">
-              Răspunsuri la cele mai frecvente întrebări despre serviciile noastre de carotare, tăiere și demolări în beton. 
-              <br />Nu găsiți răspunsul? <a href="tel:0758663415" className="text-primary hover:underline font-semibold">Sunați-ne la 0758 663 415</a>
+      <section id="intrebari" className="theme-alt scroll-mt-16 lg:scroll-mt-20 py-16 md:py-24">
+        <div className="container-custom grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+          <div className="lg:col-span-5 lg:sticky lg:top-28">
+            <h2 className="heading-lg">Întrebări Frecvente despre serviciile oferite</h2>
+            <p className="mt-4 text-lg text-mute">
+              Răspunsuri la cele mai frecvente întrebări despre serviciile noastre de carotare, tăiere și demolări în beton.
             </p>
+            <p className="mt-6 text-lg">Nu găsiți răspunsul?</p>
+            <a href="tel:+40758663415" className="btn btn-accent mt-3 h-auto min-h-14 py-3 w-full sm:w-auto whitespace-normal text-center">
+              <Phone className="h-5 w-5" strokeWidth={2.25} />
+              Sunați-ne la 0758 663 415
+            </a>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-4">
+          <div className="lg:col-span-7 divide-y divide-white/10 border-y border-white/10">
             {faqs.map((faq, index) => (
-              <div
-                key={index}
-                className="bg-gray-dark border border-gray-medium rounded-lg overflow-hidden hover:border-primary transition-all duration-300"
-              >
-                <button
-                  onClick={() => toggleFAQ(index)}
-                  className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-dark/50 transition-colors duration-200"
-                  aria-expanded={openIndex === index}
-                >
-                  <h3 className="text-lg md:text-xl font-semibold text-white pr-8">
+              <details key={faq.question} {...{ name: 'intrebari' }} open={index === 0} className="group">
+                <summary className="flex cursor-pointer list-none items-start justify-between gap-6 py-6 [&::-webkit-details-marker]:hidden">
+                  <h3 className="font-display font-bold text-lg md:text-xl leading-snug transition-colors duration-200 group-hover:text-accent-ink">
                     {faq.question}
                   </h3>
-                  <div className="flex-shrink-0">
-                    {openIndex === index ? (
-                      <Minus className="h-6 w-6 text-primary" />
-                    ) : (
-                      <Plus className="h-6 w-6 text-primary" />
-                    )}
-                  </div>
-                </button>
-                
-                {openIndex === index && (
-                  <div className="px-6 pb-5 pt-2">
-                    <p className="text-gray-light leading-relaxed text-base md:text-lg">
-                      {faq.answer}
-                    </p>
-                  </div>
-                )}
-              </div>
+                  <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded border border-white/15 text-accent transition-[transform,background-color,color] duration-300 group-open:rotate-45 group-open:bg-accent group-open:text-graphite">
+                    <Plus className="h-5 w-5" strokeWidth={2.5} />
+                  </span>
+                </summary>
+                <p className="pb-6 pr-12 text-mute leading-relaxed text-base md:text-lg">
+                  {faq.answer}
+                </p>
+              </details>
             ))}
           </div>
         </div>
-        
-        {/* Fade to black */}
-        <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-b from-transparent to-dark pointer-events-none"></div>
       </section>
     </>
   )

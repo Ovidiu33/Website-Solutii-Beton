@@ -2,21 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Archivo';
+  src: url('/fonts/archivo.woff2') format('woff2');
+  font-weight: 500 800;
+  font-style: normal;
+  font-display: optional;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 30px;
   }
-  
+
+  @media (min-width: 1800px) {
+    html {
+      font-size: 17px;
+    }
+  }
+
+  @media (min-width: 2300px) {
+    html {
+      font-size: 18.5px;
+    }
+  }
+
   body {
     @apply bg-dark text-white antialiased;
     font-display: swap;
+  }
+
+  .theme-dark {
+    --canvas: 18 18 18;
+    --surface: 30 30 30;
+    --ink: 244 244 242;
+    --mute: 166 166 160;
+    --accent-ink: 255 122 26;
+  }
+
+  .theme-alt {
+    --canvas: 24 24 24;
+    --surface: 33 33 33;
+    --ink: 244 244 242;
+    --mute: 166 166 160;
+    --accent-ink: 255 122 26;
+  }
+
+  .theme-dark,
+  .theme-alt {
+    background-color: rgb(var(--canvas));
+    color: rgb(var(--ink));
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(255 107 0);
+    outline-offset: 2px;
   }
 }
 
 @layer components {
   .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-[112rem] mx-auto px-4 sm:px-6 lg:px-10 2xl:px-16;
   }
   
   .btn-primary {
@@ -33,6 +80,40 @@
 
   .section-subtitle {
     @apply text-lg md:text-xl text-gray-light mb-12;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2.5 h-14 px-7 rounded font-display font-bold text-lg whitespace-nowrap transition-[color,background-color,border-color,box-shadow,transform] duration-200 ease-out hover:-translate-y-0.5 active:translate-y-0 active:duration-75;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-graphite hover:bg-accent-hover hover:shadow-[0_10px_24px_-10px_rgb(255_107_0/0.65)];
+  }
+
+  .btn-outline {
+    @apply border border-ink/25 text-ink hover:border-ink/70 hover:bg-ink/[0.06];
+  }
+
+  .link-underline {
+    @apply relative after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:origin-left after:scale-x-0 after:bg-accent after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100;
+  }
+
+  .logo-ring {
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  .group:hover .logo-ring {
+    transform: rotate(180deg);
+  }
+
+  .heading-xl {
+    @apply font-display font-extrabold tracking-tight leading-[0.95];
+  }
+
+  .heading-lg {
+    @apply font-display font-extrabold text-3xl md:text-[2.75rem] tracking-tight leading-[1.05];
   }
 }
 
@@ -52,6 +133,19 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }
 

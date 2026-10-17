@@ -6,6 +6,11 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        phone: { raw: '(max-width: 767px) and (orientation: portrait)' },
+        'phone-short': { raw: '(max-width: 767px) and (orientation: portrait) and (max-height: 620px)' },
+        short: { raw: '(max-height: 500px) and (orientation: landscape)' },
+      },
       colors: {
         primary: {
           DEFAULT: '#FF6B00',
@@ -23,6 +28,16 @@ export default {
           dark: '#4d4d4d',
           medium: '#a3a3a3',
         },
+        accent: {
+          DEFAULT: 'rgb(255 107 0 / <alpha-value>)',
+          hover: 'rgb(255 129 38 / <alpha-value>)',
+          ink: 'rgb(var(--accent-ink) / <alpha-value>)',
+        },
+        canvas: 'rgb(var(--canvas) / <alpha-value>)',
+        surface: 'rgb(var(--surface) / <alpha-value>)',
+        ink: 'rgb(var(--ink) / <alpha-value>)',
+        mute: 'rgb(var(--mute) / <alpha-value>)',
+        graphite: '#121212',
       },
       fontFamily: {
         sans: [
@@ -35,6 +50,7 @@ export default {
           'sans-serif',
         ],
         display: [
+          'Archivo',
           '-apple-system',
           'BlinkMacSystemFont',
           'Segoe UI',

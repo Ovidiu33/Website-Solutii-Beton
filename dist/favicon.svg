@@ -1,15 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- Background -->
-  <rect width="64" height="64" rx="12" fill="#1a1a1a"/>
-  
-  <!-- Orange circle (drill bit representation) -->
-  <circle cx="32" cy="32" r="20" fill="#FF6B00" opacity="0.2"/>
-  <circle cx="32" cy="32" r="14" fill="#FF6B00"/>
-  
-  <!-- Drill bit center -->
-  <circle cx="32" cy="32" r="8" fill="#1a1a1a"/>
-  <circle cx="32" cy="32" r="4" fill="#FF6B00"/>
-  
-  <!-- Letter C -->
-  <path d="M 38 25 A 8 8 0 0 1 38 39" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#141414"/><path fill="#FF6B00" d="M33.96 7.08A25 25 0 0 1 48.24 12.99L41.74 20.59A15 15 0 0 0 33.18 17.05ZM51.01 15.76A25 25 0 0 1 56.92 30.04L46.95 30.82A15 15 0 0 0 43.41 22.26ZM56.92 33.96A25 25 0 0 1 51.01 48.24L43.41 41.74A15 15 0 0 0 46.95 33.18ZM48.24 51.01A25 25 0 0 1 33.96 56.92L33.18 46.95A15 15 0 0 0 41.74 43.41ZM30.04 56.92A25 25 0 0 1 15.76 51.01L22.26 43.41A15 15 0 0 0 30.82 46.95ZM12.99 48.24A25 25 0 0 1 7.08 33.96L17.05 33.18A15 15 0 0 0 20.59 41.74ZM7.08 30.04A25 25 0 0 1 12.99 15.76L20.59 22.26A15 15 0 0 0 17.05 30.82ZM15.76 12.99A25 25 0 0 1 30.04 7.08L30.82 17.05A15 15 0 0 0 22.26 20.59Z"/></svg>

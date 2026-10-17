@@ -3,13 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preload" href="/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <!-- Critical CSS Inline - Prevents render blocking -->
     <style>
       *,::before,::after{box-sizing:border-box;border-width:0;border-style:solid;border-color:currentColor}
-      html{scroll-behavior:smooth;scroll-padding-top:30px;-webkit-text-size-adjust:100%;tab-size:4;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;line-height:1.5}
-      body{margin:0;background-color:#1a1a1a;color:#ffffff;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+      html{scroll-behavior:smooth;scroll-padding-top:30px;background-color:#121212;-webkit-text-size-adjust:100%;tab-size:4;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;line-height:1.5}
+      body{margin:0;background-color:#121212;color:#ffffff;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
       #root{min-height:100vh;display:flow-root}
       .bg-dark{background-color:#1a1a1a}
       .text-white{color:#fff}
@@ -78,6 +81,7 @@
     <meta property="og:image" content="https://ecarota.ro/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="eCAROTA: carotare și tăieri beton în Suceava și Botoșani, 0758 663 415" />
     <meta property="og:locale" content="ro_RO" />
     <meta property="og:site_name" content="eCarota" />
     
@@ -104,18 +108,18 @@
     <meta name="apple-mobile-web-app-title" content="eCarota" />
     
     <!-- Theme Color -->
-    <meta name="theme-color" content="#0a0a0a" />
-    <meta name="msapplication-TileColor" content="#0a0a0a" />
+    <meta name="theme-color" content="#121212" />
+    <meta name="msapplication-TileColor" content="#121212" />
     
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": "HomeAndConstructionBusiness",
       "name": "Carotare Beton Suceava și Botoșani",
       "alternateName": "eCarota",
       "description": "Servicii profesionale de carotare, tăiere și demolări în beton. Găuri până la Ø 500mm.",
-      "image": "https://ecarota.ro/logo.png",
+      "image": "https://ecarota.ro/og-image.jpg",
       "logo": "https://ecarota.ro/logo.png",
       "url": "https://ecarota.ro",
       "telephone": "+40758663415",
@@ -224,8 +228,7 @@
         "telephone": "+40758663415",
         "contactType": "customer service",
         "areaServed": ["RO-SV", "RO-BT"],
-        "availableLanguage": ["Romanian"],
-        "contactOption": "TollFree"
+        "availableLanguage": ["Romanian"]
       },
       "sameAs": [
         "https://www.tiktok.com/@carotare.taiere.beton"
@@ -240,12 +243,7 @@
       "@type": "WebSite",
       "name": "eCarota",
       "alternateName": ["ecarota.ro", "Carotare Beton Suceava și Botoșani"],
-      "url": "https://ecarota.ro",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://ecarota.ro/?s={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
+      "url": "https://ecarota.ro"
     }
     </script>
     
