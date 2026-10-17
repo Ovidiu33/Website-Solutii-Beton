@@ -118,10 +118,11 @@ const Contact = () => {
             </div>
           </div>
 
-          <div id="oferta" className="lg:col-span-7 scroll-mt-24 rounded border border-white/10 bg-surface/60 p-6 md:p-8">
+          {/* Pe desktop cardul are înălțimea coloanei din stânga: „Descriere lucrare” crește și umple spațiul */}
+          <div id="oferta" className="lg:col-span-7 lg:flex lg:flex-col scroll-mt-24 rounded border border-white/10 bg-surface/60 p-6 md:p-8">
             <h3 className="font-display font-bold text-2xl">Solicită Ofertă</h3>
 
-            <form className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-5" onSubmit={handleSubmit}>
+            <form className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-5 lg:flex-1 lg:grid-rows-[auto_auto_1fr_auto_auto]" onSubmit={handleSubmit}>
               {/* Anti-spam: câmp invizibil pentru oameni, completat doar de boți */}
               <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
 
@@ -151,14 +152,14 @@ const Contact = () => {
                 </select>
               </div>
 
-              <div className="sm:col-span-2">
+              <div className="sm:col-span-2 lg:flex lg:flex-col">
                 <label htmlFor="message" className={LABEL}>Descriere lucrare *</label>
                 <textarea
                   id="message"
                   name="message"
                   required
                   rows={4}
-                  className={`${FIELD} h-auto py-3 resize-none`}
+                  className={`${FIELD} h-auto py-3 resize-none lg:flex-1`}
                   placeholder="Dimensiuni, locație, material,..."
                 ></textarea>
               </div>

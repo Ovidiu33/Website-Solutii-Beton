@@ -24,7 +24,7 @@ const Footer = () => {
 
   return (
     <footer className="theme-dark border-t border-white/10 bg-[#0d0d0d] pb-20 lg:pb-0">
-      <div className="container-custom py-14 md:py-16">
+      <div className="container-custom pt-14 md:pt-16 pb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10">
           <div className="lg:col-span-4">
             <a href="#" className="group inline-flex" aria-label="eCAROTA, mergi la începutul paginii">
