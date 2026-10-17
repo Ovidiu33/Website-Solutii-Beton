@@ -20,13 +20,15 @@
     
     <!-- Performance Optimizations - Preconnect moved to defer script -->
     
-    <!-- Google Analytics 4 - Deferred for better performance -->
+    <!-- Google Analytics 4 - only after cookie consent (GDPR), deferred for better performance -->
     <script>
-      // Defer GA loading until after page load
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      
-      window.addEventListener('load', function() {
+
+      // Called on page load if consent was already given, or by the cookie banner on "Accept"
+      window.loadGA = function() {
+        if (window.gaLoaded) return;
+        window.gaLoaded = true;
         // Preconnect after load
         var preconnect = document.createElement('link');
         preconnect.rel = 'preconnect';
@@ -45,27 +47,13 @@
             gtag('config', 'G-NKTNP3Z6EC');
           };
         }, 100);
+      };
+
+      window.addEventListener('load', function() {
+        if (document.cookie.indexOf('cookie-consent=accepted') !== -1) window.loadGA();
       });
     </script>
     
-    <!-- Defer CSS loading for better FCP -->
-    <script>
-      // Load CSS asynchronously to prevent render blocking
-      var cssLoad = function() {
-        var links = document.getElementsByTagName('link');
-        for (var i = 0; i < links.length; i++) {
-          var link = links[i];
-          if (link.rel === 'stylesheet' && link.media === 'print') {
-            link.media = 'all';
-          }
-        }
-      };
-      if (window.addEventListener) {
-        window.addEventListener('load', cssLoad);
-      } else {
-        window.attachEvent('onload', cssLoad);
-      }
-    </script>
     
     <!-- SEO Meta Tags -->
     <title>Carotare Beton Suceava și Botoșani - Tăieri și Carotări Profesionale</title>

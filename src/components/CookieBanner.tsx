@@ -20,6 +20,7 @@ const CookieBanner = () => {
     const expires = new Date()
     expires.setFullYear(expires.getFullYear() + 1)
     document.cookie = `cookie-consent=accepted; expires=${expires.toUTCString()}; path=/`
+    window.loadGA?.()
     setShowBanner(false)
   }
 
@@ -47,7 +48,7 @@ const CookieBanner = () => {
               <Cookie className="h-4 w-4 text-primary" /> Cookies
               </h3>
               <p className="text-xs text-gray-light leading-relaxed">
-                Folosim doar cookies esențiale. <strong className="text-white">Fără tracking</strong>.
+                Folosim cookies esențiale și, <strong className="text-white">doar dacă accepți</strong>, Google Analytics pentru statistici de trafic.
               </p>
             </div>
             <button

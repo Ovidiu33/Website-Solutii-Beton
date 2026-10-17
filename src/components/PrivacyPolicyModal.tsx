@@ -102,6 +102,7 @@ const PrivacyPolicyModal = ({ isOpen, onClose }: PrivacyPolicyModalProps) => {
                 <li>Trimiterii de răspunsuri la solicitările primite prin formularele de contact online</li>
                 <li>Pentru a vă transmite comunicările/informațiile obligatorii, în baza obligațiilor noastre legale</li>
                 <li>Pentru a răspunde la întrebările dvs. sau atunci când ne contactați</li>
+                <li>Măsurării traficului pe site prin Google Analytics, doar dacă ați acceptat cookie-urile de analiză (detalii în Politica Cookie)</li>
               </ul>
               <p className="mt-3 font-semibold text-primary">
                 Datele personale colectate pe acest site nu sunt folosite și nu sunt transmise unor terți în scop 

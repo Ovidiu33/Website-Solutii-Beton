@@ -18,6 +18,20 @@ const CookiePolicyModal = ({ isOpen, onClose }: CookiePolicyModalProps) => {
     }
   }, [isOpen])
 
+  // Withdraw consent: delete the consent cookie and the Google Analytics cookies, then reload so the banner shows again
+  const resetCookieConsent = () => {
+    const expired = 'expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/'
+    document.cookie
+      .split(';')
+      .map(c => c.trim().split('=')[0])
+      .filter(name => name === 'cookie-consent' || name.startsWith('_ga'))
+      .forEach(name => {
+        document.cookie = `${name}=; ${expired}`
+        document.cookie = `${name}=; ${expired}; domain=.${location.hostname}`
+      })
+    location.reload()
+  }
+
   if (!isOpen) return null
 
   return (
@@ -102,8 +116,14 @@ const CookiePolicyModal = ({ isOpen, onClose }: CookiePolicyModalProps) => {
                 <div className="p-4 bg-primary/10 rounded-lg border border-primary/30">
                   <h4 className="font-bold text-white mb-2">📊 Cookie-uri de performanță și analiză</h4>
                   <p className="text-base leading-relaxed">
-                    Ne permit să măsurăm numărul de vizitatori și să vedem cum se deplasează vizitatorii pe site-ul nostru. 
+                    Ne permit să măsurăm numărul de vizitatori și să vedem cum se deplasează vizitatorii pe site-ul nostru.
                     Aceste informații ne ajută să îmbunătățim funcționarea site-ului.
+                  </p>
+                  <p className="text-base leading-relaxed mt-2">
+                    Folosim <strong className="text-white">Google Analytics 4</strong> (Google Ireland Ltd.), care plasează
+                    cookie-urile <strong className="text-white">_ga</strong> și <strong className="text-white">_ga_*</strong> (valabile
+                    până la 2 ani). Acestea sunt plasate <strong className="text-white">doar dacă apăsați „Accept”</strong> în
+                    bannerul de cookie-uri; dacă refuzați, Google Analytics nu se încarcă deloc.
                   </p>
                 </div>
 
@@ -129,8 +149,9 @@ const CookiePolicyModal = ({ isOpen, onClose }: CookiePolicyModalProps) => {
             <section>
               <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Cookie-uri terțe</h3>
               <p className="text-base leading-relaxed">
-                Nu folosim cookie-uri de tracking sau publicitate de la terți. Site-ul nostru nu transmite datele 
-                dvs. către agenții de publicitate sau rețele de marketing.
+                Singurele cookie-uri terțe sunt cele de analiză Google Analytics, plasate doar cu acordul dvs.
+                Nu folosim cookie-uri de publicitate și nu transmitem datele dvs. către agenții de publicitate
+                sau rețele de marketing.
               </p>
             </section>
 
@@ -153,6 +174,17 @@ const CookiePolicyModal = ({ isOpen, onClose }: CookiePolicyModalProps) => {
                   <li><strong className="text-white">Edge:</strong> Setări → Cookie-uri și permisiuni site → Gestionare și ștergere cookie-uri</li>
                 </ul>
               </div>
+
+              <p className="text-base leading-relaxed mt-4">
+                Vă puteți retrage oricând acordul pentru cookie-urile de analiză:
+              </p>
+              <button
+                type="button"
+                onClick={resetCookieConsent}
+                className="mt-2 text-sm text-primary hover:text-white border border-primary hover:bg-primary px-4 py-2 rounded transition-colors"
+              >
+                Modifică acordul pentru cookie-uri
+              </button>
             </section>
 
             <section>

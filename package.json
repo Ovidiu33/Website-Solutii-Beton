@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node defer-css.js",
+    "build": "vite build && node inline-css.js",
     "preview": "vite preview"
   },
   "dependencies": {
