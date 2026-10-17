@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
 import { X, Cookie, Check, Ban } from 'lucide-react'
+import CookiePolicyModal from './CookiePolicyModal'
 
 const CookieBanner = () => {
   const [showBanner, setShowBanner] = useState(false)
+  const [isPolicyOpen, setIsPolicyOpen] = useState(false)
 
   useEffect(() => {
     // Check if user has already made a choice
@@ -48,7 +50,14 @@ const CookieBanner = () => {
               <Cookie className="h-4 w-4 text-primary" /> Cookies
               </h3>
               <p className="text-xs text-gray-light leading-relaxed">
-                Folosim cookies esențiale și, <strong className="text-white">doar dacă accepți</strong>, Google Analytics pentru statistici de trafic.
+                Folosim cookie-uri pentru a analiza traficul și a îmbunătăți site-ul.{' '}
+                <button
+                  type="button"
+                  onClick={() => setIsPolicyOpen(true)}
+                  className="text-primary hover:text-white underline transition-colors"
+                >
+                  Detalii
+                </button>
               </p>
             </div>
             <button
@@ -76,6 +85,8 @@ const CookieBanner = () => {
           </div>
         </div>
       </div>
+
+      <CookiePolicyModal isOpen={isPolicyOpen} onClose={() => setIsPolicyOpen(false)} />
     </>
   )
 }
