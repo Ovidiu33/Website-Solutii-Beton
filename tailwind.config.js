@@ -10,6 +10,8 @@ export default {
         phone: { raw: '(max-width: 767px) and (orientation: portrait)' },
         'phone-short': { raw: '(max-width: 767px) and (orientation: portrait) and (max-height: 620px)' },
         short: { raw: '(max-height: 500px) and (orientation: landscape)' },
+        // min-[..]/max-[..] nu se generează când există ecrane raw, deci telefoanele înguste au ecranul lor
+        narrow: { raw: '(max-width: 374px)' },
       },
       colors: {
         primary: {

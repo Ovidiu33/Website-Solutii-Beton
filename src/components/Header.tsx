@@ -32,9 +32,9 @@ const Header = () => {
   return (
     <header className="theme-dark fixed top-0 inset-x-0 z-50 border-b border-white/10 bg-graphite">
       <div className="container-custom">
-        <div className="flex items-center justify-between gap-6 h-16 lg:h-20">
+        <div className="flex items-center justify-between gap-6 narrow:gap-3 h-16 lg:h-20">
           <a href="#" className="group flex items-center shrink-0" aria-label="eCAROTA, mergi la începutul paginii">
-            <Logo className="h-[22px] lg:h-[26px] w-auto" />
+            <Logo className="h-[22px] narrow:h-[19px] lg:h-[26px] w-auto" />
             <span className="sr-only">eCAROTA</span>
           </a>
 
@@ -67,6 +67,15 @@ const Header = () => {
           </div>
 
           <div className="flex lg:hidden items-center gap-1 min-[360px]:gap-2">
+            <a
+              href={TIKTOK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-11 w-11 items-center justify-center rounded text-ink/75 hover:text-ink hover:bg-white/5 transition-colors"
+              aria-label="TikTok"
+            >
+              <TikTokIcon className="h-5 w-5" />
+            </a>
             <a href="tel:+40758663415" className="btn btn-accent h-11 px-3 min-[360px]:px-4 text-base" aria-label="Sună la 0758 663 415">
               <Phone className="h-[18px] w-[18px]" strokeWidth={2.25} />
               <span className="hidden min-[360px]:inline">Sună</span>

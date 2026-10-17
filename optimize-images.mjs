@@ -8,7 +8,7 @@ const OUT = './src/assets/img';
 // slug, sursă, crop opțional (fracții din imagine: left, top, width, height), lățimi generate
 const IMAGES = [
   { slug: 'hero-wide', src: 'carotaj,prima poza vreau.jpeg', crop: [0, 0.14, 1, 0.75], widths: [960, 1600], quality: [36, 50] },
-  { slug: 'hero-mobile', src: 'carotaj,prima poza vreau.jpeg', crop: [0.15, 0.25, 0.75, 0.75], widths: [480, 760, 1080], quality: [30, 46] },
+  { slug: 'hero-mobile', src: 'carotaj,prima poza vreau.jpeg', crop: [0.08, 0.17, 0.85, 0.6375], widths: [480, 760, 1080], quality: [30, 46] },
   { slug: 'carotaj-stativ', src: 'carotaj,prima poza vreau.jpeg' },
   { slug: 'carotaj-santier', src: 'carotaj pe santier.jpeg' },
   { slug: 'gauri-traversare', src: 'Gauri traversare tevi.jpeg' },

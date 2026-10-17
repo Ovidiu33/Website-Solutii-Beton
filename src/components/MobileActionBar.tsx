@@ -31,16 +31,16 @@ const MobileActionBar = () => {
       aria-hidden={!visible}
     >
       <div className="grid grid-cols-3 gap-2 p-2">
-        <a href="tel:+40758663415" tabIndex={visible ? 0 : -1} className="btn btn-accent h-12 px-2 text-base">
-          <Phone className="h-5 w-5" strokeWidth={2.25} />
+        <a href="tel:+40758663415" tabIndex={visible ? 0 : -1} className="btn btn-accent h-14 px-2 flex-col gap-1 text-sm sm:h-12 sm:flex-row sm:gap-2.5 sm:text-base">
+          <Phone className="h-6 w-6 sm:h-5 sm:w-5" strokeWidth={2.25} />
           Sună
         </a>
-        <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" tabIndex={visible ? 0 : -1} className="btn h-12 px-2 text-base bg-[#25D366] text-graphite hover:bg-[#3ee07a]">
-          <WhatsAppIcon className="h-5 w-5" />
+        <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" tabIndex={visible ? 0 : -1} className="btn h-14 px-2 flex-col gap-1 text-sm sm:h-12 sm:flex-row sm:gap-2.5 sm:text-base bg-[#25D366] text-graphite hover:bg-[#3ee07a]">
+          <WhatsAppIcon className="h-6 w-6 shrink-0" />
           WhatsApp
         </a>
-        <a href="#oferta" tabIndex={visible ? 0 : -1} className="btn btn-outline h-12 px-2 text-base">
-          <FileText className="h-5 w-5" strokeWidth={2.25} />
+        <a href="#oferta" tabIndex={visible ? 0 : -1} className="btn btn-outline h-14 px-2 flex-col gap-1 text-sm sm:h-12 sm:flex-row sm:gap-2.5 sm:text-base">
+          <FileText className="h-6 w-6 sm:h-5 sm:w-5" strokeWidth={2.25} />
           Ofertă
         </a>
       </div>
