@@ -1,6 +1,5 @@
 import { Phone, Mail, MapPin, Clock } from 'lucide-react'
 import { useState, FormEvent } from 'react'
-import emailjs from '@emailjs/browser'
 import TermsModal from './TermsModal'
 
 const Contact = () => {
@@ -17,19 +16,16 @@ const Contact = () => {
     const form = e.currentTarget
 
     try {
-      await emailjs.sendForm(
-        'service_swpejgg',
-        'template_ccf8qbb',
-        form,
-        'Nm29ouhyIsnREZHbD'
-      )
-      
+      const response = await fetch('/contact.php', { method: 'POST', body: new FormData(form) })
+      const result = await response.json().catch(() => ({ ok: false }))
+      if (!response.ok || !result.ok) throw new Error(`HTTP ${response.status}`)
+
       setSubmitMessage('✅ Mesaj trimis cu succes! Te contactăm în curând.')
       form.reset()
       setAcceptTerms(false)
     } catch (error) {
       setSubmitMessage('❌ Eroare la trimitere. Sună direct la 0758 663 415.')
-      console.error('EmailJS error:', error)
+      console.error('Contact form error:', error)
     } finally {
       setIsSubmitting(false)
     }
@@ -123,6 +119,9 @@ const Contact = () => {
             </h3>
 
             <form className="space-y-6" onSubmit={handleSubmit}>
+              {/* Anti-spam: câmp invizibil pentru oameni, completat doar de boți */}
+              <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
+
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-light mb-2">
                   Nume complet *
