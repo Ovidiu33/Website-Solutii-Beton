@@ -11,8 +11,8 @@ import img8b from '../assets/gallery-webp/carotaj-500mm-2.webp'
 
 const Gallery = () => {
   const images = [
-    { src: img1, alt: "Carotare în beton cu stativ", priority: true },
-    { src: img6, alt: "Carotare beton și evacuare moloz", priority: true },
+    { src: img1, alt: "Carotare în beton cu stativ" },
+    { src: img6, alt: "Carotare beton și evacuare moloz" },
     { src: img3, alt: "Lucrări carotare beton pe șantier mare" },
     { src: img4, alt: "Găuri pentru traversare țevi și instalații" },
     { src: img2, alt: "Gaură pentru centrală" },
@@ -73,9 +73,6 @@ const GalleryItem = ({ image, index }: { image: any; index: number }) => {
   const currentSrc = isSlideshow 
     ? (isMobile ? image.src[currentIndex] : (isHovered ? image.src[1] : image.src[0]))
     : image.src;
-  
-  // Priority loading for first 2 images (above-the-fold on desktop)
-  const isPriority = image.priority === true;
 
   return (
     <div 
@@ -87,8 +84,7 @@ const GalleryItem = ({ image, index }: { image: any; index: number }) => {
         <img 
           src={currentSrc} 
           alt={image.alt}
-          loading={isPriority ? "eager" : "lazy"}
-          fetchPriority={isPriority ? "high" : "low"}
+          loading="lazy"
           decoding="async"
           width="400"
           height="256"

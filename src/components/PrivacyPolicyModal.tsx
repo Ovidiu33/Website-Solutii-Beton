@@ -66,7 +66,7 @@ const PrivacyPolicyModal = ({ isOpen, onClose }: PrivacyPolicyModalProps) => {
               <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Cine suntem?</h3>
               <p className="text-base leading-relaxed">
                 Prezenta Politică de Confidențialitate definește condițiile de utilizare a site-ului 
-                <strong className="text-white"> Soluții Beton</strong>.
+                <strong className="text-white"> eCarota (ecarota.ro)</strong>.
               </p>
               <p className="mt-2 text-base leading-relaxed">
                 <strong className="text-white">S.C. SULERU RENOV S.R.L.</strong> (CUI: RO38206793, J33/1603/2017) 

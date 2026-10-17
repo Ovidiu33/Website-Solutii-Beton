@@ -7,10 +7,12 @@ import { join } from 'path';
 const htmlPath = join(process.cwd(), 'dist', 'index.html');
 let html = readFileSync(htmlPath, 'utf-8');
 
-// Replace stylesheet links with deferred loading pattern
+// Replace stylesheet links with deferred loading pattern.
+// The preload keeps the CSS at high priority, so it arrives before React renders
+// (a media="print" stylesheet alone is fetched last and causes unstyled content + layout shift)
 html = html.replace(
   /<link rel="stylesheet"([^>]+)>/g,
-  '<link rel="stylesheet"$1 media="print" onload="this.media=\'all\'; this.onload=null;">'
+  '<link rel="preload" as="style"$1>\n    <link rel="stylesheet"$1 media="print" onload="this.media=\'all\'; this.onload=null;">'
 );
 
 // Add noscript fallback

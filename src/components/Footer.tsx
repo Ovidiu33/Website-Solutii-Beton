@@ -17,7 +17,7 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <h2 className="text-2xl font-display font-bold text-white mb-4">
-              CAROTARE <span className="text-primary">BETON</span>
+              <span className="text-primary">e</span>CAROTA
             </h2>
             <p className="text-gray-light">
               Ne ocupăm de găuri și tăieturi în beton, fără complicații și fără promisiuni deșarte. Dacă ai nevoie de ajutor, suntem la un telefon distanță.
@@ -166,7 +166,7 @@ const Footer = () => {
 
             {/* Copyright - Center bottom */}
             <p className="text-gray-light text-sm text-center">
-              © {currentYear} Carotare Beton Suceava și Botoșani. Toate drepturile rezervate.
+              © {currentYear} eCarota – Carotare Beton Suceava și Botoșani. Toate drepturile rezervate.
             </p>
           </div>
         </div>
