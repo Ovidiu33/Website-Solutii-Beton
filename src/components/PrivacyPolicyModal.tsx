@@ -31,7 +31,7 @@ const PrivacyPolicyModal = ({ isOpen, onClose }: PrivacyPolicyModalProps) => {
       >
         {/* Header */}
         <div className="sticky top-0 bg-[#1a1a1a] border-b-2 border-primary/40 px-4 md:px-6 py-4 md:py-5 flex items-center justify-between">
-          <h2 className="text-2xl md:text-3xl font-bold text-white">Politica de Confidențialitate</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-white">Politica de confidențialitate</h2>
           <button
             onClick={(e) => {
               e.preventDefault()
@@ -65,13 +65,10 @@ const PrivacyPolicyModal = ({ isOpen, onClose }: PrivacyPolicyModalProps) => {
             <section>
               <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Cine suntem?</h3>
               <p className="text-base leading-relaxed">
-                Prezenta Politică de Confidențialitate definește condițiile de utilizare a site-ului 
-                <strong className="text-white"> eCarota (ecarota.ro)</strong>.
+                Această politică explică ce date personale colectăm prin site-ul <strong className="text-white">eCarota (ecarota.ro)</strong> și cum le folosim.
               </p>
               <p className="mt-2 text-base leading-relaxed">
-                <strong className="text-white">S.C. SULERU RENOV S.R.L.</strong> (CUI: RO38206793, J33/1603/2017) 
-                încearcă să protejeze dreptul la intimitate și la imagine al utilizatorilor site-ului. 
-                Ne propunem să oferim utilizatorilor o experiență online sigură.
+                <strong className="text-white">S.C. SULERU RENOV S.R.L.</strong> (CUI: RO38206793, J33/1603/2017) este operatorul acestor date. Le protejăm și le folosim doar în scopurile de mai jos.
               </p>
             </section>
 
@@ -87,72 +84,66 @@ const PrivacyPolicyModal = ({ isOpen, onClose }: PrivacyPolicyModalProps) => {
             </section>
 
             <section>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Formulare de contact</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Formularul de contact</h3>
               <p className="text-base leading-relaxed">
-                Prin intermediul formularului de contact, ne puteți adresa întrebări sau puteți solicita oferte. 
-                Datele dvs. vor fi utilizate exclusiv în scopul analizării solicitării dvs. și pentru a vă contacta 
-                în legătură cu serviciile noastre.
+                Prin formularul de contact ne puteți pune întrebări sau cere o ofertă. Folosim datele doar ca să analizăm cererea și să vă contactăm în legătură cu ea. Ca să vă putem suna rapid, datele din formular (nume, telefon, email, serviciu și mesaj)
+                ne sunt transmise și ca notificare internă prin WhatsApp (Meta).
               </p>
             </section>
 
             <section>
               <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">În ce scop folosim datele?</h3>
-              <p className="text-base leading-relaxed">Datele personale sunt colectate în scopul:</p>
+              <p className="text-base leading-relaxed">Folosim datele pentru:</p>
               <ul className="list-disc list-outside ml-6 space-y-2 text-base mt-2">
-                <li>Trimiterii de răspunsuri la solicitările primite prin formularele de contact online</li>
-                <li>Pentru a vă transmite comunicările/informațiile obligatorii, în baza obligațiilor noastre legale</li>
-                <li>Pentru a răspunde la întrebările dvs. sau atunci când ne contactați</li>
-                <li>Măsurării traficului pe site prin Google Analytics, doar dacă ați acceptat cookie-urile de analiză (detalii în Politica Cookie)</li>
+                <li>a răspunde la cererile trimise prin formularul de contact</li>
+                <li>a vă transmite informările pe care ni le cere legea</li>
+                <li>a vă răspunde când ne contactați telefonic sau pe email</li>
+                <li>a măsura traficul pe site cu Google Analytics, doar dacă ați acceptat cookie-urile de analiză (detalii în Politica de cookie-uri)</li>
               </ul>
               <p className="mt-3 font-semibold text-primary">
-                Datele personale colectate pe acest site nu sunt folosite și nu sunt transmise unor terți în scop 
-                de marketing direct, fără acordul prealabil al utilizatorului.
+                Nu folosim datele pentru marketing direct și nu le transmitem în acest scop altor firme fără acordul dumneavoastră.
               </p>
             </section>
 
             <section>
               <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Cât timp păstrăm datele?</h3>
               <p className="text-base leading-relaxed">
-                Datele personale sunt păstrate pe o perioadă necesară pentru îndeplinirea scopului pentru care 
-                au fost colectate și conform obligațiilor legale aplicabile.
+                Păstrăm datele doar cât e nevoie pentru scopul în care le-am primit și cât ne obligă legea.
               </p>
               <p className="mt-2 text-base leading-relaxed">
-                Ștergerea datelor personale nu se va realiza dacă:
+                Nu putem șterge datele atunci când:
               </p>
               <ul className="list-disc list-outside ml-6 space-y-2 text-base mt-2">
-                <li>Datele sunt necesare pentru îndeplinirea unei obligații legale</li>
-                <li>Există un interes public</li>
-                <li>Datele sunt necesare pentru constatarea, exercitarea sau apărarea unui drept în instanță</li>
+                <li>sunt necesare pentru îndeplinirea unei obligații legale</li>
+                <li>există un interes public</li>
+                <li>sunt necesare pentru constatarea, exercitarea sau apărarea unui drept în instanță</li>
               </ul>
             </section>
 
             <section>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Ce drepturi aveți asupra datelor?</h3>
-              <p className="text-base leading-relaxed">Utilizatorii au următoarele drepturi:</p>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Ce drepturi aveți?</h3>
+              <p className="text-base leading-relaxed">Aveți dreptul:</p>
               <ul className="list-disc list-outside ml-6 space-y-2 text-base mt-2">
-                <li>De a fi informați în legătură cu natura exactă a datelor stocate</li>
-                <li>De a primi o copie a tuturor datelor proprii stocate</li>
-                <li>De a actualiza datele stocate</li>
-                <li>De a solicita ștergerea datelor</li>
-                <li>De a vă retrage consimțământul pentru prelucrarea datelor</li>
-                <li>De a depune o plângere la Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal</li>
+                <li>să aflați ce date avem despre dumneavoastră</li>
+                <li>să primiți o copie a acestor date</li>
+                <li>să cereți corectarea lor</li>
+                <li>să cereți ștergerea lor</li>
+                <li>să vă retrageți oricând consimțământul</li>
+                <li>să depuneți o plângere la Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (<a href="https://www.dataprotection.ro" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">www.dataprotection.ro</a>)</li>
               </ul>
             </section>
 
             <section>
               <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Cum protejăm datele?</h3>
               <p className="text-base leading-relaxed">
-                Site-ul folosește protocoale de securitate moderne și este găzduit pe platforme securizate. 
-                Luăm toate măsurile necesare pentru a proteja datele dumneavoastră împotriva accesului neautorizat, 
-                modificării, divulgării sau distrugerii.
+                Site-ul folosește conexiune criptată (HTTPS) și este găzduit pe servere securizate. Luăm măsuri tehnice și organizatorice ca datele să nu ajungă la persoane neautorizate și să nu fie modificate, divulgate sau distruse.
               </p>
             </section>
 
             <section>
               <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Contact</h3>
               <p className="text-base leading-relaxed">
-                În cazul în care aveți întrebări despre modul în care prelucrăm informațiile personale sau dacă 
-                doriți să exercitați vreunul dintre drepturile menționate, vă rugăm să ne contactați la:
+                Pentru întrebări despre datele dumneavoastră sau ca să vă exercitați drepturile de mai sus, ne puteți scrie sau suna:
               </p>
               <div className="mt-3 p-4 bg-primary/10 rounded-lg border border-primary/30">
                 <p className="font-semibold text-white">S.C. SULERU RENOV S.R.L.</p>
@@ -164,7 +155,7 @@ const PrivacyPolicyModal = ({ isOpen, onClose }: PrivacyPolicyModalProps) => {
 
             <section className="text-center pt-6 border-t border-gray-medium">
               <p className="text-sm">
-                Ultima actualizare: {new Date().toLocaleDateString('ro-RO')}
+                Ultima actualizare: 19.10.2026
               </p>
             </section>
           </div>

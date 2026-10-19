@@ -3,19 +3,19 @@ import { Phone } from 'lucide-react'
 const STEPS = [
   {
     title: 'Ne suni sau ne scrii pe WhatsApp',
-    text: 'Spune-ne diametrul, grosimea peretelui și materialul. O poză cu locul lucrării ajută.',
+    text: 'Spune-ne ce diametru îți trebuie, cât de gros e peretele și din ce e făcut. O poză cu locul ne ajută mult.',
   },
   {
     title: 'Evaluare gratuită la fața locului',
     text: 'Dacă e nevoie, venim să vedem lucrarea fără niciun cost și îți spunem prețul înainte să începem.',
   },
   {
-    title: 'Venim în 1-2 zile lucrătoare',
+    title: 'Venim în 1–2 zile lucrătoare',
     text: 'Pentru urgențe putem veni chiar în aceeași zi, în Suceava, Botoșani și localitățile din jur.',
   },
   {
     title: 'Lucrăm curat, ridicăm molozul',
-    text: 'Carotăm cu apă și aspirăm continuu, protejăm zona și mobilierul. La final curățăm complet și ridicăm molozul.',
+    text: 'Acoperim mobilierul și podeaua, carotăm cu apă și aspirăm pe loc. La final facem curat și luăm molozul cu noi.',
   },
 ]
 

@@ -8,9 +8,9 @@ const CookiePolicyModal = lazy(() => import('./CookiePolicyModal'))
 
 const LINKS = [
   { href: '#servicii', label: 'Servicii' },
-  { href: '#despre', label: 'Despre Noi' },
+  { href: '#despre', label: 'Despre noi' },
   { href: '#galerie-imagini', label: 'Galerie' },
-  { href: '#intrebari', label: 'Întrebări Frecvente' },
+  { href: '#intrebari', label: 'Întrebări frecvente' },
   { href: '#contact', label: 'Contact' },
 ]
 
@@ -32,12 +32,12 @@ const Footer = () => {
             </a>
             <h2 className="sr-only">eCAROTA</h2>
             <p className="mt-5 text-mute max-w-sm leading-relaxed">
-              Ne ocupăm de găuri și tăieturi în beton, fără complicații și fără promisiuni deșarte. Dacă ai nevoie de ajutor, suntem la un telefon distanță.
+              Carotări, tăieri și demolări în beton, în Suceava, Botoșani și împrejurimi. Lucrăm curat, la timp și cu prețul stabilit dinainte.
             </p>
           </div>
 
           <div className="lg:col-span-2">
-            <h3 className="font-display font-bold text-base">Link-uri Rapide</h3>
+            <h3 className="font-display font-bold text-base">Linkuri rapide</h3>
             <ul className="mt-4 space-y-3">
               {LINKS.map(link => (
                 <li key={link.href}>
@@ -77,7 +77,7 @@ const Footer = () => {
           <div className="lg:col-span-3">
             <p className="font-display font-bold text-base flex items-center gap-2">
               <span className="inline-block h-2.5 w-2.5 rounded-full bg-green-500" aria-hidden="true"></span>
-              Firmă Autorizată Legal
+              Firmă autorizată
             </p>
             <div className="mt-4 text-sm text-mute space-y-1">
               <p><strong className="text-ink">S.C. SULERU RENOV S.R.L.</strong></p>
@@ -91,40 +91,32 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex flex-wrap items-center gap-2">
             <button onClick={() => setIsTermsOpen(true)} className={POLICY_BTN}>
-              Termeni și Condiții
+              Termeni și condiții
             </button>
             <button onClick={() => setIsPrivacyOpen(true)} className={POLICY_BTN}>
-              Politica de Confidențialitate
+              Politica de confidențialitate
             </button>
             <button onClick={() => setIsCookieOpen(true)} className={POLICY_BTN}>
-              Politica Cookie
+              Politica de cookie-uri
             </button>
           </div>
 
-          <div className="flex items-center gap-4">
+          {/* lg:mr-16: pe desktop bula WhatsApp fixă stă în colțul din dreapta jos și ar acoperi pictograma */}
+          <div className="flex items-center gap-4 lg:mr-16">
             <a
-              href="https://anpc.ro/ce-este-sal/"
+              href="https://reclamatiisal.anpc.ro"
               target="_blank"
               rel="nofollow noopener noreferrer"
               className="opacity-90 hover:opacity-100 transition-opacity"
               title="Soluționarea Alternativă a Litigiilor"
             >
-              <img src="/anpc-sal.webp" alt="Soluționarea Alternativă a Litigiilor" className="h-10 w-auto" width="156" height="40" loading="lazy" decoding="async" />
-            </a>
-            <a
-              href="https://ec.europa.eu/consumers/odr"
-              target="_blank"
-              rel="nofollow noopener noreferrer"
-              className="opacity-90 hover:opacity-100 transition-opacity"
-              title="Soluționarea Online a Litigiilor"
-            >
-              <img src="/anpc-sol.webp" alt="Soluționarea Online a Litigiilor" className="h-10 w-auto" width="143" height="40" loading="lazy" decoding="async" />
+              <img src="/anpc-sal.webp" alt="Soluționarea Alternativă a Litigiilor" className="h-[50px] w-auto" width="195" height="50" loading="lazy" decoding="async" />
             </a>
           </div>
         </div>
 
         <p className="mt-8 text-sm text-mute" suppressHydrationWarning>
-          © {currentYear} eCarota – Carotare Beton Suceava și Botoșani. Toate drepturile rezervate.
+          © {currentYear} eCarota – carotare beton Suceava și Botoșani. Toate drepturile rezervate.
         </p>
       </div>
 

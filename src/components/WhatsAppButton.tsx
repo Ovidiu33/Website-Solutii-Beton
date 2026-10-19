@@ -1,7 +1,7 @@
 import { WhatsAppIcon } from './icons'
 
 const phoneNumber = "40758663415" // Format internațional fără +
-const message = "Bună ziua, sunt interesat de servicii de carotare/tăiere beton."
+const message = "Bună ziua! Aș avea nevoie de o carotare sau o tăiere în beton."
 
 export const WHATSAPP_URL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
 

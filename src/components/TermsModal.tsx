@@ -34,7 +34,7 @@ const TermsModal = ({ isOpen, onClose }: TermsModalProps) => {
       >
         {/* Header */}
         <div className="sticky top-0 bg-[#1a1a1a] border-b-2 border-primary/40 px-4 md:px-6 py-4 md:py-5 flex items-center justify-between">
-          <h2 className="text-2xl md:text-3xl font-bold text-white">Termeni și Condiții</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-white">Termeni și condiții</h2>
           <button
             onClick={(e) => {
               e.preventDefault()
@@ -69,13 +69,13 @@ const TermsModal = ({ isOpen, onClose }: TermsModalProps) => {
             <section className="bg-gradient-to-br from-primary/10 to-primary/5 border-2 border-primary/50 rounded-xl p-4 md:p-6">
               <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4 flex items-center gap-3">
                 <span className="inline-block w-4 h-4 bg-green-500 rounded-full"></span>
-                Date Societate
+                Datele firmei
               </h3>
               <div className="space-y-3 text-base">
                 <p className="text-white"><strong className="text-primary">Denumire:</strong> S.C. SULERU RENOV S.R.L.</p>
                 <p className="text-white"><strong className="text-primary">CUI:</strong> RO38206793</p>
                 <p className="text-white"><strong className="text-primary">Nr. Reg. Com.:</strong> J33/1603/2017</p>
-                <p className="text-white"><strong className="text-primary">Sediu Social:</strong> Str. Eroilor nr. 60, Bloc 115, Sc. D, Ap. 5, Suceava</p>
+                <p className="text-white"><strong className="text-primary">Sediu social:</strong> Str. Eroilor nr. 60, Bloc 115, Sc. D, Ap. 5, Suceava</p>
                 <p className="text-white"><strong className="text-primary">Activitate:</strong> 4120 - Lucrări de construcții a clădirilor rezidențiale și nerezidențiale</p>
                 <p className="text-white">
                   <strong className="text-primary">Contact:</strong>{' '}
@@ -90,18 +90,16 @@ const TermsModal = ({ isOpen, onClose }: TermsModalProps) => {
             <section>
               <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">1. Introducere</h3>
               <p className="text-base leading-relaxed">
-                Prezentele Termene și Condiții reglementează relația contractuală dintre <strong className="text-white">S.C. SULERU RENOV S.R.L.</strong> 
-                (furnizor) și Client în cadrul prestării serviciilor de carotare în beton, tăiere beton, demolări controlate și lucrări conexe. 
-                Prin solicitarea unei oferte sau acceptarea serviciilor, Clientul este de acord cu termenii și condițiile prezentate mai jos.
+                Acești termeni și condiții reglementează relația dintre <strong className="text-white">S.C. SULERU RENOV S.R.L.</strong> (Furnizorul) și Client pentru serviciile de carotare în beton, tăiere beton, demolări controlate și lucrări conexe. Prin cererea unei oferte sau acceptarea serviciilor, Clientul este de acord cu termenii de mai jos.
               </p>
             </section>
 
             {/* Obiectul contractului */}
             <section>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">2. Obiectul Contractului</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">2. Obiectul contractului</h3>
               <p className="text-base leading-relaxed mb-3">Furnizorul oferă următoarele servicii:</p>
               <ul className="list-disc list-outside ml-6 space-y-2 text-base">
-                <li><strong className="text-white">Carotare în beton</strong> - găuriri de precizie cu diametre între 40mm și 500mm</li>
+                <li><strong className="text-white">Carotare în beton</strong> - găuri de precizie, cu diametre între 40 mm și 600 mm</li>
                 <li><strong className="text-white">Tăiere beton</strong> - tăieturi liniare orizontale și verticale pentru demolări controlate</li>
                 <li><strong className="text-white">Demolări parțiale</strong> - eliminarea selectivă a structurilor din beton armat</li>
                 <li><strong className="text-white">Consultanță tehnică</strong> - evaluare și recomandări pentru proiecte complexe</li>
@@ -110,7 +108,7 @@ const TermsModal = ({ isOpen, onClose }: TermsModalProps) => {
 
             {/* Ofertare și comandă */}
             <section>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">3. Ofertare și Comandă</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">3. Oferta și comanda</h3>
               <ul className="list-disc list-outside ml-6 space-y-2 text-base">
                 <li>Ofertele de preț sunt valabile <strong className="text-white">30 de zile</strong> de la data emiterii, dacă nu se specifică altfel</li>
                 <li>Prețurile pot varia în funcție de complexitatea lucrării, accesibilitate, volum și condiții de la fața locului</li>
@@ -121,33 +119,33 @@ const TermsModal = ({ isOpen, onClose }: TermsModalProps) => {
 
             {/* Responsabilitățile Clientului */}
             <section>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">4. Responsabilitățile Clientului</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">4. Obligațiile Clientului</h3>
               <p className="text-base leading-relaxed mb-3">Clientul se obligă să:</p>
               <ul className="list-disc list-outside ml-6 space-y-2 text-base">
-                <li>Asigure <strong className="text-white">acces liber</strong> la zona de lucru și sursă de apă și electricitate dacă este necesar</li>
-                <li>Furnizeze informații corecte despre <strong className="text-white">structura clădirii</strong>, instalații ascunse (cabluri, țevi, etc.)</li>
+                <li>Asigure <strong className="text-white">acces liber</strong> la zona de lucru și, dacă e nevoie, la apă și curent electric</li>
+                <li>Furnizeze informații corecte despre <strong className="text-white">structura clădirii</strong>, și despre instalațiile ascunse (cabluri, țevi etc.)</li>
                 <li>Obțină toate <strong className="text-white">autorizațiile necesare</strong> pentru lucrările de intervenție (dacă este cazul)</li>
-                <li>Evacueze zona de lucru de persoane și obiecte sau bunuri valoroase</li>
-                <li>Notifice Furnizorul în cazul descoperirii unor <strong className="text-white">obstacole neprevăzute</strong> (armături, instalații, etc.)</li>
+                <li>Elibereze zona de lucru de persoane, obiecte și bunuri de valoare</li>
+                <li>Anunțe Furnizorul dacă află de <strong className="text-white">obstacole neprevăzute</strong> (armături, instalații etc.)</li>
               </ul>
             </section>
 
             {/* Responsabilitățile Furnizorului */}
             <section>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">5. Responsabilitățile Furnizorului</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">5. Obligațiile Furnizorului</h3>
               <p className="text-base leading-relaxed mb-3">Furnizorul se obligă să:</p>
               <ul className="list-disc list-outside ml-6 space-y-2 text-base">
-                <li>Execută lucrările conform specificațiilor tehnice agreate cu Clientul</li>
+                <li>Execute lucrările conform specificațiilor tehnice stabilite cu Clientul</li>
                 <li>Utilizeze echipamente profesionale și personal calificat</li>
-                <li>Respecte normele de <strong className="text-white">protecția muncii și securitate</strong></li>
-                <li>Lase zona de lucru într-o stare curată și ordonată după finalizare</li>
+                <li>Respecte normele de <strong className="text-white">securitate și sănătate în muncă</strong></li>
+                <li>Lase zona de lucru curată și ordonată la final</li>
                 <li>Informeze Clientul despre orice <strong className="text-white">impedimente tehnice</strong> descoperite în timpul lucrării</li>
               </ul>
             </section>
 
             {/* Durata execuției */}
             <section>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">6. Durata Execuției</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">6. Durata execuției</h3>
               <ul className="list-disc list-outside ml-6 space-y-2 text-base">
                 <li>Termenele de execuție sunt estimate în funcție de complexitatea lucrării și se stabilesc în oferta de preț</li>
                 <li>Întârzierile cauzate de <strong className="text-white">condiții meteo nefavorabile, accesibilitate redusă sau obstacole neprevăzute</strong> nu sunt imputabile Furnizorului</li>
@@ -157,28 +155,28 @@ const TermsModal = ({ isOpen, onClose }: TermsModalProps) => {
 
             {/* Garanții și limitări */}
             <section>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">7. Garanții și Limitări de Răspundere</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">7. Garanții și limitarea răspunderii</h3>
               <ul className="list-disc list-outside ml-6 space-y-2 text-base">
                 <li>Furnizorul garantează calitatea lucrărilor executate conform standardelor profesionale</li>
-                <li>Furnizorul <strong className="text-white">nu răspunde</strong> pentru deteriorări cauzate de informații incorecte furnizate de Client (instalații nedeclarate, structuri ascunse, etc.)</li>
+                <li>Furnizorul <strong className="text-white">nu răspunde</strong> pentru deteriorări cauzate de informații incorecte furnizate de Client (instalații nedeclarate, structuri ascunse etc.)</li>
                 <li>Clientul este responsabil pentru obținerea autorizațiilor necesare intervenției în structura clădirii</li>
-                <li>Reclamațiile se primesc în termen de <strong className="text-white">48 ore</strong> de la finalizarea lucrării</li>
+                <li>Reclamațiile se primesc în termen de <strong className="text-white">48 de ore</strong> de la finalizarea lucrării</li>
               </ul>
             </section>
 
             {/* Forță majoră */}
             <section>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">8. Forță Majoră</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">8. Forța majoră</h3>
               <p className="text-base leading-relaxed">
                 Niciuna dintre părți nu va fi răspunzătoare pentru neexecutarea obligațiilor contractuale dacă aceasta se datorează unui 
-                eveniment de <strong className="text-white">forță majoră</strong> (calamități naturale, pandemii, restricții guvernamentale, etc.). 
-                Partea afectată va notifica cealaltă parte în termen de 48 ore și va furniza dovezi ale evenimentului de forță majoră.
+                eveniment de <strong className="text-white">forță majoră</strong> (calamități naturale, pandemii, restricții guvernamentale etc.). 
+                Partea afectată va anunța cealaltă parte în termen de 48 de ore și va furniza dovezi ale evenimentului de forță majoră.
               </p>
             </section>
 
             {/* Confidențialitate și protecția datelor */}
             <section>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">9. Confidențialitate și Protecția Datelor</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">9. Confidențialitatea și protecția datelor</h3>
               <p className="text-base leading-relaxed">
                 Datele personale ale Clientului sunt prelucrate conform <strong className="text-white">GDPR</strong> și a 
                 Politicii de Confidențialitate a S.C. SULERU RENOV S.R.L. (disponibilă pe site). Datele sunt folosite exclusiv 
@@ -188,12 +186,12 @@ const TermsModal = ({ isOpen, onClose }: TermsModalProps) => {
 
             {/* Litigii și legea aplicabilă */}
             <section>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">10. Litigii și Legea Aplicabilă</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">10. Litigii și legea aplicabilă</h3>
               <ul className="list-disc list-outside ml-6 space-y-2 text-base">
-                <li>Prezentele Termene și Condiții sunt guvernate de <strong className="text-white">legea română</strong></li>
+                <li>Acești termeni și condiții sunt guvernați de <strong className="text-white">legea română</strong></li>
                 <li>Orice litigiu va fi soluționat pe cale amiabilă. În cazul imposibilității, litigiul va fi deferit instanțelor competente din <strong className="text-white">Suceava</strong></li>
-                <li>Clientul poate accesa mecanismele de <strong className="text-white">soluționare alternativă a litigiilor</strong> (SAL) prin ANPC - <a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://anpc.ro/ce-este-sal/</a></li>
-                <li>Pentru litigii transfrontaliere, Clientul poate apela la platforma SOL - <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://ec.europa.eu/consumers/odr</a></li>
+                <li>Conform O.G. nr. 38/2015, Clientul poate apela la <strong className="text-white">soluționarea alternativă a litigiilor</strong> (SAL). Entitatea SAL competentă este Autoritatea Națională pentru Protecția Consumatorilor (ANPC) - <a href="https://reclamatiisal.anpc.ro" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://reclamatiisal.anpc.ro</a></li>
+                <li>Pentru litigii transfrontaliere, Clientul poate solicita gratuit sprijinul Centrului European al Consumatorilor România - <a href="https://eccromania.ro" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://eccromania.ro</a></li>
               </ul>
             </section>
 
@@ -201,7 +199,7 @@ const TermsModal = ({ isOpen, onClose }: TermsModalProps) => {
             <section className="bg-primary/10 border border-primary/30 rounded-lg p-4">
               <h3 className="text-xl md:text-2xl font-bold text-white mb-3">11. Contact</h3>
               <p className="text-base leading-relaxed mb-3">
-                Pentru întrebări sau clarificări privind acești Termeni și Condiții, vă rugăm să ne contactați:
+                Pentru întrebări despre acești termeni și condiții, ne puteți contacta:
               </p>
               <p className="text-white">
                 <strong className="text-primary">Telefon:</strong>{' '}

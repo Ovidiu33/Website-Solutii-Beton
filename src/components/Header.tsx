@@ -5,7 +5,7 @@ import { TikTokIcon } from './icons'
 
 const NAV = [
   { href: '#servicii', label: 'Servicii' },
-  { href: '#despre', label: 'Despre Noi' },
+  { href: '#despre', label: 'Despre noi' },
   { href: '#galerie-imagini', label: 'Galerie' },
   { href: '#intrebari', label: 'Întrebări' },
   { href: '#contact', label: 'Contact' },

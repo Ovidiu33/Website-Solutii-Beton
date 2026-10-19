@@ -45,7 +45,7 @@ const CookiePolicyModal = ({ isOpen, onClose }: CookiePolicyModalProps) => {
       >
         {/* Header */}
         <div className="sticky top-0 bg-[#1a1a1a] border-b-2 border-primary/40 px-4 md:px-6 py-4 md:py-5 flex items-center justify-between">
-          <h2 className="text-2xl md:text-3xl font-bold text-white">Politica Cookie</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-white">Politica de cookie-uri</h2>
           <button
             onClick={(e) => {
               e.preventDefault()
@@ -79,25 +79,18 @@ const CookiePolicyModal = ({ isOpen, onClose }: CookiePolicyModalProps) => {
             <section>
               <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Ce sunt cookie-urile?</h3>
               <p className="text-base leading-relaxed">
-                Cookie-urile sunt fișiere text de mici dimensiuni pe care un site le salvează pe computerul sau 
-                dispozitivul dvs. mobil în momentul în care începeți să utilizați site-ul respectiv. Prin 
-                intermediul cookie-urilor, site-ul își va „aminti" acțiunile și preferințele dvs. 
-                (cum ar fi datele de autentificare, limba de afișare, dimensiunea fontului și alte preferințe 
-                de afișare) pentru ca dvs. să nu fie nevoit să le reintroduceți atunci când reveniți pe site 
-                sau când navigați de la o pagină la alta.
+                Cookie-urile sunt fișiere text mici pe care un site le salvează în browserul de pe calculator sau telefon. Prin ele, site-ul poate ține minte anumite alegeri, ca să nu le faceți din nou la fiecare vizită.
               </p>
             </section>
 
             <section>
               <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Cum folosim cookie-urile?</h3>
               <p className="text-base leading-relaxed">
-                Site-ul nostru folosește cookie-uri pentru a îmbunătăți experiența de navigare și pentru 
-                funcționarea corectă a site-ului. Folosim cookie-uri pentru:
+                Pe acest site folosim doar două tipuri de cookie-uri:
               </p>
               <ul className="list-disc list-outside ml-6 space-y-2 text-base mt-2">
-                <li>Salvarea preferințelor utilizatorilor</li>
-                <li>Cache pentru îmbunătățirea performanței site-ului</li>
-                <li>Măsurarea traficului și analiza comportamentului utilizatorilor (cu acordul dvs.)</li>
+                <li>un cookie necesar, care ține minte dacă ați acceptat sau ați refuzat cookie-urile de analiză</li>
+                <li>cookie-uri de analiză Google Analytics, doar dacă apăsați „Accept”</li>
               </ul>
             </section>
 
@@ -108,16 +101,14 @@ const CookiePolicyModal = ({ isOpen, onClose }: CookiePolicyModalProps) => {
                 <div className="p-4 bg-primary/10 rounded-lg border border-primary/30">
                   <h4 className="font-bold text-white mb-2">🔧 Cookie-uri necesare (esențiale)</h4>
                   <p className="text-base leading-relaxed">
-                    Aceste cookie-uri sunt necesare pentru funcționarea corectă a site-ului și nu pot fi dezactivate. 
-                    Includ cookie-ul care ține minte alegerea dvs. din bannerul de cookie-uri.
+                    Sunt necesare ca site-ul să funcționeze corect și nu pot fi dezactivate. Pe acest site e unul singur: cookie-ul care ține minte alegerea dumneavoastră din bannerul de cookie-uri.
                   </p>
                 </div>
 
                 <div className="p-4 bg-primary/10 rounded-lg border border-primary/30">
                   <h4 className="font-bold text-white mb-2">📊 Cookie-uri de performanță și analiză</h4>
                   <p className="text-base leading-relaxed">
-                    Ne permit să măsurăm numărul de vizitatori și să vedem cum se deplasează vizitatorii pe site-ul nostru.
-                    Aceste informații ne ajută să îmbunătățim funcționarea site-ului.
+                    Ne arată câți vizitatori avem și ce pagini văd, ca să putem îmbunătăți site-ul.
                   </p>
                   <p className="text-base leading-relaxed mt-2">
                     Folosim <strong className="text-white">Google Analytics 4</strong> (Google Ireland Ltd.), care plasează
@@ -126,21 +117,13 @@ const CookiePolicyModal = ({ isOpen, onClose }: CookiePolicyModalProps) => {
                     bannerul de cookie-uri; dacă refuzați, Google Analytics nu se încarcă deloc.
                   </p>
                 </div>
-
-                <div className="p-4 bg-primary/10 rounded-lg border border-primary/30">
-                  <h4 className="font-bold text-white mb-2">💾 Cookie-uri de funcționalitate</h4>
-                  <p className="text-base leading-relaxed">
-                    Permit site-ului să țină minte alegerile făcute de dvs. (cum ar fi limba) și oferă funcții 
-                    îmbunătățite și personalizate.
-                  </p>
-                </div>
               </div>
             </section>
 
             <section>
               <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Cache-ul browserului</h3>
               <p className="text-base leading-relaxed">
-                Browserul dvs. păstrează local fișierele site-ului (imagini, CSS, JavaScript) pentru încărcare mai rapidă la
+                Browserul păstrează local fișierele site-ului (imagini, CSS, JavaScript) pentru încărcare mai rapidă la
                 vizitele următoare. Aceste fișiere nu conțin date personale și pot fi șterse oricând din setările browserului.
               </p>
             </section>
@@ -148,28 +131,24 @@ const CookiePolicyModal = ({ isOpen, onClose }: CookiePolicyModalProps) => {
             <section>
               <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Cookie-uri terțe</h3>
               <p className="text-base leading-relaxed">
-                Singurele cookie-uri terțe sunt cele de analiză Google Analytics, plasate doar cu acordul dvs.
-                Nu folosim cookie-uri de publicitate și nu transmitem datele dvs. către agenții de publicitate
+                Singurele cookie-uri terțe sunt cele de analiză Google Analytics, plasate doar cu acordul dumneavoastră.
+                Nu folosim cookie-uri de publicitate și nu transmitem datele dumneavoastră către agenții de publicitate
                 sau rețele de marketing.
               </p>
             </section>
 
             <section>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Cum controlezi cookie-urile?</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Cum puteți controla cookie-urile?</h3>
               <p className="text-base leading-relaxed">
-                Puteți controla și/sau șterge cookie-urile așa cum doriți. Puteți șterge toate cookie-urile 
-                care se află deja pe computerul dvs. și puteți seta majoritatea browserelor să împiedice plasarea 
-                acestora. Cu toate acestea, dacă faceți acest lucru, poate fi necesar să ajustați manual unele 
-                preferințe de fiecare dată când vizitați un site, iar unele servicii și funcționalități pot să 
-                nu funcționeze.
+                Puteți șterge oricând cookie-urile salvate și puteți seta browserul să le blocheze. Dacă le blocați, pe unele site-uri va trebui să vă refaceți alegerile la fiecare vizită, iar unele funcții pot să nu meargă.
               </p>
               
               <div className="mt-4 p-4 bg-primary/10 rounded-lg border border-primary/30">
-                <h4 className="font-semibold text-white mb-2">Cum ștergi cookie-urile din browser:</h4>
+                <h4 className="font-semibold text-white mb-2">Cum ștergeți cookie-urile din browser:</h4>
                 <ul className="text-base space-y-2 ml-4">
                   <li><strong className="text-white">Chrome:</strong> Setări → Confidențialitate și securitate → Șterge datele de navigare</li>
-                  <li><strong className="text-white">Firefox:</strong> Opțiuni → Confidențialitate și securitate → Cookie-uri și date ale site-urilor</li>
-                  <li><strong className="text-white">Safari:</strong> Preferințe → Confidențialitate → Gestionare date site-uri web</li>
+                  <li><strong className="text-white">Firefox:</strong> Setări → Confidențialitate și securitate → Cookie-uri și date ale site-urilor</li>
+                  <li><strong className="text-white">Safari:</strong> Setări → Confidențialitate → Gestionează datele site-urilor web</li>
                   <li><strong className="text-white">Edge:</strong> Setări → Cookie-uri și permisiuni site → Gestionare și ștergere cookie-uri</li>
                 </ul>
               </div>
@@ -187,17 +166,16 @@ const CookiePolicyModal = ({ isOpen, onClose }: CookiePolicyModalProps) => {
             </section>
 
             <section>
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Actualizări ale politicii de cookie-uri</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Actualizări ale acestei politici</h3>
               <p className="text-base leading-relaxed">
-                Ne rezervăm dreptul de a actualiza această politică de cookie-uri periodic pentru a reflecta 
-                schimbările în practicile noastre sau din motive operaționale, legale sau de reglementare.
+                Actualizăm această politică atunci când se schimbă site-ul sau legislația. Data ultimei actualizări apare mai jos.
               </p>
             </section>
 
             <section>
               <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Contact</h3>
               <p className="text-base leading-relaxed">
-                Dacă aveți întrebări despre modul în care folosim cookie-urile, vă rugăm să ne contactați:
+                Pentru întrebări despre cookie-uri, ne puteți contacta:
               </p>
               <div className="mt-3 p-4 bg-primary/10 rounded-lg border border-primary/30">
                 <p className="font-semibold text-white">S.C. SULERU RENOV S.R.L.</p>
@@ -208,7 +186,7 @@ const CookiePolicyModal = ({ isOpen, onClose }: CookiePolicyModalProps) => {
 
             <section className="text-center pt-6 border-t border-gray-medium">
               <p className="text-sm">
-                Ultima actualizare: {new Date().toLocaleDateString('ro-RO')}
+                Ultima actualizare: 19.10.2026
               </p>
             </section>
           </div>

@@ -46,7 +46,7 @@ const CookieBanner = () => {
             <Cookie className="h-4 w-4 text-accent" />
           </div>
           <div className="flex-1">
-            <h3 className="text-sm font-display font-bold mb-1">Cookies</h3>
+            <h3 className="text-sm font-display font-bold mb-1">Cookie-uri</h3>
             <p className="text-sm text-mute leading-relaxed">
               Folosim cookie-uri pentru a analiza traficul și a îmbunătăți site-ul.{' '}
               <button

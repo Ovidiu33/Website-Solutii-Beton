@@ -1,7 +1,7 @@
 const STATS = [
-  { number: '10+', label: 'Ani Experiență' },
-  { number: '5000+', label: 'Lucrări' },
-  { number: '100%', label: 'Garanție Calitate' },
+  { number: '10+', label: 'Ani de experiență' },
+  { number: '5000+', label: 'Lucrări făcute' },
+  { number: '100%', label: 'Garanție la fiecare lucrare' },
   { number: '24/7', label: 'Răspundem la telefon' },
 ]
 

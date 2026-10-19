@@ -40,16 +40,16 @@ const Hero = () => {
 
           <p className="mt-3 phone-short:mt-2 text-lg md:text-xl text-ink/90 max-w-xl">
             <span className="font-semibold">Soluții beton</span> <span className="text-accent font-semibold">(și în beton)</span>.
-            {' '}Găuri până la Ø 500mm, tăieri și demolări controlate.
+            {' '}Găuri până la Ø 600 mm, tăieri și demolări controlate.
           </p>
 
           <div className="mt-8 phone:mt-6 phone-short:mt-4 flex flex-col sm:flex-row gap-3">
             <div className="flex gap-3">
               <a href="tel:+40758663415" className="btn btn-accent flex-1 sm:flex-none">
                 <Phone className="h-5 w-5" strokeWidth={2.25} />
-                Sună Acum
+                Sună acum
               </a>
-              {/* Pe mobil și tabletă WhatsApp stă lângă „Sună Acum”; pe desktop e bula fixă (WhatsAppButton) */}
+              {/* Pe mobil și tabletă WhatsApp stă lângă „Sună acum”; pe desktop e bula fixă (WhatsAppButton) */}
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
@@ -61,7 +61,7 @@ const Hero = () => {
               </a>
             </div>
             <a href="#oferta" className="group btn btn-outline w-full sm:w-auto">
-              Ofertă Gratuită
+              Ofertă gratuită
               <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" strokeWidth={2.25} />
             </a>
           </div>

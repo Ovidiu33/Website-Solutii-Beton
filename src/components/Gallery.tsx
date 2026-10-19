@@ -5,14 +5,14 @@ import { TikTokIcon } from './icons'
 
 const IMAGES = [
   { slug: 'carotaj-stativ', alt: 'Carotare în beton cu stativ' },
-  { slug: 'carotaj-santier', alt: 'Lucrări carotare beton pe șantier mare' },
-  { slug: 'taiere-moloz', alt: 'Carotare beton și evacuare moloz' },
-  { slug: 'gauri-traversare', alt: 'Găuri pentru traversare țevi și instalații' },
+  { slug: 'carotaj-santier', alt: 'Carotare în beton pe un șantier mare' },
+  { slug: 'taiere-moloz', alt: 'Carotare în beton și strângerea molozului' },
+  { slug: 'gauri-traversare', alt: 'Găuri de trecere pentru țevi și instalații' },
   { slug: 'gaura-centrala', alt: 'Gaură pentru centrală' },
-  { slug: 'decupaj-perete', alt: 'Decupaj perete beton' },
-  { slug: 'taiere-perete-90', alt: 'Carotare perete beton 90 cm' },
-  { slug: 'carotaj-500-stativ', alt: 'Carotare în beton Ø500 mm' },
-  { slug: 'carotaj-500-carota', alt: 'Carotă Ø500 mm și moloz pe folie de protecție' },
+  { slug: 'decupaj-perete', alt: 'Decupaj în perete de beton' },
+  { slug: 'taiere-perete-90', alt: 'Carotare într-un perete de beton de 90 cm' },
+  { slug: 'carotaj-500-stativ', alt: 'Carotare în beton, Ø 500 mm' },
+  { slug: 'carotaj-500-carota', alt: 'Carotă de Ø 500 mm și moloz pe folie de protecție' },
   { slug: 'taiere-deschidere', alt: 'Deschidere tăiată în perete de beton' },
 ]
 
@@ -54,9 +54,9 @@ const Gallery = () => {
     <section id="galerie-imagini" className="theme-dark scroll-mt-16 lg:scroll-mt-20 py-16 md:py-24">
       <div className="container-custom">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <h2 className="heading-lg max-w-2xl">Galerie Lucrări Realizate</h2>
+          <h2 className="heading-lg max-w-2xl">Galerie lucrări realizate</h2>
           <div id="galerie" className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
-            <p className="font-display font-semibold text-mute">Vezi lucrările noastre pe TikTok</p>
+            <p className="font-display font-semibold text-mute">Mai multe lucrări pe TikTok</p>
             <a
               href="https://www.tiktok.com/@carotare.taiere.beton"
               target="_blank"

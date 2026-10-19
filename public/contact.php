@@ -6,10 +6,10 @@
 
 const TO = 'contact@ecarota.ro';
 const SERVICES = [
-    'carotaj' => 'Carotaj în beton',
+    'carotaj' => 'Carotare în beton',
     'taiere' => 'Tăiere beton',
-    'demontare' => 'Demontare selectivă',
-    'altele' => 'Altele',
+    'demontare' => 'Demolări',
+    'altele' => 'Altceva',
 ];
 
 header('Content-Type: application/json; charset=utf-8');
@@ -55,6 +55,48 @@ function smtp_send(array $cfg, string $to, string $message): bool
     $send('QUIT', '221');
     fclose($socket);
     return $ok;
+}
+
+// Notificare WhatsApp (Meta Cloud API, șablon aprobat) pe telefoanele noastre, ca rezervă la email.
+// Datele de acces stau tot în afara public_html și a git: ~/ecarota-whatsapp.php
+// Fără acel fișier (sau dacă API-ul nu răspunde) formularul merge mai departe doar cu emailul.
+function whatsapp_notify(array $values): void
+{
+    $file = dirname(__DIR__) . '/ecarota-whatsapp.php';
+    if (!is_file($file) || !function_exists('curl_init')) {
+        return;
+    }
+    $cfg = require $file;
+    // Parametrii din șablon nu au voie să conțină linii noi, tab-uri sau multe spații la rând
+    $params = array_map(fn($v) => ['type' => 'text', 'text' => preg_replace('/\s+/', ' ', $v)], $values);
+    foreach ($cfg['to'] as $to) {
+        $ch = curl_init("https://graph.facebook.com/{$cfg['version']}/{$cfg['phone_id']}/messages");
+        curl_setopt_array($ch, [
+            CURLOPT_POST => true,
+            CURLOPT_HTTPHEADER => ['Authorization: Bearer ' . $cfg['token'], 'Content-Type: application/json'],
+            CURLOPT_POSTFIELDS => json_encode([
+                'messaging_product' => 'whatsapp',
+                'to' => $to,
+                'type' => 'template',
+                'template' => [
+                    'name' => $cfg['template'],
+                    'language' => ['code' => 'ro'],
+                    'components' => [['type' => 'body', 'parameters' => $params]],
+                ],
+            ]),
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_CONNECTTIMEOUT => 3,
+            CURLOPT_TIMEOUT => 5,
+        ]);
+        $response = curl_exec($ch);
+        $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $error = curl_error($ch);
+        curl_close($ch);
+        if ($code !== 200) {
+            // Fără date personale în log: doar codul și mesajul de eroare de la Meta
+            error_log("WhatsApp: HTTP $code " . (json_decode((string)$response, true)['error']['message'] ?? $error));
+        }
+    }
 }
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -119,4 +161,7 @@ if ($email !== '') {
 }
 
 $sent = smtp_send($smtp, TO, implode("\r\n", $headers) . "\r\n\r\n" . chunk_split(base64_encode($body)));
+// Mesajul din șablon are maxim 1024 de caractere, deci o descriere lungă se scurtează aici (rămâne întreagă în email)
+$short = mb_strlen($message) > 550 ? mb_substr($message, 0, 550) . '… (continuarea în email)' : $message;
+whatsapp_notify([$service, $name, $phone, $email !== '' ? $email : '-', $short]);
 respond($sent ? 200 : 500, $sent);

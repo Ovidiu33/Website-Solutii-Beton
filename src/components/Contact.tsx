@@ -29,11 +29,11 @@ const Contact = () => {
       if (!response.ok || !result.ok) throw new Error(`HTTP ${response.status}`)
 
       track('generate_lead', { service: String(new FormData(form).get('service') ?? '') })
-      setSubmitMessage('✅ Mesaj trimis cu succes! Te contactăm în curând.')
+      setSubmitMessage('✅ Mulțumim! Am primit cererea și te sunăm în curând.')
       form.reset()
       setAcceptTerms(false)
     } catch (error) {
-      setSubmitMessage('❌ Eroare la trimitere. Sună direct la 0758 663 415.')
+      setSubmitMessage('❌ Cererea nu a putut fi trimisă. Sună-ne direct la 0758 663 415.')
       console.error('Contact form error:', error)
     } finally {
       setIsSubmitting(false)
@@ -51,19 +51,19 @@ const Contact = () => {
       icon: <Mail className="h-5 w-5" />,
       title: 'Email',
       body: <a href="mailto:contact@ecarota.ro" className="font-semibold text-accent-ink hover:text-accent transition-colors break-all">contact@ecarota.ro</a>,
-      note: 'Răspundem în max 24h',
+      note: 'Răspundem în cel mult 24 de ore',
     },
     {
       icon: <MapPin className="h-5 w-5" />,
-      title: 'Zonă Acoperire',
-      body: <p className="text-ink">Suceava, Botoșani și județe</p>,
-      note: 'Deplasare rapidă în toată Moldova',
+      title: 'Zonă de lucru',
+      body: <p className="text-ink">Județele Suceava și Botoșani</p>,
+      note: 'Ne deplasăm și în restul Moldovei',
     },
     {
       icon: <Clock className="h-5 w-5" />,
       title: 'Program',
-      body: <p className="text-ink">Luni - Vineri: 7:00 - 17:00</p>,
-      note: 'Posibilitate intervenții urgente',
+      body: <p className="text-ink">Luni–vineri, 7:00–17:00</p>,
+      note: 'Pentru urgențe ne poți suna oricând',
     },
   ]
 
@@ -71,15 +71,15 @@ const Contact = () => {
     <section id="contact" className="theme-dark scroll-mt-16 lg:scroll-mt-20 py-16 md:py-24">
       <div className="container-custom">
         <div className="max-w-2xl">
-          <h2 className="heading-lg">Hai Să Discutăm</h2>
+          <h2 className="heading-lg">Hai să discutăm</h2>
           <p className="mt-4 text-lg md:text-xl text-mute">
-            Sună pentru consultanță gratuită și ofertă personalizată. Răspundem rapid!
+            Sună-ne sau lasă-ne un mesaj mai jos. Sfatul și evaluarea la fața locului sunt gratuite.
           </p>
         </div>
 
         <div className="mt-10 md:mt-14 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
           <div className="lg:col-span-5">
-            <h3 className="font-display font-bold text-2xl">Informații Contact</h3>
+            <h3 className="font-display font-bold text-2xl">Date de contact</h3>
 
             <ul className="mt-6 divide-y divide-white/10 border-y border-white/10">
               {info.map(item => (
@@ -118,22 +118,22 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Pe desktop cardul are înălțimea coloanei din stânga: „Descriere lucrare” crește și umple spațiul */}
+          {/* Pe desktop cardul are înălțimea coloanei din stânga: „Despre lucrare” crește și umple spațiul */}
           <div id="oferta" className="lg:col-span-7 lg:flex lg:flex-col scroll-mt-24 rounded border border-white/10 bg-surface/60 p-6 md:p-8">
-            <h3 className="font-display font-bold text-2xl">Solicită Ofertă</h3>
+            <h3 className="font-display font-bold text-2xl">Cere o ofertă gratuită</h3>
 
             <form className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-5 lg:flex-1 lg:grid-rows-[auto_auto_1fr_auto_auto]" onSubmit={handleSubmit}>
               {/* Anti-spam: câmp invizibil pentru oameni, completat doar de boți */}
               <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
 
               <div>
-                <label htmlFor="name" className={LABEL}>Nume complet *</label>
+                <label htmlFor="name" className={LABEL}>Nume *</label>
                 <input type="text" id="name" name="name" required autoComplete="name" className={FIELD} placeholder="Ion Popescu" />
               </div>
 
               <div>
                 <label htmlFor="phone" className={LABEL}>Telefon *</label>
-                <input type="tel" id="phone" name="phone" required autoComplete="tel" className={FIELD} placeholder="0758 663 415" />
+                <input type="tel" id="phone" name="phone" required autoComplete="tel" className={FIELD} placeholder="07xx xxx xxx" />
               </div>
 
               <div>
@@ -142,25 +142,25 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="service" className={LABEL}>Tip serviciu *</label>
+                <label htmlFor="service" className={LABEL}>Serviciu *</label>
                 <select id="service" name="service" required defaultValue="" className={`${FIELD} cursor-pointer`}>
-                  <option value="">Selectează...</option>
-                  <option value="carotaj">Carotaj în beton</option>
+                  <option value="">Alege serviciul</option>
+                  <option value="carotaj">Carotare în beton</option>
                   <option value="taiere">Tăiere beton</option>
                   <option value="demontare">Demolări</option>
-                  <option value="altele">Altele</option>
+                  <option value="altele">Altceva</option>
                 </select>
               </div>
 
               <div className="sm:col-span-2 lg:flex lg:flex-col">
-                <label htmlFor="message" className={LABEL}>Descriere lucrare *</label>
+                <label htmlFor="message" className={LABEL}>Despre lucrare *</label>
                 <textarea
                   id="message"
                   name="message"
                   required
                   rows={4}
                   className={`${FIELD} h-auto py-3 resize-none lg:flex-1`}
-                  placeholder="Dimensiuni, locație, material,..."
+                  placeholder="Ex.: gaură de Ø 150 mm pentru hotă, perete de beton de 30 cm, Suceava"
                 ></textarea>
               </div>
 
@@ -174,15 +174,15 @@ const Contact = () => {
                   required
                 />
                 <label htmlFor="acceptTerms" className="text-sm text-mute leading-relaxed cursor-pointer">
-                  Accept{' '}
+                  Sunt de acord cu{' '}
                   <button
                     type="button"
                     onClick={() => setIsTermsOpen(true)}
                     className="text-accent-ink underline decoration-accent/50 underline-offset-2 hover:decoration-accent font-semibold transition-colors"
                   >
-                    Termenii și Condițiile
+                    Termenii și condițiile
                   </button>
-                  {' '}de prelucrare a datelor personale *
+                  {' '}și cu prelucrarea datelor mele pentru această cerere *
                 </label>
               </div>
 
@@ -192,7 +192,7 @@ const Contact = () => {
                   disabled={isSubmitting || !acceptTerms}
                   className="btn btn-accent w-full disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-none"
                 >
-                  {isSubmitting ? 'Se trimite...' : 'Trimite Solicitare'}
+                  {isSubmitting ? 'Se trimite…' : 'Trimite cererea'}
                 </button>
 
                 {submitMessage && (

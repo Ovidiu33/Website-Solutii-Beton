@@ -6,22 +6,22 @@ const WhyUs = () => {
     {
       icon: <Target className="h-6 w-6" />,
       title: "Calculăm găurile cu precizie",
-      description: "Măsurăm exact, calculăm dimensiunile și poziționăm fiecare gaură perfect. Zero improvizație."
+      description: "Măsurăm, marcăm și verificăm poziția înainte să pornim mașina. Nu lucrăm „din ochi”."
     },
     {
       icon: <Wrench className="h-6 w-6" />,
       title: "Echipament profesional",
-      description: "Mașini de carotat și tăiat de ultimă generație. Facem găuri până la Ø 500mm."
+      description: "Mașini profesionale de carotat și tăiat. Facem găuri de la Ø 30 la Ø 600 mm."
     },
     {
       icon: <Droplets className="h-6 w-6" />,
       title: "Lucrăm curat",
-      description: "Carotăm cu apă în beton și aspirăm apa. Pe uscat folosim aspirator profesional pentru tot praful. Ridicăm molozul la final."
+      description: "În beton carotăm cu apă și o aspirăm pe loc. Pe uscat aspirăm praful cu aspirator profesional. La plecare luăm și molozul."
     },
     {
       icon: <Phone className="h-6 w-6" />,
       title: "Intervenim rapid",
-      description: "Răspundem la telefon 24/7. Lucrăm în Suceava, Botoșani și împrejurimi."
+      description: "Răspundem la telefon 24/7 și de obicei venim în 1–2 zile lucrătoare, în Suceava, Botoșani și împrejurimi."
     }
   ]
 
@@ -34,12 +34,12 @@ const WhyUs = () => {
             Calculăm găurile cu precizie
           </p>
           <p className="mt-2 text-lg text-mute max-w-md">
-            Ne pricepem la carotări și tăieri. Lucrăm curat, rapid și la preț corect.
+            Carotările și tăierile în beton sunt meseria noastră de peste 10 ani. Lucrăm curat, rapid și la un preț corect.
           </p>
           <div className="group mt-8 relative aspect-[4/3] overflow-hidden rounded border border-white/10 bg-surface">
             <Picture
               slug="carotaj-500-stativ"
-              alt="Carotare Ø500 mm cu folie de protecție pe pereți și podea"
+              alt="Carotare de Ø 500 mm, cu folie de protecție pe pereți și podea"
               sizes="(min-width: 1024px) 40vw, 100vw"
               width={1200}
               height={900}

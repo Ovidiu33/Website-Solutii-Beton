@@ -15,56 +15,56 @@ const ICON = 'h-6 w-6'
 const GROUPS: { name: string; summary: string; badge?: string; image: { slug: string; alt: string }; services: Service[] }[] = [
   {
     name: 'CAROTĂRI',
-    summary: 'Găuri hote • Ventilații • Aerisiri centrale • Aparate aer condiționat',
-    badge: 'Până la Ø 500mm',
-    image: { slug: 'carotaj-santier', alt: 'Lucrări carotare beton pe șantier mare' },
+    summary: 'Găuri pentru hote • Ventilații • Aerisiri centrale • Aer condiționat',
+    badge: 'Până la Ø 600 mm',
+    image: { slug: 'carotaj-santier', alt: 'Carotare în beton pe un șantier mare' },
     services: [
       {
         icon: <Circle className={ICON} />,
-        title: 'Carotare Găuri pentru Hote Bucătărie',
-        description: 'Carotări profesionale pentru hote de bucătărie în beton, cărămidă sau BCA. Calculăm exact dimensiunile necesare pentru evacuarea eficientă a fumului și vaporilor.',
-        features: ['Diametru până la Ø 500mm', 'Orice grosime perete', 'Finisaj curat', 'Fără praf excesiv'],
+        title: 'Carotare pentru hote de bucătărie',
+        description: 'Facem gaura pentru hotă în beton, cărămidă sau BCA. Alegem diametrul potrivit hotei și tubulaturii, ca aburul și mirosurile să iasă fără probleme.',
+        features: ['Diametru până la Ø 600 mm', 'Orice grosime de perete', 'Margini curate', 'Aspirăm praful'],
         formValue: 'carotaj',
       },
       {
         icon: <Wind className={ICON} />,
-        title: 'Găuri Ventilație și Aer Condiționat',
-        description: 'Găuri pentru ventilație, aerisire centrală și aparate de aer condiționat. Poziționare precisă conform proiectului, respectând normele de siguranță.',
+        title: 'Găuri pentru ventilație și aer condiționat',
+        description: 'Pentru ventilație, aerisirea centralei sau aparatul de aer condiționat. Facem găurile exact unde scrie în proiect și respectăm normele de siguranță.',
         features: ['Aer condiționat', 'Beton', 'Pereți portanți', 'Aerisiri centrale'],
         formValue: 'carotaj',
       },
       {
         icon: <Scissors className={ICON} />,
-        title: 'Decupaje pentru Instalații',
-        description: 'Decupaje precise pentru instalații sanitare, electrice și termice. Lucrăm după măsurători exacte pentru canale și treceri tehnice.',
+        title: 'Decupaje pentru instalații',
+        description: 'Facem canale și treceri pentru țevi și cabluri, la instalațiile sanitare, electrice și termice. Măsurăm înainte, ca totul să se potrivească la montaj.',
         features: ['Canale tehnice', 'Țevi', 'Cabluri', 'Instalații'],
         formValue: 'carotaj',
       },
     ],
   },
   {
-    name: 'TĂIERI DECUPAJE',
-    summary: 'Planșee • Pereți • Demolări controlate • Orice complexitate',
+    name: 'TĂIERI ȘI DECUPAJE',
+    summary: 'Planșee • Pereți • Deschideri • Demolări controlate',
     image: { slug: 'taiere-deschidere', alt: 'Deschidere tăiată în perete de beton' },
     services: [
       {
         icon: <Layers className={ICON} />,
-        title: 'Tăiere Planșee',
-        description: 'Tăiem planșee din beton pentru scări, lifturi sau alte modificări structurale. Folosim discuri diamantate profesionale pentru tăiere precisă fără vibrații.',
+        title: 'Tăiere planșee',
+        description: 'Tăiem planșee din beton pentru scări, lifturi sau alte modificări de structură. Lucrăm cu disc diamantat, precis și fără vibrații.',
         features: ['Orice grosime', 'Tăiere cu disc', 'Fără vibrații', 'Demolări controlate'],
         formValue: 'taiere',
       },
       {
         icon: <Square className={ICON} />,
-        title: 'Tăiere Pereți și Deschideri',
-        description: 'Deschideri pentru uși, ferestre sau alte modificări în pereți portanți din beton, cărămidă sau BCA. Lucrăm cu atenție la structura portantă.',
+        title: 'Tăiere pereți și deschideri',
+        description: 'Facem deschideri pentru uși și ferestre în pereți din beton, cărămidă sau BCA, inclusiv în pereți portanți. Lucrăm atent, ca să nu slăbim structura.',
         features: ['Pereți portanți', 'Cărămidă', 'BCA', 'Beton'],
         formValue: 'taiere',
       },
       {
         icon: <Hammer className={ICON} />,
         title: 'Demolări',
-        description: 'Demolări selective în beton fără să afectăm restul structurii. Lucrăm controlat pe balcoane, console și alte elemente. Ridicăm tot molozul.',
+        description: 'Demolăm doar ce trebuie: balcoane, console și alte elemente din beton, fără să afectăm restul clădirii. La final ridicăm tot molozul.',
         features: ['Balcoane', 'Console', 'Elemente structurale', 'Curățenie finală'],
         formValue: 'demontare',
       },
@@ -99,7 +99,7 @@ const Services = () => {
     <section ref={sectionRef} id="servicii" className="theme-alt scroll-mt-16 lg:scroll-mt-20 py-16 md:py-24">
       <div className="container-custom">
         <div className="max-w-2xl">
-          <h2 className="heading-lg">Ce Facem?</h2>
+          <h2 className="heading-lg">Ce facem?</h2>
           <p className="mt-4 text-lg md:text-xl text-mute">
             Carotări, tăieri, decupaje și demolări în beton, cărămidă, BCA, asfalt și piatră.
           </p>
@@ -149,7 +149,7 @@ const Services = () => {
                           onClick={() => preselect(service.formValue)}
                           className="group/link mt-4 inline-flex items-center gap-1.5 font-display font-bold text-accent-ink"
                         >
-                          Ofertă Gratuită
+                          Ofertă gratuită
                           <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/link:translate-x-1" strokeWidth={2.5} />
                         </a>
                       </div>

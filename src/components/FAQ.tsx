@@ -3,28 +3,28 @@ import { Plus, Phone } from 'lucide-react'
 const FAQ = () => {
   const faqs = [
     {
-      question: "Faceți mizerie mult? Cum procedați cu praful și apa?",
-      answer: "Lucrăm curat! În beton carotăm cu apă și o aspirăm continuu. Pe uscat aspirăm tot praful cu aspirator profesional. La tăieri protejăm zona și mobilierul. La final curățăm complet și ridicăm molozul. Totul rămâne curat."
+      question: "Faceți mizerie? Ce faceți cu praful și cu apa?",
+      answer: "Lucrăm curat. În beton carotăm cu apă și o aspirăm pe loc, iar pe uscat aspirăm praful cu un aspirator profesional. La tăieri acoperim zona și mobilierul. La final facem curat și luăm molozul cu noi."
     },
     {
-      question: "În cât timp puteți veni să faceți lucrarea?",
-      answer: "De obicei intervenim în 1-2 zile lucrătoare. Pentru urgențe putem veni chiar în aceeași zi. Suntem disponibili 24/7 la telefon 0758 663 415. Lucrăm în Suceava, Botoșani și localitățile din jur (Rădăuți, Fălticeni, Vatra Dornei, Dorohoi, etc.)."
+      question: "În cât timp puteți veni?",
+      answer: "De obicei venim în 1–2 zile lucrătoare, iar la urgențe chiar în aceeași zi. La telefon (0758 663 415) răspundem 24/7. Lucrăm în Suceava, Botoșani și în localitățile din jur: Rădăuți, Fălticeni, Vatra Dornei, Dorohoi și altele."
     },
     {
       question: "Până la ce dimensiune puteți face găuri?",
-      answer: "Facem găuri de la Ø 30mm până la Ø 500mm. Avem carote profesionale pentru orice dimensiune."
+      answer: "Facem găuri de la Ø 30 mm până la Ø 600 mm. Avem carote profesionale pentru toate aceste diametre."
     },
     {
       question: "Cât durează să faceți o gaură pentru hotă?",
-      answer: "O gaură standard pentru hotă într-un perete de 30-40cm durează 30-60 minute. Timpul variază în funcție de grosime și tipul materialului (beton, cărămidă, BCA). Pentru lucrări mai complexe sau multiple găuri, poate varia durata de timp."
+      answer: "O gaură obișnuită pentru hotă, într-un perete de 30–40 cm, durează între 30 și 60 de minute. Timpul depinde de grosimea peretelui și de material (beton, cărămidă sau BCA). Dacă sunt mai multe găuri sau lucrarea e mai complicată, durează mai mult."
     },
     {
       question: "Evaluarea la fața locului se plătește?",
-      answer: "Nu. Evaluarea la fața locului este gratuită. Venim, vedem lucrarea și vă spunem prețul înainte să începem."
+      answer: "Nu, evaluarea la fața locului e gratuită. Venim, ne uităm la lucrare și îți spunem prețul înainte să începem."
     },
     {
       question: "Pe ce materiale lucrați și cât de gros poate fi peretele?",
-      answer: "Lucrăm pe orice tip de material: beton (inclusiv beton armat), cărămidă, BCA, piatră, asfalt. Avem echipament profesional specializat care poate carota pereți de peste 1 metru grosime."
+      answer: "Lucrăm în beton (inclusiv beton armat), cărămidă, BCA, piatră și asfalt. Putem carota și pereți mai groși de 1 metru."
     }
   ]
 
@@ -54,14 +54,14 @@ const FAQ = () => {
       <section id="intrebari" className="theme-alt scroll-mt-16 lg:scroll-mt-20 py-16 md:py-24">
         <div className="container-custom grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           <div className="lg:col-span-5 lg:sticky lg:top-28">
-            <h2 className="heading-lg">Întrebări Frecvente despre serviciile oferite</h2>
+            <h2 className="heading-lg">Întrebări frecvente despre serviciile oferite</h2>
             <p className="mt-4 text-lg text-mute">
-              Răspunsuri la cele mai frecvente întrebări despre serviciile noastre de carotare, tăiere și demolări în beton.
+              Ce ne întreabă clienții cel mai des despre carotare, tăieri și demolări în beton.
             </p>
-            <p className="mt-6 text-lg">Nu găsiți răspunsul?</p>
+            <p className="mt-6 text-lg">Nu găsești răspunsul?</p>
             <a href="tel:+40758663415" className="btn btn-accent mt-3 h-auto min-h-14 py-3 w-full sm:w-auto whitespace-normal text-center">
               <Phone className="h-5 w-5" strokeWidth={2.25} />
-              Sunați-ne la 0758 663 415
+              Sună-ne la 0758 663 415
             </a>
           </div>
 
