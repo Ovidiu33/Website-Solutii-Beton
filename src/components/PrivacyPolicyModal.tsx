@@ -22,16 +22,16 @@ const PrivacyPolicyModal = ({ isOpen, onClose }: PrivacyPolicyModalProps) => {
 
   return (
     <div 
-      className="fixed inset-0 z-[100] flex items-center justify-center p-2 md:p-4 bg-black/90 backdrop-blur-md"
+      className="fixed inset-0 z-[100] flex items-center justify-center p-2 md:p-4 bg-black/90"
       onClick={onClose}
     >
       <div 
-        className="relative bg-[#1a1a1a] border-2 border-primary/40 rounded-xl max-w-4xl w-full max-h-[85vh] md:max-h-[90vh] overflow-hidden shadow-2xl"
+        className="modal-box relative flex flex-col bg-[#1a1a1a] border-2 border-primary/40 rounded-xl max-w-4xl w-full overflow-hidden shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="sticky top-0 bg-[#1a1a1a] border-b-2 border-primary/40 px-4 md:px-6 py-4 md:py-5 flex items-center justify-between">
-          <h2 className="text-2xl md:text-3xl font-bold text-white">Politica de confidențialitate</h2>
+        <div className="shrink-0 bg-[#1a1a1a] border-b-2 border-primary/40 px-4 md:px-6 py-3 md:py-5 flex items-center justify-between gap-3">
+          <h2 className="min-w-0 text-2xl md:text-3xl font-bold text-white [overflow-wrap:anywhere]">Politica de confidențialitate</h2>
           <button
             onClick={(e) => {
               e.preventDefault()
@@ -39,7 +39,7 @@ const PrivacyPolicyModal = ({ isOpen, onClose }: PrivacyPolicyModalProps) => {
               onClose()
             }}
             type="button"
-            className="text-gray-light hover:text-primary transition-colors"
+            className="shrink-0 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white hover:bg-primary transition-colors"
             aria-label="Închide"
           >
             <X className="h-6 w-6 md:h-7 md:w-7" />
@@ -48,7 +48,7 @@ const PrivacyPolicyModal = ({ isOpen, onClose }: PrivacyPolicyModalProps) => {
 
         {/* Content */}
         <div 
-          className="px-4 md:px-6 py-4 md:py-6 overflow-y-auto max-h-[calc(85vh-140px)] md:max-h-[calc(90vh-160px)] bg-gradient-to-b from-[#1a1a1a] to-[#0f0f0f]"
+          className="flex-1 min-h-0 px-4 md:px-6 py-4 md:py-6 overflow-y-auto overscroll-contain bg-gradient-to-b from-[#1a1a1a] to-[#0f0f0f]"
           style={{
             scrollbarWidth: 'none',
             msOverflowStyle: 'none',
@@ -162,7 +162,7 @@ const PrivacyPolicyModal = ({ isOpen, onClose }: PrivacyPolicyModalProps) => {
         </div>
 
         {/* Footer */}
-        <div className="sticky bottom-0 bg-[#1a1a1a] border-t-2 border-primary/40 px-4 md:px-6 py-3 md:py-5">
+        <div className="shrink-0 bg-[#1a1a1a] border-t-2 border-primary/40 px-4 md:px-6 py-3 md:py-5">
           <button
             onClick={(e) => {
               e.preventDefault()

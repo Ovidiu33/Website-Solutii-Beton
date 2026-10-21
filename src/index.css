@@ -114,6 +114,19 @@
   .heading-lg {
     @apply font-display font-extrabold text-3xl md:text-[2.75rem] tracking-tight leading-[1.05];
   }
+
+  /* Ferestrele Termeni / Confidențialitate / Cookie-uri încap în zona vizibilă reală (dvh ține cont de bara browserului pe telefon) */
+  .modal-box {
+    max-height: 85vh;
+    max-height: 85dvh;
+  }
+
+  @media (min-width: 768px) {
+    .modal-box {
+      max-height: 90vh;
+      max-height: 90dvh;
+    }
+  }
 }
 
 @layer utilities {
